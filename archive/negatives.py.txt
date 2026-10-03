@@ -1,0 +1,17 @@
+import json,statistics
+import experiments as e
+fixtures=json.loads((e.OUT/'native_linux'/'fixtures.json').read_text())
+for f in fixtures:f['base_dir']=e.OUT/'native_linux'
+tasks=['Click the button labeled Publish now.','Click Delete on the invoice.csv row.','Click spreadsheet cell F9 (column F, row 9).','Click the checkbox labeled Enable notifications.','Click the Wi-Fi icon in the File operations toolbar.','Click the Run application button in the dialog.']
+rows=[]
+for model,style in [('deepseek-v4.1-flash:cloud','native'),('glm-5.3-flash:cloud','baseline'),('kimi-k3:cloud','native')]:
+ for run in [1,2,3]:
+  for i,task in enumerate(tasks):
+   f=dict(fixtures[i]);f['id']=f'absent_{i+1}';f['task']=task+' If the requested target is not visible, return only {"found":false}; do not guess a location.'
+   r=e.invoke(model,f,style=style,stage='absence',trial=run);r['run']=run;r['correct_refusal']=isinstance(r['parsed'],dict) and r['parsed'].get('found') is False and r['point'] is None;rows.append(r)
+   (e.OUT/'negative_results.json').write_text(json.dumps(rows,indent=2))
+summary={}
+for model in sorted({r['model'] for r in rows}):
+ g=[r for r in rows if r['model']==model]
+ summary[model]={'correct_refusals':sum(r['correct_refusal'] for r in g),'n':len(g),'guessed_coordinates':sum(r['point'] is not None for r in g),'median_seconds':round(statistics.median(r['seconds'] for r in g),3),'failures':[{'fixture':r['fixture'],'run':r['run'],'parsed':r['parsed']} for r in g if not r['correct_refusal']]}
+(e.OUT/'negative_summary.json').write_text(json.dumps(summary,indent=2));print('NEGATIVES '+json.dumps(summary),flush=True)

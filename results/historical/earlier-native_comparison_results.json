@@ -1,0 +1,2733 @@
+[
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "large_buttons_800x600",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.935,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:09.395207199Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 331, \"y\": 856}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 750240806,
+      "prompt_eval_count": 781,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      264.47,
+      512.74
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 331,
+      "y": 856
+    },
+    "center_error_px": 1.36
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "large_buttons_1024x768",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.794,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:10.19407879Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 259, \"y\": 888}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 727201369,
+      "prompt_eval_count": 1180,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      264.96,
+      681.1
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 259,
+      "y": 888
+    },
+    "center_error_px": 0.91
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "large_buttons_1280x720",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.868,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:11.057643593Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 890, \"y\": 880}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 793308884,
+      "prompt_eval_count": 1340,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      1138.31,
+      632.72
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 890,
+      "y": 880
+    },
+    "center_error_px": 2.12
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "large_buttons_1920x1080",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.352,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:12.410931556Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 513, \"y\": 513}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1280250487,
+      "prompt_eval_count": 2836,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      984.45,
+      553.53
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 513,
+      "y": 513
+    },
+    "center_error_px": 0.73
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "dense_toolbar_800x600",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.789,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:13.206330565Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 362, \"y\": 293}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 721758572,
+      "prompt_eval_count": 790,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      289.24,
+      175.51
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 362,
+      "y": 293
+    },
+    "center_error_px": 1.68
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "dense_toolbar_1024x768",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.791,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:13.991532938Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 523, \"y\": 184}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 726449708,
+      "prompt_eval_count": 1189,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      535.03,
+      141.13
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 523,
+      "y": 184
+    },
+    "center_error_px": 1.34
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "dense_toolbar_1280x720",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.151,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:15.14996345Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 226, \"y\": 197}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1065793942,
+      "prompt_eval_count": 1349,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      289.05,
+      141.64
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 226,
+      "y": 197
+    },
+    "center_error_px": 1.03
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "dense_toolbar_1920x1080",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.881,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:16.031902692Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 310, \"y\": 131}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 808447118,
+      "prompt_eval_count": 2845,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      594.89,
+      141.35
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 310,
+      "y": 131
+    },
+    "center_error_px": 1.07
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "small_icons_800x600",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.797,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:16.820915524Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 573, \"y\": 236}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 735676463,
+      "prompt_eval_count": 789,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      457.83,
+      141.36
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 573,
+      "y": 236
+    },
+    "center_error_px": 1.33
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "small_icons_1024x768",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.015,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:17.844345966Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 448, \"y\": 185}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 945697341,
+      "prompt_eval_count": 1188,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      458.3,
+      141.9
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 448,
+      "y": 185
+    },
+    "center_error_px": 0.7
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "small_icons_1280x720",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.774,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:18.612357248Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 194, \"y\": 197}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 711043216,
+      "prompt_eval_count": 1348,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      248.13,
+      141.64
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 194,
+      "y": 197
+    },
+    "center_error_px": 0.94
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "small_icons_1920x1080",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.866,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:19.485096376Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 129, \"y\": 131}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 798151662,
+      "prompt_eval_count": 2844,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      247.55,
+      141.35
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 129,
+      "y": 131
+    },
+    "center_error_px": 1.59
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "duplicate_labels_800x600",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.886,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:20.365600898Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 783, \"y\": 659}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 807787839,
+      "prompt_eval_count": 790,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      625.62,
+      394.74
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 783,
+      "y": 659
+    },
+    "center_error_px": 1.67
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "duplicate_labels_1024x768",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.173,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:21.52846274Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 765, \"y\": 235}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1084322580,
+      "prompt_eval_count": 1189,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      782.6,
+      180.25
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 765,
+      "y": 235
+    },
+    "center_error_px": 1.02
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "duplicate_labels_1280x720",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.007,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:22.547375465Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 751, \"y\": 429}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 765700521,
+      "prompt_eval_count": 1349,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      960.53,
+      308.45
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 751,
+      "y": 429
+    },
+    "center_error_px": 2.14
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "duplicate_labels_1920x1080",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.955,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:23.502372076Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 733, \"y\": 366}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 880621110,
+      "prompt_eval_count": 2845,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      1406.63,
+      394.91
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 733,
+      "y": 366
+    },
+    "center_error_px": 2.86
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "dialog_fields_800x600",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.2,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:24.699143336Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 425}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1109893379,
+      "prompt_eval_count": 787,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      399.5,
+      254.57
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 425
+    },
+    "center_error_px": 1.05
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "dialog_fields_1024x768",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.852,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:25.557667826Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 442}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 777873621,
+      "prompt_eval_count": 1186,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      511.5,
+      339.01
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 442
+    },
+    "center_error_px": 0.7
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "dialog_fields_1280x720",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.821,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:26.378058253Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 438}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 746833481,
+      "prompt_eval_count": 1346,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      639.5,
+      314.92
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 438
+    },
+    "center_error_px": 0.76
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "dialog_fields_1920x1080",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.125,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:27.513881488Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 458}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1054075402,
+      "prompt_eval_count": 2842,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      959.5,
+      494.18
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 458
+    },
+    "center_error_px": 1.41
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "table_cells_800x600",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.855,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:28.361183634Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 576, \"y\": 614}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 783107267,
+      "prompt_eval_count": 788,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      460.22,
+      367.79
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 576,
+      "y": 614
+    },
+    "center_error_px": 33.52
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "table_cells_1024x768",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.848,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:29.216035362Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 543, \"y\": 480}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 776138557,
+      "prompt_eval_count": 1187,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      555.49,
+      368.16
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 543,
+      "y": 480
+    },
+    "center_error_px": 50.24
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "table_cells_1280x720",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.046,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:30.262150402Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 509, \"y\": 512}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 972199724,
+      "prompt_eval_count": 1347,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      651.01,
+      368.13
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 509,
+      "y": 512
+    },
+    "center_error_px": 82.72
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "fixture": "table_cells_1920x1080",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.88,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k3",
+      "created_at": "2026-10-01T01:11:31.13894399Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 473, \"y\": 341}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 804615544,
+      "prompt_eval_count": 2843,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 19
+    },
+    "hit": true,
+    "point": [
+      907.69,
+      367.94
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 473,
+      "y": 341
+    },
+    "center_error_px": 146.04
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "large_buttons_800x600",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.044,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:32.183550712Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 315, \"y\": 805}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 976887451,
+      "prompt_eval_count": 834,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      251.69,
+      482.19
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 315,
+      "y": 805
+    },
+    "center_error_px": 34.48
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "large_buttons_1024x768",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 2.261,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:34.443179187Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 261, \"y\": 906}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 2191071744,
+      "prompt_eval_count": 1261,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      267.0,
+      694.9
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 261,
+      "y": 906
+    },
+    "center_error_px": 13.06
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "large_buttons_1280x720",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.038,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:35.484450672Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 890, \"y\": 877}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 963760053,
+      "prompt_eval_count": 1421,
+      "prompt_eval_cached_count": 218,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      1138.31,
+      630.56
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 890,
+      "y": 877
+    },
+    "center_error_px": 3.83
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "large_buttons_1920x1080",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.843,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:37.336850455Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 513, \"y\": 513}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1775240573,
+      "prompt_eval_count": 2916,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      984.45,
+      553.53
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 513,
+      "y": 513
+    },
+    "center_error_px": 0.73
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "dense_toolbar_800x600",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.518,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:38.84864976Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 357, \"y\": 262}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1445266305,
+      "prompt_eval_count": 872,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      285.24,
+      156.94
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 357,
+      "y": 262
+    },
+    "center_error_px": 20.62
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "dense_toolbar_1024x768",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.06,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:39.905853896Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 523, \"y\": 214}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 980180772,
+      "prompt_eval_count": 1270,
+      "prompt_eval_cached_count": 227,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      535.03,
+      164.14
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 523,
+      "y": 214
+    },
+    "center_error_px": 22.16
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "dense_toolbar_1280x720",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.079,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:40.989690709Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 229, \"y\": 226}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1003445153,
+      "prompt_eval_count": 1430,
+      "prompt_eval_cached_count": 227,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      292.89,
+      162.49
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 229,
+      "y": 226
+    },
+    "center_error_px": 20.69
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "dense_toolbar_1920x1080",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.044,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:42.031965366Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 311, \"y\": 157}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 966551079,
+      "prompt_eval_count": 2925,
+      "prompt_eval_cached_count": 227,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      596.81,
+      169.4
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 311,
+      "y": 157
+    },
+    "center_error_px": 27.42
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "small_icons_800x600",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.62,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:42.655568743Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 569, \"y\": 261}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 557719687,
+      "prompt_eval_count": 871,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      454.63,
+      156.34
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 569,
+      "y": 261
+    },
+    "center_error_px": 14.99
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "small_icons_1024x768",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.515,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:44.163435039Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 431, \"y\": 206}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1431239394,
+      "prompt_eval_count": 1232,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      440.91,
+      158.0
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 431,
+      "y": 206
+    },
+    "center_error_px": 24.15
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "small_icons_1280x720",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 3.8,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:47.969282444Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 206, \"y\": 215}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 3716153042,
+      "prompt_eval_count": 1429,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      263.47,
+      154.59
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 206,
+      "y": 215
+    },
+    "center_error_px": 19.18
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "small_icons_1920x1080",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.686,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:49.664909154Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 130, \"y\": 156}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1616062003,
+      "prompt_eval_count": 2924,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      249.47,
+      168.32
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 130,
+      "y": 156
+    },
+    "center_error_px": 26.33
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "duplicate_labels_800x600",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.505,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:51.168901322Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 772, \"y\": 653}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1429084477,
+      "prompt_eval_count": 872,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      616.83,
+      391.15
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 772,
+      "y": 653
+    },
+    "center_error_px": 11.16
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "duplicate_labels_1024x768",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 5.438,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:56.606502198Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 750, \"y\": 254}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 5357800293,
+      "prompt_eval_count": 1270,
+      "prompt_eval_cached_count": 227,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      767.25,
+      194.82
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 750,
+      "y": 254
+    },
+    "center_error_px": 21.72
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "duplicate_labels_1280x720",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 2.446,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:11:59.061843153Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 752, \"y\": 394}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 2383635908,
+      "prompt_eval_count": 1430,
+      "prompt_eval_cached_count": 227,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      961.81,
+      283.29
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 752,
+      "y": 394
+    },
+    "center_error_px": 26.22
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "duplicate_labels_1920x1080",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.405,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:00.469596992Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 942, \"y\": 307}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1333627746,
+      "prompt_eval_count": 2925,
+      "prompt_eval_cached_count": 227,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      1807.7,
+      331.25
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 942,
+      "y": 307
+    },
+    "center_error_px": 403.42
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "dialog_fields_800x600",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.511,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:01.981434467Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 335, \"y\": 493}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1447893523,
+      "prompt_eval_count": 870,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      267.67,
+      295.31
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 335,
+      "y": 493
+    },
+    "center_error_px": 138.19
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "dialog_fields_1024x768",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.969,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:02.941356456Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 427}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 887291423,
+      "prompt_eval_count": 1268,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      511.5,
+      327.51
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 427
+    },
+    "center_error_px": 12.0
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "dialog_fields_1280x720",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.755,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:04.705020818Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 435}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1686277392,
+      "prompt_eval_count": 1428,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      639.5,
+      312.76
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 435
+    },
+    "center_error_px": 2.78
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "dialog_fields_1920x1080",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 3.86,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:08.561126629Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 499, \"y\": 459}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 3776279899,
+      "prompt_eval_count": 2923,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      957.58,
+      495.26
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 499,
+      "y": 459
+    },
+    "center_error_px": 2.43
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "table_cells_800x600",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.149,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:09.71238651Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 540, \"y\": 520}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1076009878,
+      "prompt_eval_count": 870,
+      "prompt_eval_cached_count": 128,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      431.46,
+      311.48
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 540,
+      "y": 520
+    },
+    "center_error_px": 84.77
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "table_cells_1024x768",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.173,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:10.892427193Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 503, \"y\": 469}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1103791940,
+      "prompt_eval_count": 1268,
+      "prompt_eval_cached_count": 225,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      514.57,
+      359.72
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 503,
+      "y": 469
+    },
+    "center_error_px": 91.62
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "table_cells_1280x720",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.223,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:12.11022534Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 498, \"y\": 461}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1150014273,
+      "prompt_eval_count": 1428,
+      "prompt_eval_cached_count": 225,
+      "eval_count": 13
+    },
+    "hit": false,
+    "point": [
+      636.94,
+      331.46
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 498,
+      "y": 461
+    },
+    "center_error_px": 103.81
+  },
+  {
+    "model": "minimax-m3:cloud",
+    "fixture": "table_cells_1920x1080",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.011,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "minimax-m3",
+      "created_at": "2026-10-01T01:12:13.122936598Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 503, \"y\": 342}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 934871153,
+      "prompt_eval_count": 2923,
+      "prompt_eval_cached_count": 225,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      965.26,
+      369.02
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 503,
+      "y": 342
+    },
+    "center_error_px": 88.47
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "large_buttons_800x600",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.776,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:14.899634691Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 331, \"y\": 856}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1708531408,
+      "prompt_eval_count": 712,
+      "prompt_eval_cached_count": 608,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      264.47,
+      512.74
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 331,
+      "y": 856
+    },
+    "center_error_px": 1.36
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "large_buttons_1024x768",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 2.799,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:17.698040831Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 258, \"y\": 888}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 2715350434,
+      "prompt_eval_count": 1110,
+      "prompt_eval_cached_count": 992,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      263.93,
+      681.1
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 258,
+      "y": 888
+    },
+    "center_error_px": 1.4
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "large_buttons_1280x720",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.439,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:19.147125964Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 891, \"y\": 880}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1358293908,
+      "prompt_eval_count": 1270,
+      "prompt_eval_cached_count": 1152,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      1139.59,
+      632.72
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 891,
+      "y": 880
+    },
+    "center_error_px": 1.34
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "large_buttons_1920x1080",
+    "category": "large_buttons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.912,
+    "status": 200,
+    "prompt": "Click the button labeled Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:21.045051019Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.512, \"y\": 0.512}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1835574298,
+      "prompt_eval_count": 2765,
+      "prompt_eval_cached_count": 2656,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      0.98,
+      0.55
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.512,
+      "y": 0.512
+    },
+    "center_error_px": 1128.98
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "dense_toolbar_800x600",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 2.768,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:23.830510113Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.361, \"y\": 0.294}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 2700161242,
+      "prompt_eval_count": 721,
+      "prompt_eval_cached_count": 608,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      0.29,
+      0.18
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.361,
+      "y": 0.294
+    },
+    "center_error_px": 339.42
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "dense_toolbar_1024x768",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 3.12,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:26.944966594Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.523, \"y\": 0.183}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 3044085979,
+      "prompt_eval_count": 1119,
+      "prompt_eval_cached_count": 1024,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      0.54,
+      0.14
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.523,
+      "y": 0.183
+    },
+    "center_error_px": 553.98
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "dense_toolbar_1280x720",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 2.264,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:29.210890152Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 227, \"y\": 195}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 2189366872,
+      "prompt_eval_count": 1279,
+      "prompt_eval_cached_count": 1184,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      290.33,
+      140.21
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 227,
+      "y": 195
+    },
+    "center_error_px": 1.82
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "dense_toolbar_1920x1080",
+    "category": "dense_toolbar",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.726,
+    "status": 200,
+    "prompt": "Click Save As in the editor toolbar. Choose Save As rather than Save.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:30.935998082Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 310, \"y\": 130}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1632605269,
+      "prompt_eval_count": 2774,
+      "prompt_eval_cached_count": 2656,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      594.89,
+      140.27
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 310,
+      "y": 130
+    },
+    "center_error_px": 1.93
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "small_icons_800x600",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.69,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:32.629574213Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 573, \"y\": 237}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1628094983,
+      "prompt_eval_count": 720,
+      "prompt_eval_cached_count": 608,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      457.83,
+      141.96
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 573,
+      "y": 237
+    },
+    "center_error_px": 1.17
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "small_icons_1024x768",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.891,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:34.461784199Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 450, \"y\": 184}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1616141613,
+      "prompt_eval_count": 1118,
+      "prompt_eval_cached_count": 1024,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      460.35,
+      141.13
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 450,
+      "y": 184
+    },
+    "center_error_px": 1.61
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "small_icons_1280x720",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.889,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:36.411918001Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 194, \"y\": 197}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1797906420,
+      "prompt_eval_count": 1278,
+      "prompt_eval_cached_count": 1184,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      248.13,
+      141.64
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 194,
+      "y": 197
+    },
+    "center_error_px": 0.94
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "small_icons_1920x1080",
+    "category": "small_icons",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.824,
+    "status": 200,
+    "prompt": "Click the trash-can icon in the toolbar to delete the selected file.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:38.237113621Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 130, \"y\": 130}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1760438960,
+      "prompt_eval_count": 2773,
+      "prompt_eval_cached_count": 2656,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      249.47,
+      140.27
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 130,
+      "y": 130
+    },
+    "center_error_px": 1.79
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "duplicate_labels_800x600",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 3.878,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:42.116890765Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 783, \"y\": 659}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 3810208783,
+      "prompt_eval_count": 721,
+      "prompt_eval_cached_count": 608,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      625.62,
+      394.74
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 783,
+      "y": 659
+    },
+    "center_error_px": 1.67
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "duplicate_labels_1024x768",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.915,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:44.033610423Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.765, \"y\": 0.234}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1846919856,
+      "prompt_eval_count": 1119,
+      "prompt_eval_cached_count": 1024,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      0.78,
+      0.18
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.765,
+      "y": 0.234
+    },
+    "center_error_px": 803.3
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "duplicate_labels_1280x720",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.893,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:45.927203556Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.752, \"y\": 0.429}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1815040665,
+      "prompt_eval_count": 1279,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      0.96,
+      0.31
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.752,
+      "y": 0.429
+    },
+    "center_error_px": 1009.92
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "duplicate_labels_1920x1080",
+    "category": "duplicate_labels",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.943,
+    "status": 200,
+    "prompt": "Click Delete on the archive.zip row. Other rows also have Delete buttons.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:47.875691622Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 732, \"y\": 365}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1859407645,
+      "prompt_eval_count": 2774,
+      "prompt_eval_cached_count": 2656,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      1404.71,
+      393.83
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 732,
+      "y": 365
+    },
+    "center_error_px": 5.0
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "dialog_fields_800x600",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.997,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:49.875722456Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 425}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1930134986,
+      "prompt_eval_count": 718,
+      "prompt_eval_cached_count": 608,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      399.5,
+      254.57
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 425
+    },
+    "center_error_px": 1.05
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "dialog_fields_1024x768",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.87,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:50.747980353Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 441}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 804354931,
+      "prompt_eval_count": 1116,
+      "prompt_eval_cached_count": 1024,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      511.5,
+      338.25
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 441
+    },
+    "center_error_px": 1.35
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "dialog_fields_1280x720",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.839,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:51.59059522Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 500, \"y\": 438}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 776948601,
+      "prompt_eval_count": 1276,
+      "prompt_eval_cached_count": 1184,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      639.5,
+      314.92
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 500,
+      "y": 438
+    },
+    "center_error_px": 0.76
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "dialog_fields_1920x1080",
+    "category": "dialog_fields",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 0.88,
+    "status": 200,
+    "prompt": "Click inside the Filename text field in the Save document dialog.\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:52.462689169Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 499, \"y\": 456}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 798854880,
+      "prompt_eval_count": 2771,
+      "prompt_eval_cached_count": 2656,
+      "eval_count": 13
+    },
+    "hit": true,
+    "point": [
+      957.58,
+      492.02
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 499,
+      "y": 456
+    },
+    "center_error_px": 4.23
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "table_cells_800x600",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.002,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:53.466952186Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.573, \"y\": 0.614}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 934441815,
+      "prompt_eval_count": 719,
+      "prompt_eval_cached_count": 0,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      0.46,
+      0.37
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.573,
+      "y": 0.614
+    },
+    "center_error_px": 615.8
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "table_cells_1024x768",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.043,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:54.518435756Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.536, \"y\": 0.477}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 973733047,
+      "prompt_eval_count": 1117,
+      "prompt_eval_cached_count": 1024,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      0.55,
+      0.37
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.536,
+      "y": 0.477
+    },
+    "center_error_px": 708.61
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "table_cells_1280x720",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 1.336,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:12:55.84879237Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.572, \"y\": 0.512}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 1256005229,
+      "prompt_eval_count": 1277,
+      "prompt_eval_cached_count": 1184,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      0.73,
+      0.37
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.572,
+      "y": 0.512
+    },
+    "center_error_px": 820.47
+  },
+  {
+    "model": "kimi-k2.6:cloud",
+    "fixture": "table_cells_1920x1080",
+    "category": "table_cells",
+    "stage": "native_comparison",
+    "style": "native",
+    "think": false,
+    "trial": 1,
+    "seconds": 7.334,
+    "status": 200,
+    "prompt": "Click spreadsheet cell C4 (column C, row 4).\nPoint to the visual center of that control. Use native image coordinates normalized to 0\u20131000 for x and y. Return only {\"x\": ..., \"y\": ...}. Do not convert into pixels or do resolution arithmetic. If absent return {\"found\":false}.",
+    "raw": {
+      "model": "kimi-k2.6",
+      "created_at": "2026-10-01T01:13:03.184711858Z",
+      "message": {
+        "role": "assistant",
+        "content": "{\"x\": 0.548, \"y\": 0.340}"
+      },
+      "done": true,
+      "done_reason": "stop",
+      "total_duration": 7259038178,
+      "prompt_eval_count": 2772,
+      "prompt_eval_cached_count": 2656,
+      "eval_count": 17
+    },
+    "hit": false,
+    "point": [
+      1.05,
+      0.37
+    ],
+    "parseable": true,
+    "strict_json": true,
+    "parsed": {
+      "x": 0.548,
+      "y": 0.34
+    },
+    "center_error_px": 1115.35
+  }
+]

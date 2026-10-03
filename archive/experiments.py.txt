@@ -1,0 +1,76 @@
+from pathlib import Path
+from PIL import Image, ImageDraw
+import benchmark as b
+import base64,json,time,requests,re,statistics,io,random,math
+OUT=b.OUT
+MODELS=['deepseek-v4.1-flash:cloud','glm-5.3-flash:cloud','kimi-k3:cloud','minimax-m3:cloud','kimi-k2.6:cloud']
+
+def encode(path): return base64.b64encode(Path(path).read_bytes()).decode()
+def invoke(model,fixture,style='baseline',think=False,stage='comparison',trial=1,override_images=None,crop=None):
+ w,h=fixture['size']; task=fixture['task']; tool=None
+ if style=='baseline':
+  prompt=task+'\n'+f'The screenshot is {w} pixels wide and {h} pixels high. Return the target center in normalized coordinates from 0 to 1000 on EACH axis: top-left is (0,0), bottom-right is (1000,1000). Return only JSON {{"x":integer,"y":integer}}. Use normalized coordinates, not pixels.'
+ elif style=='native':
+  prompt=f'{task}\nPoint to the visual center of that control. Use native image coordinates normalized to 0–1000 for x and y. Return only {{"x": ..., "y": ...}}. Do not convert into pixels or do resolution arithmetic. If absent return {{"found":false}}.'
+ elif style=='bbox':
+  prompt=f'{task}\nLocate the target control precisely. Return its tight bounding box in the image using normalized 0–1000 coordinates: {{"box": [left, top, right, bottom]}}. No pixel conversion or explanation. If absent return {{"found":false}}.'
+ elif style=='tool':
+  prompt=f'{task}\nUse click_normalized once to click the visual center of the requested control. Coordinates are on the image in a 0–1000 scale on each axis. Do not convert to screen pixels. If target absent, say unavailable and do not call the tool.'
+  tool={'type':'function','function':{'name':'click_normalized','description':'Click at a point in the provided screenshot. x and y are normalized from 0 to 1000 on each axis, with top-left (0,0) and bottom-right (1000,1000).','parameters':{'type':'object','properties':{'x':{'type':'number','minimum':0,'maximum':1000},'y':{'type':'number','minimum':0,'maximum':1000}},'required':['x','y'],'additionalProperties':False}}}
+ elif style=='zoom':
+  prompt=f'{task}\nImage 1 is the full screen for context. Image 2 is a magnified crop of part of that same screen. Locate the target in IMAGE 2 and return its center using normalized 0–1000 coordinates RELATIVE TO IMAGE 2 ONLY. Return only {{"x":...,"y":...}}. Do not do pixel conversions. If target is outside image 2 return {{"found":false}}.'
+ else: raise ValueError(style)
+ images=override_images or [encode(fixture['base_dir']/fixture['image'])]
+ payload={'model':model,'messages':[{'role':'user','content':prompt,'images':images}],'stream':False,'options':{'temperature':0,'num_predict':4096}}
+ if think is not None: payload['think']=think
+ if tool:payload['tools']=[tool]
+ t=time.monotonic()
+ try:
+  res=requests.post(b.HOST+'/api/chat',json=payload,timeout=(10,110)); raw=res.json(); status=res.status_code
+ except Exception as e:raw={'error':str(e)};status=None
+ result={'model':model,'fixture':fixture['id'],'category':fixture['category'],'stage':stage,'style':style,'think':think,'trial':trial,'seconds':round(time.monotonic()-t,3),'status':status,'prompt':prompt,'raw':raw,'hit':False,'point':None,'parseable':False,'strict_json':False}
+ content=raw.get('message',{}).get('content',''); parsed=b.parse_json(content)
+ try:json.loads(content.strip());result['strict_json']=True
+ except Exception:pass
+ calls=raw.get('message',{}).get('tool_calls') or []
+ if tool and len(calls)==1 and calls[0].get('function',{}).get('name')=='click_normalized':
+  parsed=calls[0]['function']['arguments']
+  if isinstance(parsed,str):parsed=b.parse_json(parsed)
+  result['tool_call']=True
+ result['parsed']=parsed; result['parseable']=parsed is not None
+ if isinstance(parsed,dict):
+  if style=='bbox' and isinstance(parsed.get('box'),list) and len(parsed['box'])==4:
+   box=parsed['box']; x=(box[0]+box[2])/2;y=(box[1]+box[3])/2
+  else:x=parsed.get('x');y=parsed.get('y')
+  if isinstance(x,(int,float)) and isinstance(y,(int,float)) and 0<=x<=1000 and 0<=y<=1000:
+   if crop:
+    left,top,right,bottom=crop;point=[left+x*(right-left-1)/1000,top+y*(bottom-top-1)/1000]
+   else:point=[x*(w-1)/1000,y*(h-1)/1000]
+   result['point']=[round(v,2) for v in point]
+   target=fixture['boxes'][str(fixture['target_ref'])]
+   result['hit']=target['x']<=point[0]<target['x']+target['width'] and target['y']<=point[1]<target['y']+target['height']
+   result['center_error_px']=round(math.hypot(point[0]-(target['x']+target['width']/2),point[1]-(target['y']+target['height']/2)),2)
+ with (OUT/'experiments.jsonl').open('a') as stream:stream.write(json.dumps(result)+'\n')
+ print(json.dumps({'model':model,'fixture':fixture['id'],'stage':stage,'style':style,'think':think,'hit':result['hit'],'seconds':result['seconds'],'parsed':parsed,'error':raw.get('error')}),flush=True)
+ return result
+
+def load_fixtures(path=None):
+ path=path or OUT/'fixtures.json';rows=json.loads(path.read_text())
+ for f in rows:f['base_dir']=path.parent/'scenes'
+ return rows
+
+def compare():
+ fixtures=load_fixtures();summary={}
+ # DeepSeek's baseline is already measured; test other models with the identical prompt.
+ for model in MODELS[1:]:
+  rows=[]
+  for f in fixtures:
+   row=invoke(model,f);rows.append(row)
+   if row['status'] not in [200]:
+    if row['status'] in [400] and 'think' in str(row['raw']).lower():
+     row=invoke(model,f,think=None);rows[-1]=row
+    if row['status']!=200:break
+  summary[model]={'hits':sum(r['hit'] for r in rows),'n':len(rows),'median_seconds':round(statistics.median(r['seconds'] for r in rows),3),'errors':sum(r['status']!=200 for r in rows),'parseable':sum(r['parseable'] for r in rows)}
+  (OUT/'comparison_summary.json').write_text(json.dumps(summary,indent=2))
+ print('COMPARISON '+json.dumps(summary),flush=True)
+if __name__=='__main__':compare()

@@ -1,0 +1,51 @@
+import asyncio,json,os,time,statistics,logging
+from pathlib import Path
+from unittest.mock import patch
+from Xlib import display,X
+logging.disable(logging.CRITICAL)
+for proc in Path('/proc').iterdir():
+    if proc.name.isdigit():
+        try:
+            if b'main.py' not in (proc/'cmdline').read_bytes():continue
+            for entry in (proc/'environ').read_bytes().split(b'\0'):
+                if entry.startswith(b'DBUS_SESSION_BUS_ADDRESS='):os.environ['DBUS_SESSION_BUS_ADDRESS']=entry.split(b'=',1)[1].decode()
+        except OSError:pass
+from tools.desktop import visual_click,visual_move,visual_drag,read_screen
+from tools.desktop._screenshot import capture_screenshot
+from providers import get_provider
+provider=get_provider('ollama'); original_chat=provider.chat
+model_times=[]
+async def timed_chat(**kwargs):
+    t=time.monotonic();r=await original_chat(**kwargs);model_times.append(time.monotonic()-t);return r
+provider.chat=timed_chat
+root=Path('/home/omnideck');truth=json.loads((root/'visual-live-truth.json').read_text())
+rows=[]
+def state():return json.loads((root/'visual-live-events.json').read_text())
+def inside(key,point):
+    x,y,w,h=truth['targets'][key];return x<=point[0]<x+w and y<=point[1]<y+h
+def pointer():
+    d=display.Display(':99')
+    try:
+        p=d.screen().root.query_pointer();return [p.root_x,p.root_y],p.mask
+    finally:d.close()
+async def record(model,run,name,call,check):
+    before=state();n=len(model_times);start=time.monotonic();result=await call();after=state()
+    point,mask=pointer();hit=check(before,after,point) and not mask&X.Button1Mask
+    row={'model':model,'run':run,'case':name,'hit':bool(hit),'tool_seconds':time.monotonic()-start,'model_seconds':model_times[n:], 'pointer':point,'result':result[:160]}
+    rows.append(row);print(json.dumps(row),flush=True)
+    (root/'visual-live-results.json').write_text(json.dumps(rows,indent=2))
+async def main():
+    with patch('providers.get_provider',return_value=provider):
+        for model in ['deepseek-v4.1-flash:cloud','kimi-k3:cloud']:
+            settings={'desktop_vision_provider':'ollama','desktop_vision_model':model}
+            with patch('providers._vision.load_settings',return_value=settings):
+                for run in [1,2,3]:
+                    await record(model,run,'click',lambda:visual_click('Click the blue DRAG SOURCE tile.'),lambda b,a,p:len(a['presses'])==len(b['presses'])+1 and inside('source',a['presses'][-1]) and inside('source',a['releases'][-1]))
+                    await record(model,run,'hover',lambda:visual_move('Hover over the purple HOVER HERE tile.'),lambda b,a,p:a['hover'] and len(a['presses'])==len(b['presses']))
+                    await record(model,run,'drag',lambda:visual_drag('the blue DRAG SOURCE tile','the green DROP TARGET tile',duration_ms=650),lambda b,a,p:len(a['presses'])==len(b['presses'])+1 and inside('source',a['presses'][-1]) and inside('destination',a['releases'][-1]) and len(a['motions'])>len(b['motions']))
+                    old,_=pointer()
+                    await record(model,run,'absent',lambda:visual_click('Click the red button labeled ZEBRA-ABSENT-9042.'),lambda b,a,p:p==old and len(a['presses'])==len(b['presses']))
+    (root/'visual-live-final.png').write_bytes(await capture_screenshot())
+    print('SUMMARY',json.dumps({m:{'hits':sum(r['hit'] for r in rows if r['model']==m),'n':sum(r['model']==m for r in rows),'median_tool_seconds':round(statistics.median(r['tool_seconds'] for r in rows if r['model']==m and r['case']!='absent'),3)} for m in settings_models}),flush=True)
+settings_models=['deepseek-v4.1-flash:cloud','kimi-k3:cloud']
+asyncio.run(main())

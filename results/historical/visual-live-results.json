@@ -1,0 +1,368 @@
+[
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 1,
+    "case": "click",
+    "hit": true,
+    "tool_seconds": 1.0811909760013805,
+    "model_seconds": [
+      0.4809740380005678
+    ],
+    "pointer": [
+      354,
+      270
+    ],
+    "result": "Clicked at (354, 270).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop in"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 1,
+    "case": "hover",
+    "hit": true,
+    "tool_seconds": 0.8131547329994646,
+    "model_seconds": [
+      0.44656971199947293
+    ],
+    "pointer": [
+      803,
+      211
+    ],
+    "result": "Moved to (803, 211).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop inte"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 1,
+    "case": "drag",
+    "hit": true,
+    "tool_seconds": 1.4625366119998944,
+    "model_seconds": [
+      0.41480144200068025,
+      0.43051467100121954
+    ],
+    "pointer": [
+      784,
+      439
+    ],
+    "result": "Dragged from (354, 270) to (784, 439).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] V"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 1,
+    "case": "absent",
+    "hit": true,
+    "tool_seconds": 0.47235774000000674,
+    "model_seconds": [
+      0.4332487970004877
+    ],
+    "pointer": [
+      784,
+      439
+    ],
+    "result": "Target is not visible. No click was performed."
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 2,
+    "case": "click",
+    "hit": true,
+    "tool_seconds": 0.850496065999323,
+    "model_seconds": [
+      0.3719036309994408
+    ],
+    "pointer": [
+      354,
+      260
+    ],
+    "result": "Clicked at (354, 260).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop in"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 2,
+    "case": "hover",
+    "hit": true,
+    "tool_seconds": 0.7761538329996256,
+    "model_seconds": [
+      0.4067149980000977
+    ],
+    "pointer": [
+      803,
+      209
+    ],
+    "result": "Moved to (803, 209).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop inte"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 2,
+    "case": "drag",
+    "hit": true,
+    "tool_seconds": 9.091732365999633,
+    "model_seconds": [
+      0.46688011300102517,
+      8.058918237999023
+    ],
+    "pointer": [
+      784,
+      471
+    ],
+    "result": "Dragged from (354, 256) to (784, 471).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] V"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 2,
+    "case": "absent",
+    "hit": true,
+    "tool_seconds": 0.43577316399932897,
+    "model_seconds": [
+      0.3943587789999583
+    ],
+    "pointer": [
+      784,
+      471
+    ],
+    "result": "Target is not visible. No click was performed."
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 3,
+    "case": "click",
+    "hit": true,
+    "tool_seconds": 0.8490512520002085,
+    "model_seconds": [
+      0.37429090600016934
+    ],
+    "pointer": [
+      354,
+      253
+    ],
+    "result": "Clicked at (354, 253).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop in"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 3,
+    "case": "hover",
+    "hit": true,
+    "tool_seconds": 0.9818045480005821,
+    "model_seconds": [
+      0.6005118489993038
+    ],
+    "pointer": [
+      803,
+      214
+    ],
+    "result": "Moved to (803, 214).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop inte"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 3,
+    "case": "drag",
+    "hit": true,
+    "tool_seconds": 1.509661418000178,
+    "model_seconds": [
+      0.4370839849998447,
+      0.4627937240002211
+    ],
+    "pointer": [
+      784,
+      471
+    ],
+    "result": "Dragged from (354, 254) to (784, 471).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] V"
+  },
+  {
+    "model": "deepseek-v4.1-flash:cloud",
+    "run": 3,
+    "case": "absent",
+    "hit": true,
+    "tool_seconds": 0.4635757670002931,
+    "model_seconds": [
+      0.4258496809998178
+    ],
+    "pointer": [
+      784,
+      471
+    ],
+    "result": "Target is not visible. No click was performed."
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 1,
+    "case": "click",
+    "hit": true,
+    "tool_seconds": 1.4120695010005875,
+    "model_seconds": [
+      0.9278466779996961
+    ],
+    "pointer": [
+      354,
+      276
+    ],
+    "result": "Clicked at (354, 276).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop in"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 1,
+    "case": "hover",
+    "hit": true,
+    "tool_seconds": 1.3532898600005865,
+    "model_seconds": [
+      0.9710964749992854
+    ],
+    "pointer": [
+      803,
+      216
+    ],
+    "result": "Moved to (803, 216).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop inte"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 1,
+    "case": "drag",
+    "hit": true,
+    "tool_seconds": 2.463499879000665,
+    "model_seconds": [
+      1.163635578001049,
+      1.412656414000594
+    ],
+    "pointer": [
+      784,
+      470
+    ],
+    "result": "Dragged from (354, 276) to (784, 470).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] V"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 1,
+    "case": "absent",
+    "hit": true,
+    "tool_seconds": 0.8911153330009256,
+    "model_seconds": [
+      0.850138653000613
+    ],
+    "pointer": [
+      784,
+      470
+    ],
+    "result": "Target is not visible. No click was performed."
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 2,
+    "case": "click",
+    "hit": true,
+    "tool_seconds": 1.4114318500014633,
+    "model_seconds": [
+      0.8964425369995297
+    ],
+    "pointer": [
+      354,
+      276
+    ],
+    "result": "Clicked at (354, 276).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop in"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 2,
+    "case": "hover",
+    "hit": true,
+    "tool_seconds": 1.3366498139985197,
+    "model_seconds": [
+      0.9423465010004293
+    ],
+    "pointer": [
+      803,
+      216
+    ],
+    "result": "Moved to (803, 216).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop inte"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 2,
+    "case": "drag",
+    "hit": true,
+    "tool_seconds": 2.2892926660006196,
+    "model_seconds": [
+      0.9745780609991925,
+      1.2313915640006599
+    ],
+    "pointer": [
+      784,
+      470
+    ],
+    "result": "Dragged from (354, 276) to (784, 470).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] V"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 2,
+    "case": "absent",
+    "hit": true,
+    "tool_seconds": 0.8625318009999319,
+    "model_seconds": [
+      0.8201614419995167
+    ],
+    "pointer": [
+      784,
+      470
+    ],
+    "result": "Target is not visible. No click was performed."
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 3,
+    "case": "click",
+    "hit": true,
+    "tool_seconds": 1.6041951770002925,
+    "model_seconds": [
+      1.1041321630000311
+    ],
+    "pointer": [
+      354,
+      276
+    ],
+    "result": "Clicked at (354, 276).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop in"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 3,
+    "case": "hover",
+    "hit": true,
+    "tool_seconds": 1.2729325700001937,
+    "model_seconds": [
+      0.8986789740010863
+    ],
+    "pointer": [
+      803,
+      216
+    ],
+    "result": "Moved to (803, 216).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] Visual desktop inte"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 3,
+    "case": "drag",
+    "hit": true,
+    "tool_seconds": 2.431947228000354,
+    "model_seconds": [
+      1.2239219260009122,
+      1.347307516998626
+    ],
+    "pointer": [
+      784,
+      470
+    ],
+    "result": "Dragged from (354, 276) to (784, 470).\nVISIBLE CONTROLS AND TEXT:\n  [(desktop)]\n    [1] [toggle button] Applications \u2014 center (51, 13)\n    [2] [toggle button] V"
+  },
+  {
+    "model": "kimi-k3:cloud",
+    "run": 3,
+    "case": "absent",
+    "hit": true,
+    "tool_seconds": 0.9812903820002248,
+    "model_seconds": [
+      0.9378833230002783
+    ],
+    "pointer": [
+      784,
+      470
+    ],
+    "result": "Target is not visible. No click was performed."
+  }
+]

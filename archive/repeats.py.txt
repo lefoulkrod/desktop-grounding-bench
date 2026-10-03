@@ -1,0 +1,44 @@
+import json,statistics,random,time
+import experiments as e
+OUT=e.OUT
+fixtures=e.load_fixtures()+e.load_fixtures(OUT/'heldout'/'fixtures.json')
+native=json.loads((OUT/'native_linux'/'fixtures.json').read_text())
+for f in native:f['base_dir']=OUT/'native_linux'
+fixtures+=native
+configs=[('deepseek-v4.1-flash:cloud','native'),('glm-5.3-flash:cloud','baseline'),('kimi-k3:cloud','native')]
+rows=[]
+# Reuse the completed first evaluation of the same frozen image/task pairs.
+seed=[]
+seed += [r for r in json.loads((OUT/'tuning_results.json').read_text()) if r['style']=='native']
+seed += [r for r in [json.loads(l) for l in (OUT/'experiments.jsonl').read_text().splitlines()] if r['stage']=='comparison' and r['model']=='glm-5.3-flash:cloud']
+seed += [r for r in json.loads((OUT/'native_comparison_results.json').read_text()) if r['model']=='kimi-k3:cloud']
+seed += json.loads((OUT/'validation_results.json').read_text())
+seed += json.loads((OUT/'native_linux'/'results.json').read_text())
+seen=set()
+for r in seed:
+ key=(r['model'],r['fixture'])
+ if key in seen:continue
+ seen.add(key);r=dict(r);r['run']=1;r['first_run_reused']=True;rows.append(r)
+(OUT/'repeat_plan.json').write_text(json.dumps({'models':configs,'runs':3,'targets_per_model_per_run':len(fixtures),'first_run_reuses_existing_identical_pairs':True,'temperature':0,'thinking':False,'calls_sequential':True,'timing':'HTTP chat roundtrip including image upload, inference, and response download; local screenshot/input overhead reported separately'},indent=2))
+def save():
+ (OUT/'repeat_results.json').write_text(json.dumps(rows,indent=2))
+ summary={}
+ for model,style in configs:
+  g=[r for r in rows if r['model']==model]
+  if not g:continue
+  seconds=[r['seconds'] for r in g];hits=sum(r.get('actual_hit',r['hit']) for r in g)
+  summary[model]={'style':style,'n':len(g),'hits':hits,'accuracy':round(hits/len(g),4),'median_seconds':round(statistics.median(seconds),3),'mean_seconds':round(statistics.mean(seconds),3),'p95_seconds':round(sorted(seconds)[min(len(seconds)-1,int(len(seconds)*.95))],3),'successful_clicks_per_second':round(hits/sum(seconds),3),'seconds_per_successful_click':round(sum(seconds)/hits,3) if hits else None,'runs':{str(run):{'n':sum(r['run']==run for r in g),'hits':sum(r.get('actual_hit',r['hit']) for r in g if r['run']==run),'median_seconds':round(statistics.median([r['seconds'] for r in g if r['run']==run]),3) if any(r['run']==run for r in g) else None} for run in [1,2,3]},'failures':[{'fixture':r['fixture'],'run':r['run'],'parsed':r['parsed'],'point':r['point']} for r in g if not r.get('actual_hit',r['hit'])]}
+ (OUT/'repeat_summary.json').write_text(json.dumps(summary,indent=2))
+ return summary
+save()
+# Complete Kimi's missing first-pass pairs, then run every finalist twice more.
+for model,style in configs:
+ for f in fixtures:
+  if (model,f['id']) in seen:continue
+  r=e.invoke(model,f,style=style,stage='repeated_finalists',trial=1);r['run']=1;rows.append(r);save()
+for run in [2,3]:
+ order=configs[run-1:]+configs[:run-1]
+ for model,style in order:
+  for f in fixtures:
+   r=e.invoke(model,f,style=style,stage='repeated_finalists',trial=run);r['run']=run;rows.append(r);save()
+print('REPEATS '+json.dumps(save()),flush=True)

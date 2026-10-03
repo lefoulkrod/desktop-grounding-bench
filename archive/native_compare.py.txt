@@ -1,0 +1,14 @@
+import json,statistics
+import experiments as e
+fixtures=e.load_fixtures();rows=[]
+models=['kimi-k3:cloud','minimax-m3:cloud','kimi-k2.6:cloud']
+for model in models:
+ for f in fixtures:
+  rows.append(e.invoke(model,f,style='native',stage='native_comparison'))
+  (e.OUT/'native_comparison_results.json').write_text(json.dumps(rows,indent=2))
+summary={}
+for model in models:
+ g=[r for r in rows if r['model']==model]
+ summary[model]={'hits':sum(r['hit'] for r in g),'n':len(g),'median_seconds':round(statistics.median(r['seconds'] for r in g),3),'strict_json':sum(r['strict_json'] for r in g),'failures':[{'fixture':r['fixture'],'parsed':r['parsed']} for r in g if not r['hit']]}
+(e.OUT/'native_comparison_summary.json').write_text(json.dumps(summary,indent=2))
+print('NATIVE_COMPARISON '+json.dumps(summary),flush=True)

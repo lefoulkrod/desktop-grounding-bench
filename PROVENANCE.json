@@ -1,0 +1,25 @@
+{
+  "packaged_on": "2026-10-02",
+  "source_project": "https://github.com/omnideck-dev/omnideck",
+  "source_state": "Uncommitted development snapshot; archived scripts and results retain original bytes. Fixture metadata paths normalized; PNG bytes unchanged.",
+  "sha256": {
+    "archive/benchmark.py.txt": "b86cbc63771aa52c90faba84b90e519650d2ed5124d9c98fd592cdf013eb267f",
+    "archive/experiments.py.txt": "fcd51626889e17ea79699f30bb393f80ffb1d0f966f6f0b9f3889222dde8259b",
+    "archive/generate_heldout.py.txt": "aafabaaadebfebd2dbd4fc2986634897e73ed22d48913557b7218a40a0915cb6",
+    "archive/native_compare.py.txt": "c548baeb32fd38bb4ae87ec19496d5d659e6ad3a62064b132a3dd35543833cb6",
+    "archive/native_linux.py.txt": "e640059478a83a4354c3ef47e7a9f8cc05e51e979aef914b1ea09076effea56c",
+    "archive/negatives.py.txt": "3a4c90b42e238df1d0102a8501199360a8851da1ac5d1bdd6bc0f92b34496b2c",
+    "archive/repeats.py.txt": "5a2580e7864e328b6b15a5f6a2c4a53530ed891c3feb1736a2ec0b4712b530f0",
+    "archive/replay_native.py.txt": "b4961b871f12bcff43ad16653ee33a4800e0128a8e4b0a2643a4274abc339c8d",
+    "archive/rerun-visual-tools.txt": "d31159ad6a4d446dd4b152e4bb7e717e5da3c8ea3c2564e0ce646f3c5de320bf",
+    "archive/resume-visual-benchmark.txt": "150e141b9469ae8d0baf22c36029c186611464802fb5fe6a4b45cc85900a9c86",
+    "archive/visual-live-app.txt": "e86ab03e474cd9a8d241c68b31a7644d6c71a899a76257efc2fed65f691cbeab",
+    "archive/visual-live-driver.txt": "03f81584020b148a3708f5b532429c3acd388d7218c52e07a26e4d7998f99de3",
+    "results/historical/earlier-native_comparison_results.json": "2a33bbfed0030598c9641f1e7918a46e5dce891bdd4a09523f1e71ab8f94b031",
+    "results/historical/earlier-native_comparison_summary.json": "be414a220d7e18e893b2a8cb09228f50f4f9f1d8e92d6bda026c36ccabd5c6d7",
+    "results/historical/visual-live-results.json": "32156460dbb84cf980b27bbaf9ce322bc1935bb3405c898d6d71d5fdf742bad9",
+    "results/historical/visual-tool-benchmark-results.json": "1b0b2f2cff4577e5c6793103ddcfacfcd4691d96dc2b68067c223ce5ea0ed5b3",
+    "results/historical/visual-tool-benchmark-summary.json": "c863ecd10508c81d106046af78cf5c29d5d381f8082853ec61d85141293af569",
+    "grounding.py": "706d87c54109d0fbcdd0108ccc021739fd6414fa47dbe998c0a0beac016bc891"
+  }
+}

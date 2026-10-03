@@ -1,0 +1,60 @@
+import asyncio,json,time,statistics,logging
+from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch,AsyncMock
+from agent_core.providers._ollama import OllamaProvider
+from tools.desktop._tools import visual_click,visual_move,visual_drag
+logging.disable(logging.CRITICAL)
+ROOT=Path(__file__).resolve().parent
+BASE=ROOT/'benchmark-original'
+fixtures=[]
+for sub,images in [('', 'scenes'),('heldout','heldout/scenes'),('native_linux','native_linux')]:
+ for f in json.loads((BASE/sub/'fixtures.json').read_text()):
+  f['image_path']=BASE/images/f['image'];fixtures.append(f)
+models=['deepseek-v4.1-flash:cloud','glm-5.3-flash:cloud','kimi-k3:cloud']
+rows=[]
+settings={'desktop_vision_provider':'ollama'}
+provider=OllamaProvider(host='http://127.0.0.1:11434')
+last={}
+original_chat=provider.chat
+async def measured_chat(**kwargs):
+ t=time.monotonic();response=await original_chat(**kwargs)
+ last.update(model_seconds=time.monotonic()-t,response=response.message.content)
+ return response
+provider.chat=measured_chat
+
+def save():
+ (ROOT/'visual-tool-benchmark-results.json').write_text(json.dumps(rows,indent=2))
+ summary={}
+ for model in models:
+  g=[r for r in rows if r['model']==model and not r.get('absent')]
+  if not g:continue
+  a=[r for r in rows if r['model']==model and r.get('absent')]
+  total=sum(r['model_seconds'] for r in g)
+  summary[model]={'hits':sum(r['hit'] for r in g),'n':len(g),'median_model_seconds':round(statistics.median(r['model_seconds'] for r in g),3),'mean_model_seconds':round(total/len(g),3),'correct_per_model_second':round(sum(r['hit'] for r in g)/total,3),'runs':{str(run):{'hits':sum(r['hit'] for r in g if r['run']==run),'n':sum(r['run']==run for r in g)} for run in [1,2,3]},'absent_correct':sum(r['hit'] for r in a),'absent_n':len(a),'failures':[{'fixture':r['fixture'],'run':r['run'],'response':r.get('response'),'result':r['result'][:250]} for r in g if not r['hit']]}
+ (ROOT/'visual-tool-benchmark-summary.json').write_text(json.dumps(summary,indent=2))
+ return summary
+async def main():
+ with patch('tools.desktop._control.load_config',return_value=SimpleNamespace(features=SimpleNamespace(desktop=True))),patch('tools.desktop._tools.ensure_desktop_running',new_callable=AsyncMock),patch('tools.desktop._tools.load_config',return_value=SimpleNamespace(desktop=SimpleNamespace(user_display=':999'))),patch('providers._vision.load_settings',return_value=settings),patch('providers.get_provider',return_value=provider),patch('tools.desktop._tools._observe',new_callable=AsyncMock,return_value='Benchmark observation'):
+  for run in [1,2,3]:
+   order=models[run-1:]+models[:run-1]
+   for model in order:
+    settings['desktop_vision_model']=model
+    for f in fixtures:
+     last.clear()
+     with patch('tools.desktop._tools.capture_screenshot',new_callable=AsyncMock,return_value=f['image_path'].read_bytes()),patch('tools.desktop._tools.move_pointer') as move,patch('tools.desktop._tools._run_desktop_cmd',new_callable=AsyncMock) as command:
+      t=time.monotonic();result=await visual_click(f['task']);elapsed=time.monotonic()-t
+      point=list(move.call_args.args[1:]) if move.called else None
+      box=f['boxes'][str(f['target_ref'])]
+      hit=bool(point and box['x']<=point[0]<box['x']+box['width'] and box['y']<=point[1]<box['y']+box['height'] and command.await_count==1)
+      rows.append({'model':model,'run':run,'fixture':f['id'],'category':f['category'],'point':point,'hit':hit,'model_seconds':last.get('model_seconds',elapsed),'tool_seconds':elapsed,'response':last.get('response'),'result':result})
+     save()
+    for i,f in enumerate(fixtures[-12:][:6]):
+     last.clear()
+     with patch('tools.desktop._tools.capture_screenshot',new_callable=AsyncMock,return_value=f['image_path'].read_bytes()),patch('tools.desktop._tools.move_pointer') as move,patch('tools.desktop._tools._run_desktop_cmd',new_callable=AsyncMock) as command:
+      t=time.monotonic();result=await visual_click('Click the button labelled ZEBRA-ABSENT-9042.');elapsed=time.monotonic()-t
+      rows.append({'model':model,'run':run,'fixture':f['id'],'absent':True,'hit':'No click' in result and not move.called and not command.await_count,'model_seconds':last.get('model_seconds',elapsed),'response':last.get('response'),'result':result})
+     save()
+    print(json.dumps({'model':model,'run':run,'summary':save()[model]}),flush=True)
+  print('FINAL',json.dumps(save()),flush=True)
+asyncio.run(main())

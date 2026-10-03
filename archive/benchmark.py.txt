@@ -1,0 +1,179 @@
+from pathlib import Path
+try:
+    from playwright.sync_api import sync_playwright
+except ImportError:
+    sync_playwright = None
+from PIL import Image, ImageDraw, ImageFont
+import base64, json, os, random, time, requests, math, re, statistics, html
+
+OUT=Path(__file__).resolve().parent
+MODEL='deepseek-v4.1-flash:cloud'
+HOST=os.environ.get('OLLAMA_HOST','http://127.0.0.1:11434')
+if '://' not in HOST: HOST='http://'+HOST
+RNG=random.Random(20260930)
+SCENES=OUT/'scenes'; SCENES.mkdir(exist_ok=True)
+RESULTS=[]; FIXTURES=[]
+SIZES=[(800,600),(1024,768),(1280,720),(1920,1080)]
+FONT=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',13)
+STYLE='''*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;color:#263445;background:#dce2e9}button{font-family:inherit;cursor:pointer;border:1px solid #8995a4;border-radius:5px;color:#243345;background:#f8fafc}header{height:35px;background:#253244;color:white;padding:9px 16px;font-size:14px}.sidebar{position:absolute;top:35px;bottom:0;width:148px;background:#f1f4f8;border-right:1px solid #bdc5d1;padding:20px;font-size:14px;line-height:2}.content{position:absolute;left:168px;right:20px;top:55px;bottom:20px;background:white;border:1px solid #b8c2cf;box-shadow:0 5px 14px #0001;padding:20px}.title{font-size:20px;font-weight:bold;margin-bottom:18px}.muted{font-size:13px;color:#64748b}.toolbar{display:flex;gap:7px;padding:10px;border:1px solid #ccd3dd;background:#f1f5f9}svg{display:block;width:20px;height:20px;margin:auto;stroke:#334155;fill:none;stroke-width:1.8}table{width:100%;border-collapse:collapse;font-size:14px}td,th{height:42px;text-align:left;border-bottom:1px solid #dce2e9;padding:8px}th{background:#f1f5f9}input{font-size:15px;padding:8px;border:1px solid #aab5c3;border-radius:4px}.status{position:absolute;left:170px;bottom:3px;font-size:11px;color:#64748b}'''
+ICONS={
+ 'Search':'<circle cx="9" cy="9" r="5"/><path d="m13 13 6 6"/>',
+ 'Settings':'<path d="m9 2 1-1 2 0 1 1 0 2 2 1 2-1 2 2-1 2 1 2 2 0 1 1 0 2-1 1-2 0-1 2 1 2-2 2-2-1-2 1 0 2-1 1-2 0-1-1 0-2-2-1-2 1-2-2 1-2-1-2-2 0-1-1 0-2 1-1 2 0 1-2-1-2 2-2 2 1 2-1z"/><circle cx="11" cy="11" r="3"/>',
+ 'Delete':'<path d="M5 6h14M9 6V3h6v3M7 6l1 14h8l1-14M10 9v8M14 9v8"/>',
+ 'Refresh':'<path d="M18 8a7 7 0 1 0 1 7M18 3v6h-6"/>',
+ 'Folder':'<path d="M3 6h7l2 3h9v11H3zM3 6V4h7l2 2h9v3"/>',
+ 'Add':'<path d="M12 4v16M4 12h16"/>',
+ 'Download':'<path d="M12 3v12M7 10l5 5 5-5M4 17v4h16v-4"/>',
+ 'Close':'<path d="m5 5 14 14M19 5 5 19"/>',
+}
+def button(ref,label,style='',icon=None):
+ inner=f'<svg viewBox="0 0 24 24">{ICONS[icon]}</svg>' if icon else html.escape(label)
+ return f'<button data-ref="{ref}" aria-label="{html.escape(label)}" style="{style}">{inner}</button>'
+def shell(body,title='Workspace'):
+ return f'<!doctype html><html><head><meta charset="utf-8"><style>{STYLE}</style></head><body><header>Desktop Lab · {title}</header><aside class="sidebar">Files<br>Recent<br>Projects<br>Downloads<br>Preferences</aside>{body}<div class="status">Ready · All changes saved</div></body></html>'
+def parse_json(content):
+ try: return json.loads(content.strip())
+ except Exception:
+  match=re.search(r'\{[^{}]*\}',content)
+  if match:
+   try: return json.loads(match.group())
+   except Exception: pass
+ return None
+
+def call(fixture,mode,think=False,trial=1):
+ path=SCENES/fixture['image']
+ w,h=fixture['size']
+ if mode=='overlay':
+  path=SCENES/fixture['overlay']
+  instruction='The screenshot has numbered badges marking clickable controls. Choose the badge for the requested target. Return only JSON {"ref":integer}. Do not return coordinates.'
+ elif mode=='normalized':
+  instruction=f'The screenshot is {w} pixels wide and {h} pixels high. Return the target center in normalized coordinates from 0 to 1000 on EACH axis: top-left is (0,0), bottom-right is (1000,1000). Return only JSON {{"x":integer,"y":integer}}. Use normalized coordinates, not pixels.'
+ else:
+  instruction=f'The screenshot is EXACTLY {w} pixels wide and {h} pixels high. Return the center of the target in ORIGINAL SCREENSHOT PIXEL coordinates: x ranges from 0 to {w-1}, y from 0 to {h-1}, origin at top-left. Return only JSON {{"x":integer,"y":integer}}. Do not use normalized coordinates.'
+ prompt=fixture['task']+'\n'+instruction
+ payload={'model':MODEL,'messages':[{'role':'user','content':prompt,'images':[base64.b64encode(path.read_bytes()).decode()]}],
+          'stream':False,'think':think,'options':{'temperature':0,'num_predict':4096 if think else 512}}
+ start=time.monotonic()
+ try:
+  res=requests.post(HOST+'/api/chat',json=payload,timeout=(10,110)); raw=res.json()
+  result={'fixture':fixture['id'],'category':fixture['category'],'mode':mode,'think':think,'trial':trial,'status':res.status_code,'seconds':round(time.monotonic()-start,3),'prompt':prompt,'raw':raw}
+ except Exception as exc:
+  result={'fixture':fixture['id'],'category':fixture['category'],'mode':mode,'think':think,'trial':trial,'error':str(exc),'seconds':round(time.monotonic()-start,3)}
+ content=result.get('raw',{}).get('message',{}).get('content',''); parsed=parse_json(content)
+ result.update({'parsed':parsed,'strict_json':False,'hit':False,'point':None,'center_error_px':None})
+ try: json.loads(content.strip()); result['strict_json']=True
+ except Exception: pass
+ if parsed:
+  if mode=='overlay':
+   ref=parsed.get('ref'); box=fixture['boxes'].get(str(ref))
+   if box: point=[box['x']+box['width']/2,box['y']+box['height']/2]
+   else: point=None
+   result['correct_ref']=str(ref)==str(fixture['target_ref'])
+  else:
+   x,y=parsed.get('x'),parsed.get('y')
+   point=[x,y] if isinstance(x,(int,float)) and isinstance(y,(int,float)) else None
+   if point and mode=='normalized': point=[round(x*(w-1)/1000),round(y*(h-1)/1000)]
+  if point:
+   target=fixture['boxes'][str(fixture['target_ref'])]; x,y=point
+   result['point']=point
+   result['hit']=target['x']<=x<target['x']+target['width'] and target['y']<=y<target['y']+target['height']
+   result['center_error_px']=round(math.hypot(x-(target['x']+target['width']/2),y-(target['y']+target['height']/2)),2)
+ RESULTS.append(result)
+ with (OUT/'results.jsonl').open('a') as stream: stream.write(json.dumps(result)+'\n')
+ print(json.dumps({'fixture':fixture['id'],'category':fixture['category'],'mode':mode,'think':think,'hit':result['hit'],'point':result['point'],'error_px':result['center_error_px'],'seconds':result['seconds'],'content':content[:180]}),flush=True)
+ return result
+
+def main():
+    with sync_playwright() as p:
+     browser=p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox'])
+     for category in ['large_buttons','dense_toolbar','small_icons','duplicate_labels','dialog_fields','table_cells']:
+      for variant,(w,h) in enumerate(SIZES):
+       fixture_id=f'{category}_{w}x{h}'
+       refs=list(range(1,50)); RNG.shuffle(refs); target_ref=None
+       content='<main class="content">'
+       if category=='large_buttons':
+        content+='<div class="title">Project actions</div><p class="muted">Choose an operation for this workspace.</p>'
+        labels=['Save','Cancel','Export','Help','Apply','Open']; RNG.shuffle(labels)
+        slots=[(190,150),(w-215,155),(w//2-50,h//2-10),(190,h-110),(w-215,h-110),(w//2-50,100)]
+        content+='</main>'
+        for n,(label,(x,y)) in enumerate(zip(labels,slots)):
+         ref=refs[n]; style=f'position:absolute;left:{x}px;top:{y}px;width:150px;height:48px;font-size:19px;'+('background:#2563eb;color:white;border-color:#2563eb;' if n==2 else '')
+         content+=button(ref,label,style)
+         if label=='Save': target_ref=ref
+        task='Click the button labeled Save.'
+       elif category=='dense_toolbar':
+        labels=['Open','Save','Save As','Print','Undo','Redo','Find','Replace','Export','Share','Close','Help']; RNG.shuffle(labels)
+        content+='<div class="title">Document editor</div><div class="toolbar" style="flex-wrap:wrap">'
+        for n,label in enumerate(labels):
+         ref=refs[n]; content+=button(ref,label,'height:28px;min-width:52px;padding:3px 8px;font-size:12px')
+         if label=='Save As': target_ref=ref
+        content+='</div><p>Quarterly project notes</p><p class="muted">This document contains the latest revision of the workspace plan.</p></main>'
+        task='Click Save As in the editor toolbar. Choose Save As rather than Save.'
+       elif category=='small_icons':
+        labels=list(ICONS); RNG.shuffle(labels)
+        content+='<div class="title">File manager</div><div class="toolbar">'
+        for n,label in enumerate(labels):
+         ref=refs[n]; content+=button(ref,label,'width:28px;height:28px;padding:2px;border-radius:3px',label)
+         if label=='Delete': target_ref=ref
+        content+='</div><p class="muted">report.pdf selected · 248 KB</p></main>'
+        task='Click the trash-can icon in the toolbar to delete the selected file.'
+       elif category=='duplicate_labels':
+        names=['meeting-notes.txt','budget.xlsx','archive.zip','report.pdf','photo.png','draft.docx']; RNG.shuffle(names)
+        content+='<div class="title">Downloads</div><table><tr><th>Filename</th><th>Size</th><th>Action</th></tr>'
+        for n,name in enumerate(names):
+         ref=refs[n]; content+=f'<tr><td>{name}</td><td>{RNG.randrange(20,900)} KB</td><td>'+button(ref,'Delete','width:64px;height:26px;font-size:12px')+'</td></tr>'
+         if name=='archive.zip': target_ref=ref
+        content+='</table></main>'
+        task='Click Delete on the archive.zip row. Other rows also have Delete buttons.'
+       elif category=='dialog_fields':
+        dw=min(510,w-230); dx=(w-dw)//2; dy=(h-290)//2
+        content+='</main><div style="position:absolute;inset:35px 0 0;background:#17203366"></div>'
+        content+=f'<section style="position:absolute;left:{dx}px;top:{dy}px;width:{dw}px;height:290px;background:#fff;border:1px solid #8b96a8;border-radius:7px;box-shadow:0 12px 30px #0004;padding:22px"><div class="title">Save document</div>'
+        for n,label in enumerate(['Filename','Folder']):
+         ref=refs[n]; content+=f'<label style="display:block;font-size:13px;margin:10px 0 4px">{label}</label><input data-ref="{ref}" style="width:100%" value="'+('Untitled.txt' if label=='Filename' else '/home/user/Documents')+'">'
+         if label=='Filename': target_ref=ref
+        content+='<div style="display:flex;justify-content:flex-end;gap:8px;margin-top:18px">'+button(refs[2],'Cancel','width:80px;height:30px')+button(refs[3],'Save','width:80px;height:30px;background:#2563eb;color:white')+'</div></section>'
+        task='Click inside the Filename text field in the Save document dialog.'
+       else:
+        content+='<div class="title">Planning spreadsheet</div><div class="toolbar">'+button(refs[40],'Save','height:26px;width:60px')+'</div><table style="table-layout:fixed;margin-top:15px"><tr><th style="width:40px"></th>'+''.join(f'<th>{c}</th>' for c in 'ABCDE')+'</tr>'
+        n=0
+        for row in range(1,7):
+         content+=f'<tr><th>{row}</th>'
+         for col in range(5):
+          ref=refs[n]; n+=1
+          content+=f'<td data-ref="{ref}" style="border:1px solid #dce2e9;background:'+('#eef6ff' if row==2 and col==1 else 'white')+f'">{RNG.randrange(10,999)}</td>'
+          if row==4 and col==2: target_ref=ref
+         content+='</tr>'
+        content+='</table></main>'
+        task='Click spreadsheet cell C4 (column C, row 4).'
+       page=browser.new_page(viewport={'width':w,'height':h},device_scale_factor=1)
+       scene_html=shell(content,category.replace('_',' ').title()); (SCENES/(fixture_id+'.html')).write_text(scene_html)
+       page.set_content(scene_html); page.evaluate('document.fonts.ready')
+       boxes={}
+       for locator in page.locator('[data-ref]').all():
+        box=locator.bounding_box()
+        if box: boxes[locator.get_attribute('data-ref')]=box
+       image_name=fixture_id+'.png'; page.screenshot(path=str(SCENES/image_name))
+       image=Image.open(SCENES/image_name).convert('RGB'); draw=ImageDraw.Draw(image)
+       for ref,box in boxes.items():
+        x,y=box['x'],box['y']; bw,bh=box['width'],box['height']; draw.rectangle((x,y,x+bw-1,y+bh-1),outline='#c026d3',width=2)
+        text_w=draw.textbbox((0,0),ref,font=FONT)[2]+7
+        bx=max(0,min(w-text_w,x)); by=max(0,y-18)
+        draw.rectangle((bx,by,bx+text_w,by+17),fill='#7e22ce'); draw.text((bx+3,by+1),ref,font=FONT,fill='white')
+       overlay_name=fixture_id+'_overlay.png'; image.save(SCENES/overlay_name)
+       fixture={'id':fixture_id,'category':category,'size':[w,h],'task':task,'image':image_name,'overlay':overlay_name,'target_ref':target_ref,'boxes':boxes}
+       FIXTURES.append(fixture); page.close()
+     browser.close()
+    (OUT/'fixtures.json').write_text(json.dumps(FIXTURES,indent=2))
+    (OUT/'results.jsonl').write_text('')
+    for fixture in FIXTURES:
+     for mode in ['pixels','normalized','overlay']: call(fixture,mode)
+    summary={}
+    for mode in ['pixels','normalized','overlay']:
+     subset=[r for r in RESULTS if r['mode']==mode]
+     summary[mode]={'n':len(subset),'hits':sum(r['hit'] for r in subset),'strict_json':sum(r['strict_json'] for r in subset),'parseable':sum(r['parsed'] is not None for r in subset),'median_seconds':round(statistics.median(r['seconds'] for r in subset),3),'max_seconds':max(r['seconds'] for r in subset),'categories':{c:{'hits':sum(r['hit'] for r in subset if r['category']==c),'n':sum(r['category']==c for r in subset)} for c in sorted({r['category'] for r in subset})}}
+    (OUT/'summary.json').write_text(json.dumps(summary,indent=2))
+    print('SUMMARY '+json.dumps(summary),flush=True)
+
+if __name__ == '__main__':
+    main()

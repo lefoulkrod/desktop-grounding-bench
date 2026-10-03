@@ -1,0 +1,4190 @@
+[
+  {
+    "id": "large_buttons_800x600",
+    "category": "large_buttons",
+    "size": [
+      800,
+      600
+    ],
+    "task": "Click the button labeled Save.",
+    "image": "images/large_buttons_800x600.png",
+    "target_ref": 10,
+    "boxes": {
+      "17": {
+        "x": 190,
+        "y": 150,
+        "width": 150,
+        "height": 48
+      },
+      "23": {
+        "x": 585,
+        "y": 155,
+        "width": 150,
+        "height": 48
+      },
+      "29": {
+        "x": 350,
+        "y": 290,
+        "width": 150,
+        "height": 48
+      },
+      "10": {
+        "x": 190,
+        "y": 490,
+        "width": 150,
+        "height": 48
+      },
+      "5": {
+        "x": 585,
+        "y": 490,
+        "width": 150,
+        "height": 48
+      },
+      "7": {
+        "x": 350,
+        "y": 100,
+        "width": 150,
+        "height": 48
+      }
+    },
+    "split": "development",
+    "sha256": "b00550e1946aaec8233342f12d95ea1ea494c13e6e3f6439d8e6c596091f582d"
+  },
+  {
+    "id": "large_buttons_1024x768",
+    "category": "large_buttons",
+    "size": [
+      1024,
+      768
+    ],
+    "task": "Click the button labeled Save.",
+    "image": "images/large_buttons_1024x768.png",
+    "target_ref": 6,
+    "boxes": {
+      "23": {
+        "x": 190,
+        "y": 150,
+        "width": 150,
+        "height": 48
+      },
+      "4": {
+        "x": 809,
+        "y": 155,
+        "width": 150,
+        "height": 48
+      },
+      "49": {
+        "x": 462,
+        "y": 374,
+        "width": 150,
+        "height": 48
+      },
+      "6": {
+        "x": 190,
+        "y": 658,
+        "width": 150,
+        "height": 48
+      },
+      "31": {
+        "x": 809,
+        "y": 658,
+        "width": 150,
+        "height": 48
+      },
+      "8": {
+        "x": 462,
+        "y": 100,
+        "width": 150,
+        "height": 48
+      }
+    },
+    "split": "development",
+    "sha256": "97596eb86d69f462eca8247119b8c6bcf7e20823596a8e753bd0af3d7631a4c0"
+  },
+  {
+    "id": "large_buttons_1280x720",
+    "category": "large_buttons",
+    "size": [
+      1280,
+      720
+    ],
+    "task": "Click the button labeled Save.",
+    "image": "images/large_buttons_1280x720.png",
+    "target_ref": 1,
+    "boxes": {
+      "14": {
+        "x": 190,
+        "y": 150,
+        "width": 150,
+        "height": 48
+      },
+      "30": {
+        "x": 1065,
+        "y": 155,
+        "width": 150,
+        "height": 48
+      },
+      "47": {
+        "x": 590,
+        "y": 350,
+        "width": 150,
+        "height": 48
+      },
+      "42": {
+        "x": 190,
+        "y": 610,
+        "width": 150,
+        "height": 48
+      },
+      "1": {
+        "x": 1065,
+        "y": 610,
+        "width": 150,
+        "height": 48
+      },
+      "32": {
+        "x": 590,
+        "y": 100,
+        "width": 150,
+        "height": 48
+      }
+    },
+    "split": "development",
+    "sha256": "7f6e947f7348c5a3193569ba5a197231e92d9c789d6bfc6af1e88ca005521930"
+  },
+  {
+    "id": "large_buttons_1920x1080",
+    "category": "large_buttons",
+    "size": [
+      1920,
+      1080
+    ],
+    "task": "Click the button labeled Save.",
+    "image": "images/large_buttons_1920x1080.png",
+    "target_ref": 18,
+    "boxes": {
+      "46": {
+        "x": 190,
+        "y": 150,
+        "width": 150,
+        "height": 48
+      },
+      "25": {
+        "x": 1705,
+        "y": 155,
+        "width": 150,
+        "height": 48
+      },
+      "18": {
+        "x": 910,
+        "y": 530,
+        "width": 150,
+        "height": 48
+      },
+      "47": {
+        "x": 190,
+        "y": 970,
+        "width": 150,
+        "height": 48
+      },
+      "30": {
+        "x": 1705,
+        "y": 970,
+        "width": 150,
+        "height": 48
+      },
+      "45": {
+        "x": 910,
+        "y": 100,
+        "width": 150,
+        "height": 48
+      }
+    },
+    "split": "development",
+    "sha256": "e645d47cf78cd36d0ce67db939b9bf481b9fb02f7386ab0dca1328cda8bedf03"
+  },
+  {
+    "id": "dense_toolbar_800x600",
+    "category": "dense_toolbar",
+    "size": [
+      800,
+      600
+    ],
+    "task": "Click Save As in the editor toolbar. Choose Save As rather than Save.",
+    "image": "images/dense_toolbar_800x600.png",
+    "target_ref": 39,
+    "boxes": {
+      "8": {
+        "x": 200,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "16": {
+        "x": 259,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "43": {
+        "x": 318,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "18": {
+        "x": 377,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "1": {
+        "x": 436,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "3": {
+        "x": 505.03125,
+        "y": 128,
+        "width": 52.6875,
+        "height": 28
+      },
+      "14": {
+        "x": 564.71875,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "37": {
+        "x": 623.71875,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "7": {
+        "x": 682.71875,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "29": {
+        "x": 200,
+        "y": 163,
+        "width": 52,
+        "height": 28
+      },
+      "39": {
+        "x": 259,
+        "y": 163,
+        "width": 62.03125,
+        "height": 28
+      },
+      "42": {
+        "x": 328.03125,
+        "y": 163,
+        "width": 52,
+        "height": 28
+      }
+    },
+    "split": "development",
+    "sha256": "25be00d6de7f1e388a21c0efab51b915d4f12a45de6fa9f797a1801cb3222e4e"
+  },
+  {
+    "id": "dense_toolbar_1024x768",
+    "category": "dense_toolbar",
+    "size": [
+      1024,
+      768
+    ],
+    "task": "Click Save As in the editor toolbar. Choose Save As rather than Save.",
+    "image": "images/dense_toolbar_1024x768.png",
+    "target_ref": 16,
+    "boxes": {
+      "26": {
+        "x": 200,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "15": {
+        "x": 259,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "10": {
+        "x": 318,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "44": {
+        "x": 377,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "11": {
+        "x": 436,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "16": {
+        "x": 505.03125,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "22": {
+        "x": 574.0625,
+        "y": 128,
+        "width": 52.6875,
+        "height": 28
+      },
+      "32": {
+        "x": 633.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "1": {
+        "x": 692.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "13": {
+        "x": 751.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "12": {
+        "x": 810.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "48": {
+        "x": 869.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      }
+    },
+    "split": "development",
+    "sha256": "ec7ab6f8e2833888bce653b4424d5a59266d4f3529a56a6ea839d5c5339ecc16"
+  },
+  {
+    "id": "dense_toolbar_1280x720",
+    "category": "dense_toolbar",
+    "size": [
+      1280,
+      720
+    ],
+    "task": "Click Save As in the editor toolbar. Choose Save As rather than Save.",
+    "image": "images/dense_toolbar_1280x720.png",
+    "target_ref": 22,
+    "boxes": {
+      "8": {
+        "x": 200,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "22": {
+        "x": 259,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "39": {
+        "x": 328.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "46": {
+        "x": 387.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "41": {
+        "x": 446.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "2": {
+        "x": 505.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "44": {
+        "x": 564.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "36": {
+        "x": 623.03125,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "48": {
+        "x": 692.0625,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "45": {
+        "x": 751.0625,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "5": {
+        "x": 810.0625,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "34": {
+        "x": 869.0625,
+        "y": 128,
+        "width": 52.6875,
+        "height": 28
+      }
+    },
+    "split": "development",
+    "sha256": "3437649cabac290ed41f58569728c31dc60449d8ddfca0f2443896d39b8289a8"
+  },
+  {
+    "id": "dense_toolbar_1920x1080",
+    "category": "dense_toolbar",
+    "size": [
+      1920,
+      1080
+    ],
+    "task": "Click Save As in the editor toolbar. Choose Save As rather than Save.",
+    "image": "images/dense_toolbar_1920x1080.png",
+    "target_ref": 21,
+    "boxes": {
+      "38": {
+        "x": 200,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "18": {
+        "x": 269.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "44": {
+        "x": 328.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "24": {
+        "x": 387.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "10": {
+        "x": 446.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "23": {
+        "x": 505.03125,
+        "y": 128,
+        "width": 52.6875,
+        "height": 28
+      },
+      "21": {
+        "x": 564.71875,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "25": {
+        "x": 633.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "32": {
+        "x": 692.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "14": {
+        "x": 751.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "13": {
+        "x": 810.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "15": {
+        "x": 869.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      }
+    },
+    "split": "development",
+    "sha256": "db8abc58ff847f04da131ea6ecb4c451949c0c61a48e3f0a7e79b1489bf70304"
+  },
+  {
+    "id": "small_icons_800x600",
+    "category": "small_icons",
+    "size": [
+      800,
+      600
+    ],
+    "task": "Click the trash-can icon in the toolbar to delete the selected file.",
+    "image": "images/small_icons_800x600.png",
+    "target_ref": 39,
+    "boxes": {
+      "31": {
+        "x": 200,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "30": {
+        "x": 235,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "40": {
+        "x": 270,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "18": {
+        "x": 305,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "37": {
+        "x": 340,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "1": {
+        "x": 375,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "20": {
+        "x": 410,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "39": {
+        "x": 445,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      }
+    },
+    "split": "development",
+    "sha256": "57d042e26cc47aa02d98ff282fb4567db00e2fc8a79f9069b66ebc93a428ba96"
+  },
+  {
+    "id": "small_icons_1024x768",
+    "category": "small_icons",
+    "size": [
+      1024,
+      768
+    ],
+    "task": "Click the trash-can icon in the toolbar to delete the selected file.",
+    "image": "images/small_icons_1024x768.png",
+    "target_ref": 21,
+    "boxes": {
+      "34": {
+        "x": 200,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "7": {
+        "x": 235,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "27": {
+        "x": 270,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "5": {
+        "x": 305,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "22": {
+        "x": 340,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "31": {
+        "x": 375,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "3": {
+        "x": 410,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "21": {
+        "x": 445,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      }
+    },
+    "split": "development",
+    "sha256": "09130460cc87c9d88fa02647536f3d4288eb0e3faf8cf1cabb93bc75a35bcaed"
+  },
+  {
+    "id": "small_icons_1280x720",
+    "category": "small_icons",
+    "size": [
+      1280,
+      720
+    ],
+    "task": "Click the trash-can icon in the toolbar to delete the selected file.",
+    "image": "images/small_icons_1280x720.png",
+    "target_ref": 11,
+    "boxes": {
+      "13": {
+        "x": 200,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "11": {
+        "x": 235,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "23": {
+        "x": 270,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "26": {
+        "x": 305,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "1": {
+        "x": 340,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "18": {
+        "x": 375,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "45": {
+        "x": 410,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "37": {
+        "x": 445,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      }
+    },
+    "split": "development",
+    "sha256": "dbb9efde0a5a75f2e5690addab2c3f429e535153c979423f87455254921fe621"
+  },
+  {
+    "id": "small_icons_1920x1080",
+    "category": "small_icons",
+    "size": [
+      1920,
+      1080
+    ],
+    "task": "Click the trash-can icon in the toolbar to delete the selected file.",
+    "image": "images/small_icons_1920x1080.png",
+    "target_ref": 5,
+    "boxes": {
+      "32": {
+        "x": 200,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "5": {
+        "x": 235,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "36": {
+        "x": 270,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "9": {
+        "x": 305,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "40": {
+        "x": 340,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "12": {
+        "x": 375,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "29": {
+        "x": 410,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "42": {
+        "x": 445,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      }
+    },
+    "split": "development",
+    "sha256": "714b11e745a9a7461bc4322706fa87446add709a298a6ea2596370f8377bc08e"
+  },
+  {
+    "id": "duplicate_labels_800x600",
+    "category": "duplicate_labels",
+    "size": [
+      800,
+      600
+    ],
+    "task": "Click Delete on the archive.zip row. Other rows also have Delete buttons.",
+    "image": "images/duplicate_labels_800x600.png",
+    "target_ref": 22,
+    "boxes": {
+      "10": {
+        "x": 595.109375,
+        "y": 167.5,
+        "width": 64,
+        "height": 26
+      },
+      "48": {
+        "x": 595.109375,
+        "y": 210.5,
+        "width": 64,
+        "height": 26
+      },
+      "3": {
+        "x": 595.109375,
+        "y": 253.5,
+        "width": 64,
+        "height": 26
+      },
+      "49": {
+        "x": 595.109375,
+        "y": 296.5,
+        "width": 64,
+        "height": 26
+      },
+      "43": {
+        "x": 595.109375,
+        "y": 339.5,
+        "width": 64,
+        "height": 26
+      },
+      "22": {
+        "x": 595.109375,
+        "y": 382.5,
+        "width": 64,
+        "height": 26
+      }
+    },
+    "split": "development",
+    "sha256": "c5ab1858f9a7826b25f29589cc16d628dfbcdfc89fc88ca164f465a3730d6e1b"
+  },
+  {
+    "id": "duplicate_labels_1024x768",
+    "category": "duplicate_labels",
+    "size": [
+      1024,
+      768
+    ],
+    "task": "Click Delete on the archive.zip row. Other rows also have Delete buttons.",
+    "image": "images/duplicate_labels_1024x768.png",
+    "target_ref": 19,
+    "boxes": {
+      "19": {
+        "x": 751.578125,
+        "y": 167.5,
+        "width": 64,
+        "height": 26
+      },
+      "25": {
+        "x": 751.578125,
+        "y": 210.5,
+        "width": 64,
+        "height": 26
+      },
+      "20": {
+        "x": 751.578125,
+        "y": 253.5,
+        "width": 64,
+        "height": 26
+      },
+      "46": {
+        "x": 751.578125,
+        "y": 296.5,
+        "width": 64,
+        "height": 26
+      },
+      "8": {
+        "x": 751.578125,
+        "y": 339.5,
+        "width": 64,
+        "height": 26
+      },
+      "3": {
+        "x": 751.578125,
+        "y": 382.5,
+        "width": 64,
+        "height": 26
+      }
+    },
+    "split": "development",
+    "sha256": "d59a69492306d4be4d96580e9cc2760786c2852cb77a9a533d116a023dc4314a"
+  },
+  {
+    "id": "duplicate_labels_1280x720",
+    "category": "duplicate_labels",
+    "size": [
+      1280,
+      720
+    ],
+    "task": "Click Delete on the archive.zip row. Other rows also have Delete buttons.",
+    "image": "images/duplicate_labels_1280x720.png",
+    "target_ref": 46,
+    "boxes": {
+      "15": {
+        "x": 930.390625,
+        "y": 167.5,
+        "width": 64,
+        "height": 26
+      },
+      "25": {
+        "x": 930.390625,
+        "y": 210.5,
+        "width": 64,
+        "height": 26
+      },
+      "27": {
+        "x": 930.390625,
+        "y": 253.5,
+        "width": 64,
+        "height": 26
+      },
+      "46": {
+        "x": 930.390625,
+        "y": 296.5,
+        "width": 64,
+        "height": 26
+      },
+      "36": {
+        "x": 930.390625,
+        "y": 339.5,
+        "width": 64,
+        "height": 26
+      },
+      "1": {
+        "x": 930.390625,
+        "y": 382.5,
+        "width": 64,
+        "height": 26
+      }
+    },
+    "split": "development",
+    "sha256": "3b3260b13db095acec71f60cc9f1b016655d88a070393bd681002bfe37611ff1"
+  },
+  {
+    "id": "duplicate_labels_1920x1080",
+    "category": "duplicate_labels",
+    "size": [
+      1920,
+      1080
+    ],
+    "task": "Click Delete on the archive.zip row. Other rows also have Delete buttons.",
+    "image": "images/duplicate_labels_1920x1080.png",
+    "target_ref": 15,
+    "boxes": {
+      "35": {
+        "x": 1377.421875,
+        "y": 167.5,
+        "width": 64,
+        "height": 26
+      },
+      "28": {
+        "x": 1377.421875,
+        "y": 210.5,
+        "width": 64,
+        "height": 26
+      },
+      "5": {
+        "x": 1377.421875,
+        "y": 253.5,
+        "width": 64,
+        "height": 26
+      },
+      "37": {
+        "x": 1377.421875,
+        "y": 296.5,
+        "width": 64,
+        "height": 26
+      },
+      "30": {
+        "x": 1377.421875,
+        "y": 339.5,
+        "width": 64,
+        "height": 26
+      },
+      "15": {
+        "x": 1377.421875,
+        "y": 382.5,
+        "width": 64,
+        "height": 26
+      }
+    },
+    "split": "development",
+    "sha256": "934e0cf6c22230b225a9f8710a7594daec93a71a0a0f2a95100754c11a93e6ad"
+  },
+  {
+    "id": "dialog_fields_800x600",
+    "category": "dialog_fields",
+    "size": [
+      800,
+      600
+    ],
+    "task": "Click inside the Filename text field in the Save document dialog.",
+    "image": "images/dialog_fields_800x600.png",
+    "target_ref": 44,
+    "boxes": {
+      "44": {
+        "x": 168,
+        "y": 238,
+        "width": 464,
+        "height": 35
+      },
+      "42": {
+        "x": 168,
+        "y": 302,
+        "width": 464,
+        "height": 35
+      },
+      "38": {
+        "x": 464,
+        "y": 355,
+        "width": 80,
+        "height": 30
+      },
+      "36": {
+        "x": 552,
+        "y": 355,
+        "width": 80,
+        "height": 30
+      }
+    },
+    "split": "development",
+    "sha256": "629fbe6f91dcddb3f23f9f4a5a00398a9f005822665b7585dd3e551d9e888a72"
+  },
+  {
+    "id": "dialog_fields_1024x768",
+    "category": "dialog_fields",
+    "size": [
+      1024,
+      768
+    ],
+    "task": "Click inside the Filename text field in the Save document dialog.",
+    "image": "images/dialog_fields_1024x768.png",
+    "target_ref": 2,
+    "boxes": {
+      "2": {
+        "x": 280,
+        "y": 322,
+        "width": 464,
+        "height": 35
+      },
+      "5": {
+        "x": 280,
+        "y": 386,
+        "width": 464,
+        "height": 35
+      },
+      "44": {
+        "x": 576,
+        "y": 439,
+        "width": 80,
+        "height": 30
+      },
+      "39": {
+        "x": 664,
+        "y": 439,
+        "width": 80,
+        "height": 30
+      }
+    },
+    "split": "development",
+    "sha256": "269e8dfd259d29d4b222bbe6311b51ba645bb8307dc216ed159d956990fb6248"
+  },
+  {
+    "id": "dialog_fields_1280x720",
+    "category": "dialog_fields",
+    "size": [
+      1280,
+      720
+    ],
+    "task": "Click inside the Filename text field in the Save document dialog.",
+    "image": "images/dialog_fields_1280x720.png",
+    "target_ref": 48,
+    "boxes": {
+      "48": {
+        "x": 408,
+        "y": 298,
+        "width": 464,
+        "height": 35
+      },
+      "40": {
+        "x": 408,
+        "y": 362,
+        "width": 464,
+        "height": 35
+      },
+      "42": {
+        "x": 704,
+        "y": 415,
+        "width": 80,
+        "height": 30
+      },
+      "6": {
+        "x": 792,
+        "y": 415,
+        "width": 80,
+        "height": 30
+      }
+    },
+    "split": "development",
+    "sha256": "476759d4d5a859e89a1430a9dd90728d7639ac57c578a1c95baa98b1738b7898"
+  },
+  {
+    "id": "dialog_fields_1920x1080",
+    "category": "dialog_fields",
+    "size": [
+      1920,
+      1080
+    ],
+    "task": "Click inside the Filename text field in the Save document dialog.",
+    "image": "images/dialog_fields_1920x1080.png",
+    "target_ref": 23,
+    "boxes": {
+      "23": {
+        "x": 728,
+        "y": 478,
+        "width": 464,
+        "height": 35
+      },
+      "46": {
+        "x": 728,
+        "y": 542,
+        "width": 464,
+        "height": 35
+      },
+      "36": {
+        "x": 1024,
+        "y": 595,
+        "width": 80,
+        "height": 30
+      },
+      "15": {
+        "x": 1112,
+        "y": 595,
+        "width": 80,
+        "height": 30
+      }
+    },
+    "split": "development",
+    "sha256": "cd1a6617fcf6cc00f8a12dba09c7ebd7caa97d102122751a9710f9e5d97c55ff"
+  },
+  {
+    "id": "table_cells_800x600",
+    "category": "table_cells",
+    "size": [
+      800,
+      600
+    ],
+    "task": "Click spreadsheet cell C4 (column C, row 4).",
+    "image": "images/table_cells_800x600.png",
+    "target_ref": 49,
+    "boxes": {
+      "31": {
+        "x": 200,
+        "y": 128,
+        "width": 60,
+        "height": 26
+      },
+      "45": {
+        "x": 229,
+        "y": 222,
+        "width": 105.890625,
+        "height": 42
+      },
+      "7": {
+        "x": 334.890625,
+        "y": 222,
+        "width": 105.890625,
+        "height": 42
+      },
+      "9": {
+        "x": 440.78125,
+        "y": 222,
+        "width": 105.890625,
+        "height": 42
+      },
+      "46": {
+        "x": 546.671875,
+        "y": 222,
+        "width": 105.890625,
+        "height": 42
+      },
+      "43": {
+        "x": 652.5625,
+        "y": 222,
+        "width": 105.9375,
+        "height": 42
+      },
+      "34": {
+        "x": 229,
+        "y": 264,
+        "width": 105.890625,
+        "height": 42
+      },
+      "41": {
+        "x": 334.890625,
+        "y": 264,
+        "width": 105.890625,
+        "height": 42
+      },
+      "29": {
+        "x": 440.78125,
+        "y": 264,
+        "width": 105.890625,
+        "height": 42
+      },
+      "20": {
+        "x": 546.671875,
+        "y": 264,
+        "width": 105.890625,
+        "height": 42
+      },
+      "1": {
+        "x": 652.5625,
+        "y": 264,
+        "width": 105.9375,
+        "height": 42
+      },
+      "11": {
+        "x": 229,
+        "y": 306,
+        "width": 105.890625,
+        "height": 42
+      },
+      "33": {
+        "x": 334.890625,
+        "y": 306,
+        "width": 105.890625,
+        "height": 42
+      },
+      "27": {
+        "x": 440.78125,
+        "y": 306,
+        "width": 105.890625,
+        "height": 42
+      },
+      "40": {
+        "x": 546.671875,
+        "y": 306,
+        "width": 105.890625,
+        "height": 42
+      },
+      "38": {
+        "x": 652.5625,
+        "y": 306,
+        "width": 105.9375,
+        "height": 42
+      },
+      "23": {
+        "x": 229,
+        "y": 348,
+        "width": 105.890625,
+        "height": 42
+      },
+      "32": {
+        "x": 334.890625,
+        "y": 348,
+        "width": 105.890625,
+        "height": 42
+      },
+      "49": {
+        "x": 440.78125,
+        "y": 348,
+        "width": 105.890625,
+        "height": 42
+      },
+      "10": {
+        "x": 546.671875,
+        "y": 348,
+        "width": 105.890625,
+        "height": 42
+      },
+      "4": {
+        "x": 652.5625,
+        "y": 348,
+        "width": 105.9375,
+        "height": 42
+      },
+      "26": {
+        "x": 229,
+        "y": 390,
+        "width": 105.890625,
+        "height": 42
+      },
+      "30": {
+        "x": 334.890625,
+        "y": 390,
+        "width": 105.890625,
+        "height": 42
+      },
+      "39": {
+        "x": 440.78125,
+        "y": 390,
+        "width": 105.890625,
+        "height": 42
+      },
+      "6": {
+        "x": 546.671875,
+        "y": 390,
+        "width": 105.890625,
+        "height": 42
+      },
+      "13": {
+        "x": 652.5625,
+        "y": 390,
+        "width": 105.9375,
+        "height": 42
+      },
+      "14": {
+        "x": 229,
+        "y": 432,
+        "width": 105.890625,
+        "height": 42
+      },
+      "28": {
+        "x": 334.890625,
+        "y": 432,
+        "width": 105.890625,
+        "height": 42
+      },
+      "21": {
+        "x": 440.78125,
+        "y": 432,
+        "width": 105.890625,
+        "height": 42
+      },
+      "35": {
+        "x": 546.671875,
+        "y": 432,
+        "width": 105.890625,
+        "height": 42
+      },
+      "47": {
+        "x": 652.5625,
+        "y": 432,
+        "width": 105.9375,
+        "height": 42
+      }
+    },
+    "split": "development",
+    "sha256": "4eeacfdd1e4d823f46f56be210cc5e643adb9690ce039d49c040ca23e45391a9"
+  },
+  {
+    "id": "table_cells_1024x768",
+    "category": "table_cells",
+    "size": [
+      1024,
+      768
+    ],
+    "task": "Click spreadsheet cell C4 (column C, row 4).",
+    "image": "images/table_cells_1024x768.png",
+    "target_ref": 7,
+    "boxes": {
+      "42": {
+        "x": 200,
+        "y": 128,
+        "width": 60,
+        "height": 26
+      },
+      "46": {
+        "x": 229,
+        "y": 222,
+        "width": 150.6875,
+        "height": 42
+      },
+      "47": {
+        "x": 379.6875,
+        "y": 222,
+        "width": 150.6875,
+        "height": 42
+      },
+      "38": {
+        "x": 530.375,
+        "y": 222,
+        "width": 150.6875,
+        "height": 42
+      },
+      "8": {
+        "x": 681.0625,
+        "y": 222,
+        "width": 150.6875,
+        "height": 42
+      },
+      "32": {
+        "x": 831.75,
+        "y": 222,
+        "width": 150.75,
+        "height": 42
+      },
+      "9": {
+        "x": 229,
+        "y": 264,
+        "width": 150.6875,
+        "height": 42
+      },
+      "49": {
+        "x": 379.6875,
+        "y": 264,
+        "width": 150.6875,
+        "height": 42
+      },
+      "41": {
+        "x": 530.375,
+        "y": 264,
+        "width": 150.6875,
+        "height": 42
+      },
+      "1": {
+        "x": 681.0625,
+        "y": 264,
+        "width": 150.6875,
+        "height": 42
+      },
+      "44": {
+        "x": 831.75,
+        "y": 264,
+        "width": 150.75,
+        "height": 42
+      },
+      "16": {
+        "x": 229,
+        "y": 306,
+        "width": 150.6875,
+        "height": 42
+      },
+      "27": {
+        "x": 379.6875,
+        "y": 306,
+        "width": 150.6875,
+        "height": 42
+      },
+      "34": {
+        "x": 530.375,
+        "y": 306,
+        "width": 150.6875,
+        "height": 42
+      },
+      "48": {
+        "x": 681.0625,
+        "y": 306,
+        "width": 150.6875,
+        "height": 42
+      },
+      "24": {
+        "x": 831.75,
+        "y": 306,
+        "width": 150.75,
+        "height": 42
+      },
+      "20": {
+        "x": 229,
+        "y": 348,
+        "width": 150.6875,
+        "height": 42
+      },
+      "30": {
+        "x": 379.6875,
+        "y": 348,
+        "width": 150.6875,
+        "height": 42
+      },
+      "7": {
+        "x": 530.375,
+        "y": 348,
+        "width": 150.6875,
+        "height": 42
+      },
+      "18": {
+        "x": 681.0625,
+        "y": 348,
+        "width": 150.6875,
+        "height": 42
+      },
+      "37": {
+        "x": 831.75,
+        "y": 348,
+        "width": 150.75,
+        "height": 42
+      },
+      "12": {
+        "x": 229,
+        "y": 390,
+        "width": 150.6875,
+        "height": 42
+      },
+      "21": {
+        "x": 379.6875,
+        "y": 390,
+        "width": 150.6875,
+        "height": 42
+      },
+      "26": {
+        "x": 530.375,
+        "y": 390,
+        "width": 150.6875,
+        "height": 42
+      },
+      "43": {
+        "x": 681.0625,
+        "y": 390,
+        "width": 150.6875,
+        "height": 42
+      },
+      "3": {
+        "x": 831.75,
+        "y": 390,
+        "width": 150.75,
+        "height": 42
+      },
+      "15": {
+        "x": 229,
+        "y": 432,
+        "width": 150.6875,
+        "height": 42
+      },
+      "40": {
+        "x": 379.6875,
+        "y": 432,
+        "width": 150.6875,
+        "height": 42
+      },
+      "25": {
+        "x": 530.375,
+        "y": 432,
+        "width": 150.6875,
+        "height": 42
+      },
+      "14": {
+        "x": 681.0625,
+        "y": 432,
+        "width": 150.6875,
+        "height": 42
+      },
+      "2": {
+        "x": 831.75,
+        "y": 432,
+        "width": 150.75,
+        "height": 42
+      }
+    },
+    "split": "development",
+    "sha256": "27dcb42f6a1522b2b9c5a3de430a40dda26d258a67ac078cb6b297d79d6f7bdf"
+  },
+  {
+    "id": "table_cells_1280x720",
+    "category": "table_cells",
+    "size": [
+      1280,
+      720
+    ],
+    "task": "Click spreadsheet cell C4 (column C, row 4).",
+    "image": "images/table_cells_1280x720.png",
+    "target_ref": 38,
+    "boxes": {
+      "40": {
+        "x": 200,
+        "y": 128,
+        "width": 60,
+        "height": 26
+      },
+      "16": {
+        "x": 229,
+        "y": 222,
+        "width": 201.890625,
+        "height": 42
+      },
+      "27": {
+        "x": 430.890625,
+        "y": 222,
+        "width": 201.890625,
+        "height": 42
+      },
+      "24": {
+        "x": 632.78125,
+        "y": 222,
+        "width": 201.890625,
+        "height": 42
+      },
+      "26": {
+        "x": 834.671875,
+        "y": 222,
+        "width": 201.890625,
+        "height": 42
+      },
+      "9": {
+        "x": 1036.5625,
+        "y": 222,
+        "width": 201.9375,
+        "height": 42
+      },
+      "19": {
+        "x": 229,
+        "y": 264,
+        "width": 201.890625,
+        "height": 42
+      },
+      "34": {
+        "x": 430.890625,
+        "y": 264,
+        "width": 201.890625,
+        "height": 42
+      },
+      "20": {
+        "x": 632.78125,
+        "y": 264,
+        "width": 201.890625,
+        "height": 42
+      },
+      "28": {
+        "x": 834.671875,
+        "y": 264,
+        "width": 201.890625,
+        "height": 42
+      },
+      "31": {
+        "x": 1036.5625,
+        "y": 264,
+        "width": 201.9375,
+        "height": 42
+      },
+      "43": {
+        "x": 229,
+        "y": 306,
+        "width": 201.890625,
+        "height": 42
+      },
+      "14": {
+        "x": 430.890625,
+        "y": 306,
+        "width": 201.890625,
+        "height": 42
+      },
+      "18": {
+        "x": 632.78125,
+        "y": 306,
+        "width": 201.890625,
+        "height": 42
+      },
+      "35": {
+        "x": 834.671875,
+        "y": 306,
+        "width": 201.890625,
+        "height": 42
+      },
+      "33": {
+        "x": 1036.5625,
+        "y": 306,
+        "width": 201.9375,
+        "height": 42
+      },
+      "47": {
+        "x": 229,
+        "y": 348,
+        "width": 201.890625,
+        "height": 42
+      },
+      "44": {
+        "x": 430.890625,
+        "y": 348,
+        "width": 201.890625,
+        "height": 42
+      },
+      "38": {
+        "x": 632.78125,
+        "y": 348,
+        "width": 201.890625,
+        "height": 42
+      },
+      "48": {
+        "x": 834.671875,
+        "y": 348,
+        "width": 201.890625,
+        "height": 42
+      },
+      "4": {
+        "x": 1036.5625,
+        "y": 348,
+        "width": 201.9375,
+        "height": 42
+      },
+      "36": {
+        "x": 229,
+        "y": 390,
+        "width": 201.890625,
+        "height": 42
+      },
+      "39": {
+        "x": 430.890625,
+        "y": 390,
+        "width": 201.890625,
+        "height": 42
+      },
+      "3": {
+        "x": 632.78125,
+        "y": 390,
+        "width": 201.890625,
+        "height": 42
+      },
+      "46": {
+        "x": 834.671875,
+        "y": 390,
+        "width": 201.890625,
+        "height": 42
+      },
+      "49": {
+        "x": 1036.5625,
+        "y": 390,
+        "width": 201.9375,
+        "height": 42
+      },
+      "12": {
+        "x": 229,
+        "y": 432,
+        "width": 201.890625,
+        "height": 42
+      },
+      "13": {
+        "x": 430.890625,
+        "y": 432,
+        "width": 201.890625,
+        "height": 42
+      },
+      "6": {
+        "x": 632.78125,
+        "y": 432,
+        "width": 201.890625,
+        "height": 42
+      },
+      "41": {
+        "x": 834.671875,
+        "y": 432,
+        "width": 201.890625,
+        "height": 42
+      },
+      "37": {
+        "x": 1036.5625,
+        "y": 432,
+        "width": 201.9375,
+        "height": 42
+      }
+    },
+    "split": "development",
+    "sha256": "da77c70ab39b68faac4a759155bdf9726194df6829d1a4bb8cc6e8538501c85e"
+  },
+  {
+    "id": "table_cells_1920x1080",
+    "category": "table_cells",
+    "size": [
+      1920,
+      1080
+    ],
+    "task": "Click spreadsheet cell C4 (column C, row 4).",
+    "image": "images/table_cells_1920x1080.png",
+    "target_ref": 49,
+    "boxes": {
+      "33": {
+        "x": 200,
+        "y": 128,
+        "width": 60,
+        "height": 26
+      },
+      "35": {
+        "x": 229,
+        "y": 222,
+        "width": 329.890625,
+        "height": 42
+      },
+      "6": {
+        "x": 558.890625,
+        "y": 222,
+        "width": 329.890625,
+        "height": 42
+      },
+      "39": {
+        "x": 888.78125,
+        "y": 222,
+        "width": 329.890625,
+        "height": 42
+      },
+      "38": {
+        "x": 1218.671875,
+        "y": 222,
+        "width": 329.890625,
+        "height": 42
+      },
+      "25": {
+        "x": 1548.5625,
+        "y": 222,
+        "width": 329.9375,
+        "height": 42
+      },
+      "23": {
+        "x": 229,
+        "y": 264,
+        "width": 329.890625,
+        "height": 42
+      },
+      "40": {
+        "x": 558.890625,
+        "y": 264,
+        "width": 329.890625,
+        "height": 42
+      },
+      "12": {
+        "x": 888.78125,
+        "y": 264,
+        "width": 329.890625,
+        "height": 42
+      },
+      "42": {
+        "x": 1218.671875,
+        "y": 264,
+        "width": 329.890625,
+        "height": 42
+      },
+      "41": {
+        "x": 1548.5625,
+        "y": 264,
+        "width": 329.9375,
+        "height": 42
+      },
+      "21": {
+        "x": 229,
+        "y": 306,
+        "width": 329.890625,
+        "height": 42
+      },
+      "28": {
+        "x": 558.890625,
+        "y": 306,
+        "width": 329.890625,
+        "height": 42
+      },
+      "17": {
+        "x": 888.78125,
+        "y": 306,
+        "width": 329.890625,
+        "height": 42
+      },
+      "4": {
+        "x": 1218.671875,
+        "y": 306,
+        "width": 329.890625,
+        "height": 42
+      },
+      "13": {
+        "x": 1548.5625,
+        "y": 306,
+        "width": 329.9375,
+        "height": 42
+      },
+      "29": {
+        "x": 229,
+        "y": 348,
+        "width": 329.890625,
+        "height": 42
+      },
+      "14": {
+        "x": 558.890625,
+        "y": 348,
+        "width": 329.890625,
+        "height": 42
+      },
+      "49": {
+        "x": 888.78125,
+        "y": 348,
+        "width": 329.890625,
+        "height": 42
+      },
+      "3": {
+        "x": 1218.671875,
+        "y": 348,
+        "width": 329.890625,
+        "height": 42
+      },
+      "30": {
+        "x": 1548.5625,
+        "y": 348,
+        "width": 329.9375,
+        "height": 42
+      },
+      "19": {
+        "x": 229,
+        "y": 390,
+        "width": 329.890625,
+        "height": 42
+      },
+      "27": {
+        "x": 558.890625,
+        "y": 390,
+        "width": 329.890625,
+        "height": 42
+      },
+      "2": {
+        "x": 888.78125,
+        "y": 390,
+        "width": 329.890625,
+        "height": 42
+      },
+      "18": {
+        "x": 1218.671875,
+        "y": 390,
+        "width": 329.890625,
+        "height": 42
+      },
+      "22": {
+        "x": 1548.5625,
+        "y": 390,
+        "width": 329.9375,
+        "height": 42
+      },
+      "16": {
+        "x": 229,
+        "y": 432,
+        "width": 329.890625,
+        "height": 42
+      },
+      "20": {
+        "x": 558.890625,
+        "y": 432,
+        "width": 329.890625,
+        "height": 42
+      },
+      "34": {
+        "x": 888.78125,
+        "y": 432,
+        "width": 329.890625,
+        "height": 42
+      },
+      "47": {
+        "x": 1218.671875,
+        "y": 432,
+        "width": 329.890625,
+        "height": 42
+      },
+      "36": {
+        "x": 1548.5625,
+        "y": 432,
+        "width": 329.9375,
+        "height": 42
+      }
+    },
+    "split": "development",
+    "sha256": "dba0a9716d60b1bfcf8e16703126987982338486b59df9228a750b234f01cde0"
+  },
+  {
+    "id": "heldout_large_buttons_960x640",
+    "category": "large_buttons",
+    "size": [
+      960,
+      640
+    ],
+    "task": "Click the button labeled Export.",
+    "image": "images/heldout_large_buttons_960x640.png",
+    "target_ref": 20,
+    "boxes": {
+      "7": {
+        "x": 190,
+        "y": 150,
+        "width": 150,
+        "height": 48
+      },
+      "21": {
+        "x": 745,
+        "y": 155,
+        "width": 150,
+        "height": 48
+      },
+      "23": {
+        "x": 430,
+        "y": 310,
+        "width": 150,
+        "height": 48
+      },
+      "22": {
+        "x": 190,
+        "y": 530,
+        "width": 150,
+        "height": 48
+      },
+      "34": {
+        "x": 745,
+        "y": 530,
+        "width": 150,
+        "height": 48
+      },
+      "20": {
+        "x": 430,
+        "y": 100,
+        "width": 150,
+        "height": 48
+      }
+    },
+    "split": "heldout",
+    "sha256": "72762a9a795be2a29cead1497051bb4273ea1c2fdf39cb47d10b62b36806f109"
+  },
+  {
+    "id": "heldout_large_buttons_1366x768",
+    "category": "large_buttons",
+    "size": [
+      1366,
+      768
+    ],
+    "task": "Click the button labeled Export.",
+    "image": "images/heldout_large_buttons_1366x768.png",
+    "target_ref": 28,
+    "boxes": {
+      "23": {
+        "x": 190,
+        "y": 150,
+        "width": 150,
+        "height": 48
+      },
+      "28": {
+        "x": 1151,
+        "y": 155,
+        "width": 150,
+        "height": 48
+      },
+      "46": {
+        "x": 633,
+        "y": 374,
+        "width": 150,
+        "height": 48
+      },
+      "17": {
+        "x": 190,
+        "y": 658,
+        "width": 150,
+        "height": 48
+      },
+      "20": {
+        "x": 1151,
+        "y": 658,
+        "width": 150,
+        "height": 48
+      },
+      "1": {
+        "x": 633,
+        "y": 100,
+        "width": 150,
+        "height": 48
+      }
+    },
+    "split": "heldout",
+    "sha256": "32a33a23d358e84705456dfcc28c43db2fe0323088b6756a10532740e7228ac4"
+  },
+  {
+    "id": "heldout_large_buttons_1600x900",
+    "category": "large_buttons",
+    "size": [
+      1600,
+      900
+    ],
+    "task": "Click the button labeled Export.",
+    "image": "images/heldout_large_buttons_1600x900.png",
+    "target_ref": 23,
+    "boxes": {
+      "14": {
+        "x": 190,
+        "y": 150,
+        "width": 150,
+        "height": 48
+      },
+      "23": {
+        "x": 1385,
+        "y": 155,
+        "width": 150,
+        "height": 48
+      },
+      "24": {
+        "x": 750,
+        "y": 440,
+        "width": 150,
+        "height": 48
+      },
+      "11": {
+        "x": 190,
+        "y": 790,
+        "width": 150,
+        "height": 48
+      },
+      "12": {
+        "x": 1385,
+        "y": 790,
+        "width": 150,
+        "height": 48
+      },
+      "32": {
+        "x": 750,
+        "y": 100,
+        "width": 150,
+        "height": 48
+      }
+    },
+    "split": "heldout",
+    "sha256": "8d1112be7ebd592c0e91824386d5d4b55c95236b59f360358290da6f44239097"
+  },
+  {
+    "id": "heldout_large_buttons_1920x1200",
+    "category": "large_buttons",
+    "size": [
+      1920,
+      1200
+    ],
+    "task": "Click the button labeled Export.",
+    "image": "images/heldout_large_buttons_1920x1200.png",
+    "target_ref": 39,
+    "boxes": {
+      "24": {
+        "x": 190,
+        "y": 150,
+        "width": 150,
+        "height": 48
+      },
+      "27": {
+        "x": 1705,
+        "y": 155,
+        "width": 150,
+        "height": 48
+      },
+      "39": {
+        "x": 910,
+        "y": 590,
+        "width": 150,
+        "height": 48
+      },
+      "43": {
+        "x": 190,
+        "y": 1090,
+        "width": 150,
+        "height": 48
+      },
+      "23": {
+        "x": 1705,
+        "y": 1090,
+        "width": 150,
+        "height": 48
+      },
+      "44": {
+        "x": 910,
+        "y": 100,
+        "width": 150,
+        "height": 48
+      }
+    },
+    "split": "heldout",
+    "sha256": "c8cfd9cdb2e953de88f6a01dcc81b154e83a3e97fcc1e5b297ee1f7d48fa9f7f"
+  },
+  {
+    "id": "heldout_dense_toolbar_960x640",
+    "category": "dense_toolbar",
+    "size": [
+      960,
+      640
+    ],
+    "task": "Click Replace in the editor toolbar.",
+    "image": "images/heldout_dense_toolbar_960x640.png",
+    "target_ref": 6,
+    "boxes": {
+      "35": {
+        "x": 200,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "39": {
+        "x": 259,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "27": {
+        "x": 318,
+        "y": 128,
+        "width": 52.6875,
+        "height": 28
+      },
+      "46": {
+        "x": 377.6875,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "11": {
+        "x": 446.71875,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "6": {
+        "x": 505.71875,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "15": {
+        "x": 574.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "26": {
+        "x": 633.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "5": {
+        "x": 692.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "49": {
+        "x": 751.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "19": {
+        "x": 810.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "37": {
+        "x": 200,
+        "y": 163,
+        "width": 52,
+        "height": 28
+      }
+    },
+    "split": "heldout",
+    "sha256": "8d0c61ceb2f68038dcd607e4ff7340aa98bfe625f585c3e328947ae36c5a3f88"
+  },
+  {
+    "id": "heldout_dense_toolbar_1366x768",
+    "category": "dense_toolbar",
+    "size": [
+      1366,
+      768
+    ],
+    "task": "Click Replace in the editor toolbar.",
+    "image": "images/heldout_dense_toolbar_1366x768.png",
+    "target_ref": 26,
+    "boxes": {
+      "20": {
+        "x": 200,
+        "y": 128,
+        "width": 52.6875,
+        "height": 28
+      },
+      "11": {
+        "x": 259.6875,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "46": {
+        "x": 318.6875,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "26": {
+        "x": 377.6875,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "29": {
+        "x": 446.71875,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "43": {
+        "x": 515.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "22": {
+        "x": 574.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "4": {
+        "x": 633.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "37": {
+        "x": 692.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "28": {
+        "x": 751.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "21": {
+        "x": 810.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "41": {
+        "x": 869.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      }
+    },
+    "split": "heldout",
+    "sha256": "c686fd9427a4cff455043a89558052c7e7d68c90b33198cdfda5240067127cd7"
+  },
+  {
+    "id": "heldout_dense_toolbar_1600x900",
+    "category": "dense_toolbar",
+    "size": [
+      1600,
+      900
+    ],
+    "task": "Click Replace in the editor toolbar.",
+    "image": "images/heldout_dense_toolbar_1600x900.png",
+    "target_ref": 17,
+    "boxes": {
+      "17": {
+        "x": 200,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "36": {
+        "x": 269.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "7": {
+        "x": 328.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "44": {
+        "x": 387.03125,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "34": {
+        "x": 456.0625,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "24": {
+        "x": 515.0625,
+        "y": 128,
+        "width": 52.6875,
+        "height": 28
+      },
+      "10": {
+        "x": 574.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "20": {
+        "x": 633.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "26": {
+        "x": 692.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "43": {
+        "x": 751.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "41": {
+        "x": 810.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "47": {
+        "x": 869.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      }
+    },
+    "split": "heldout",
+    "sha256": "cfcc87f003edd754d72a025877427ce741766267dfbb419558c11e1dd155650b"
+  },
+  {
+    "id": "heldout_dense_toolbar_1920x1200",
+    "category": "dense_toolbar",
+    "size": [
+      1920,
+      1200
+    ],
+    "task": "Click Replace in the editor toolbar.",
+    "image": "images/heldout_dense_toolbar_1920x1200.png",
+    "target_ref": 49,
+    "boxes": {
+      "49": {
+        "x": 200,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "38": {
+        "x": 269.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "28": {
+        "x": 328.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "47": {
+        "x": 387.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "34": {
+        "x": 446.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "33": {
+        "x": 505.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "40": {
+        "x": 564.03125,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "3": {
+        "x": 623.03125,
+        "y": 128,
+        "width": 62.03125,
+        "height": 28
+      },
+      "39": {
+        "x": 692.0625,
+        "y": 128,
+        "width": 52.6875,
+        "height": 28
+      },
+      "16": {
+        "x": 751.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "13": {
+        "x": 810.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      },
+      "4": {
+        "x": 869.75,
+        "y": 128,
+        "width": 52,
+        "height": 28
+      }
+    },
+    "split": "heldout",
+    "sha256": "e41f9e36cb69cd42f35c26a80293324089a1c0d039d90f0383c9db36c870293c"
+  },
+  {
+    "id": "heldout_small_icons_960x640",
+    "category": "small_icons",
+    "size": [
+      960,
+      640
+    ],
+    "task": "Click the magnifying-glass icon in the toolbar to search files.",
+    "image": "images/heldout_small_icons_960x640.png",
+    "target_ref": 15,
+    "boxes": {
+      "38": {
+        "x": 200,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "9": {
+        "x": 235,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "15": {
+        "x": 270,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "44": {
+        "x": 305,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "17": {
+        "x": 340,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "8": {
+        "x": 375,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "26": {
+        "x": 410,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "30": {
+        "x": 445,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      }
+    },
+    "split": "heldout",
+    "sha256": "9049766506cba5e60ce4fd26a3a51078a305201b42aea42df205cd900abedb1d"
+  },
+  {
+    "id": "heldout_small_icons_1366x768",
+    "category": "small_icons",
+    "size": [
+      1366,
+      768
+    ],
+    "task": "Click the magnifying-glass icon in the toolbar to search files.",
+    "image": "images/heldout_small_icons_1366x768.png",
+    "target_ref": 30,
+    "boxes": {
+      "36": {
+        "x": 200,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "41": {
+        "x": 235,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "22": {
+        "x": 270,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "7": {
+        "x": 305,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "25": {
+        "x": 340,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "29": {
+        "x": 375,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "30": {
+        "x": 410,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "11": {
+        "x": 445,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      }
+    },
+    "split": "heldout",
+    "sha256": "c632ce634bcbd090b0a7f58bb27a599c74f928c64df4cdcd043153aeae58b720"
+  },
+  {
+    "id": "heldout_small_icons_1600x900",
+    "category": "small_icons",
+    "size": [
+      1600,
+      900
+    ],
+    "task": "Click the magnifying-glass icon in the toolbar to search files.",
+    "image": "images/heldout_small_icons_1600x900.png",
+    "target_ref": 31,
+    "boxes": {
+      "31": {
+        "x": 200,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "14": {
+        "x": 235,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "20": {
+        "x": 270,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "33": {
+        "x": 305,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "35": {
+        "x": 340,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "22": {
+        "x": 375,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "10": {
+        "x": 410,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "40": {
+        "x": 445,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      }
+    },
+    "split": "heldout",
+    "sha256": "200fc574007243b8afe67124646bc81fb342dda814ac8c5353743014d45bc1d6"
+  },
+  {
+    "id": "heldout_small_icons_1920x1200",
+    "category": "small_icons",
+    "size": [
+      1920,
+      1200
+    ],
+    "task": "Click the magnifying-glass icon in the toolbar to search files.",
+    "image": "images/heldout_small_icons_1920x1200.png",
+    "target_ref": 32,
+    "boxes": {
+      "17": {
+        "x": 200,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "16": {
+        "x": 235,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "1": {
+        "x": 270,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "27": {
+        "x": 305,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "10": {
+        "x": 340,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "28": {
+        "x": 375,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "39": {
+        "x": 410,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      },
+      "32": {
+        "x": 445,
+        "y": 128,
+        "width": 28,
+        "height": 28
+      }
+    },
+    "split": "heldout",
+    "sha256": "1876c92046b9133e8fd6eeb867dbb5296d16b53856a7fd94b74f43253edc18b2"
+  },
+  {
+    "id": "heldout_duplicate_labels_960x640",
+    "category": "duplicate_labels",
+    "size": [
+      960,
+      640
+    ],
+    "task": "Click Delete on the report.pdf row. Other rows also have Delete buttons.",
+    "image": "images/heldout_duplicate_labels_960x640.png",
+    "target_ref": 24,
+    "boxes": {
+      "24": {
+        "x": 706.890625,
+        "y": 167.5,
+        "width": 64,
+        "height": 26
+      },
+      "12": {
+        "x": 706.890625,
+        "y": 210.5,
+        "width": 64,
+        "height": 26
+      },
+      "33": {
+        "x": 706.890625,
+        "y": 253.5,
+        "width": 64,
+        "height": 26
+      },
+      "3": {
+        "x": 706.890625,
+        "y": 296.5,
+        "width": 64,
+        "height": 26
+      },
+      "36": {
+        "x": 706.890625,
+        "y": 339.5,
+        "width": 64,
+        "height": 26
+      },
+      "23": {
+        "x": 706.890625,
+        "y": 382.5,
+        "width": 64,
+        "height": 26
+      }
+    },
+    "split": "heldout",
+    "sha256": "264e45c13e2621e9eabb3590b8f4dbfaf05d6e0838f8273de74e4002c84d53d6"
+  },
+  {
+    "id": "heldout_duplicate_labels_1366x768",
+    "category": "duplicate_labels",
+    "size": [
+      1366,
+      768
+    ],
+    "task": "Click Delete on the report.pdf row. Other rows also have Delete buttons.",
+    "image": "images/heldout_duplicate_labels_1366x768.png",
+    "target_ref": 17,
+    "boxes": {
+      "21": {
+        "x": 990.453125,
+        "y": 167.5,
+        "width": 64,
+        "height": 26
+      },
+      "40": {
+        "x": 990.453125,
+        "y": 210.5,
+        "width": 64,
+        "height": 26
+      },
+      "10": {
+        "x": 990.453125,
+        "y": 253.5,
+        "width": 64,
+        "height": 26
+      },
+      "17": {
+        "x": 990.453125,
+        "y": 296.5,
+        "width": 64,
+        "height": 26
+      },
+      "2": {
+        "x": 990.453125,
+        "y": 339.5,
+        "width": 64,
+        "height": 26
+      },
+      "8": {
+        "x": 990.453125,
+        "y": 382.5,
+        "width": 64,
+        "height": 26
+      }
+    },
+    "split": "heldout",
+    "sha256": "3eefe434831a1cc3c9894baa8a75624d83a5e51c54fd5a48c2dcd7440df9f30a"
+  },
+  {
+    "id": "heldout_duplicate_labels_1600x900",
+    "category": "duplicate_labels",
+    "size": [
+      1600,
+      900
+    ],
+    "task": "Click Delete on the report.pdf row. Other rows also have Delete buttons.",
+    "image": "images/heldout_duplicate_labels_1600x900.png",
+    "target_ref": 36,
+    "boxes": {
+      "15": {
+        "x": 1153.90625,
+        "y": 167.5,
+        "width": 64,
+        "height": 26
+      },
+      "44": {
+        "x": 1153.90625,
+        "y": 210.5,
+        "width": 64,
+        "height": 26
+      },
+      "36": {
+        "x": 1153.90625,
+        "y": 253.5,
+        "width": 64,
+        "height": 26
+      },
+      "40": {
+        "x": 1153.90625,
+        "y": 296.5,
+        "width": 64,
+        "height": 26
+      },
+      "13": {
+        "x": 1153.90625,
+        "y": 339.5,
+        "width": 64,
+        "height": 26
+      },
+      "30": {
+        "x": 1153.90625,
+        "y": 382.5,
+        "width": 64,
+        "height": 26
+      }
+    },
+    "split": "heldout",
+    "sha256": "a031ed36b53ef5ee3ed0c51c36b9b32035af0a394d107d0560f2035034cf01b6"
+  },
+  {
+    "id": "heldout_duplicate_labels_1920x1200",
+    "category": "duplicate_labels",
+    "size": [
+      1920,
+      1200
+    ],
+    "task": "Click Delete on the report.pdf row. Other rows also have Delete buttons.",
+    "image": "images/heldout_duplicate_labels_1920x1200.png",
+    "target_ref": 46,
+    "boxes": {
+      "38": {
+        "x": 1377.421875,
+        "y": 167.5,
+        "width": 64,
+        "height": 26
+      },
+      "27": {
+        "x": 1377.421875,
+        "y": 210.5,
+        "width": 64,
+        "height": 26
+      },
+      "42": {
+        "x": 1377.421875,
+        "y": 253.5,
+        "width": 64,
+        "height": 26
+      },
+      "34": {
+        "x": 1377.421875,
+        "y": 296.5,
+        "width": 64,
+        "height": 26
+      },
+      "46": {
+        "x": 1377.421875,
+        "y": 339.5,
+        "width": 64,
+        "height": 26
+      },
+      "31": {
+        "x": 1377.421875,
+        "y": 382.5,
+        "width": 64,
+        "height": 26
+      }
+    },
+    "split": "heldout",
+    "sha256": "27278e3ca609fa2dc4c3763fdd393daf6ed415769f86c33c9c488283a8b8020c"
+  },
+  {
+    "id": "heldout_dialog_fields_960x640",
+    "category": "dialog_fields",
+    "size": [
+      960,
+      640
+    ],
+    "task": "Click inside the Folder text field in the Save document dialog.",
+    "image": "images/heldout_dialog_fields_960x640.png",
+    "target_ref": 27,
+    "boxes": {
+      "44": {
+        "x": 248,
+        "y": 258,
+        "width": 464,
+        "height": 35
+      },
+      "27": {
+        "x": 248,
+        "y": 322,
+        "width": 464,
+        "height": 35
+      },
+      "17": {
+        "x": 544,
+        "y": 375,
+        "width": 80,
+        "height": 30
+      },
+      "6": {
+        "x": 632,
+        "y": 375,
+        "width": 80,
+        "height": 30
+      }
+    },
+    "split": "heldout",
+    "sha256": "58ce71e8b92e58dd70a04bbe9cbc7a444d3811e42fa4caa31f9ef5b6abb7dc2f"
+  },
+  {
+    "id": "heldout_dialog_fields_1366x768",
+    "category": "dialog_fields",
+    "size": [
+      1366,
+      768
+    ],
+    "task": "Click inside the Folder text field in the Save document dialog.",
+    "image": "images/heldout_dialog_fields_1366x768.png",
+    "target_ref": 6,
+    "boxes": {
+      "18": {
+        "x": 451,
+        "y": 322,
+        "width": 464,
+        "height": 35
+      },
+      "6": {
+        "x": 451,
+        "y": 386,
+        "width": 464,
+        "height": 35
+      },
+      "31": {
+        "x": 747,
+        "y": 439,
+        "width": 80,
+        "height": 30
+      },
+      "25": {
+        "x": 835,
+        "y": 439,
+        "width": 80,
+        "height": 30
+      }
+    },
+    "split": "heldout",
+    "sha256": "66d5966c5f664932dad4735ad718c30dda1a09959697a9eed777c3d86bc07f2f"
+  },
+  {
+    "id": "heldout_dialog_fields_1600x900",
+    "category": "dialog_fields",
+    "size": [
+      1600,
+      900
+    ],
+    "task": "Click inside the Folder text field in the Save document dialog.",
+    "image": "images/heldout_dialog_fields_1600x900.png",
+    "target_ref": 21,
+    "boxes": {
+      "37": {
+        "x": 568,
+        "y": 388,
+        "width": 464,
+        "height": 35
+      },
+      "21": {
+        "x": 568,
+        "y": 452,
+        "width": 464,
+        "height": 35
+      },
+      "28": {
+        "x": 864,
+        "y": 505,
+        "width": 80,
+        "height": 30
+      },
+      "47": {
+        "x": 952,
+        "y": 505,
+        "width": 80,
+        "height": 30
+      }
+    },
+    "split": "heldout",
+    "sha256": "ea95281c06b4122f03a6411f595d0f5a07e37365d5dd6d318e225fc87964aebe"
+  },
+  {
+    "id": "heldout_dialog_fields_1920x1200",
+    "category": "dialog_fields",
+    "size": [
+      1920,
+      1200
+    ],
+    "task": "Click inside the Folder text field in the Save document dialog.",
+    "image": "images/heldout_dialog_fields_1920x1200.png",
+    "target_ref": 15,
+    "boxes": {
+      "40": {
+        "x": 728,
+        "y": 538,
+        "width": 464,
+        "height": 35
+      },
+      "15": {
+        "x": 728,
+        "y": 602,
+        "width": 464,
+        "height": 35
+      },
+      "20": {
+        "x": 1024,
+        "y": 655,
+        "width": 80,
+        "height": 30
+      },
+      "25": {
+        "x": 1112,
+        "y": 655,
+        "width": 80,
+        "height": 30
+      }
+    },
+    "split": "heldout",
+    "sha256": "4886e1cb0e1cdb073c35b1ec912959e0de8972bf5b27f8cb32fa7d8e41fec760"
+  },
+  {
+    "id": "heldout_table_cells_960x640",
+    "category": "table_cells",
+    "size": [
+      960,
+      640
+    ],
+    "task": "Click spreadsheet cell D3 (column D, row 3).",
+    "image": "images/heldout_table_cells_960x640.png",
+    "target_ref": 31,
+    "boxes": {
+      "18": {
+        "x": 200,
+        "y": 128,
+        "width": 60,
+        "height": 26
+      },
+      "35": {
+        "x": 229,
+        "y": 222,
+        "width": 137.890625,
+        "height": 42
+      },
+      "34": {
+        "x": 366.890625,
+        "y": 222,
+        "width": 137.890625,
+        "height": 42
+      },
+      "48": {
+        "x": 504.78125,
+        "y": 222,
+        "width": 137.890625,
+        "height": 42
+      },
+      "17": {
+        "x": 642.671875,
+        "y": 222,
+        "width": 137.890625,
+        "height": 42
+      },
+      "6": {
+        "x": 780.5625,
+        "y": 222,
+        "width": 137.9375,
+        "height": 42
+      },
+      "10": {
+        "x": 229,
+        "y": 264,
+        "width": 137.890625,
+        "height": 42
+      },
+      "43": {
+        "x": 366.890625,
+        "y": 264,
+        "width": 137.890625,
+        "height": 42
+      },
+      "41": {
+        "x": 504.78125,
+        "y": 264,
+        "width": 137.890625,
+        "height": 42
+      },
+      "16": {
+        "x": 642.671875,
+        "y": 264,
+        "width": 137.890625,
+        "height": 42
+      },
+      "1": {
+        "x": 780.5625,
+        "y": 264,
+        "width": 137.9375,
+        "height": 42
+      },
+      "7": {
+        "x": 229,
+        "y": 306,
+        "width": 137.890625,
+        "height": 42
+      },
+      "37": {
+        "x": 366.890625,
+        "y": 306,
+        "width": 137.890625,
+        "height": 42
+      },
+      "23": {
+        "x": 504.78125,
+        "y": 306,
+        "width": 137.890625,
+        "height": 42
+      },
+      "31": {
+        "x": 642.671875,
+        "y": 306,
+        "width": 137.890625,
+        "height": 42
+      },
+      "12": {
+        "x": 780.5625,
+        "y": 306,
+        "width": 137.9375,
+        "height": 42
+      },
+      "29": {
+        "x": 229,
+        "y": 348,
+        "width": 137.890625,
+        "height": 42
+      },
+      "14": {
+        "x": 366.890625,
+        "y": 348,
+        "width": 137.890625,
+        "height": 42
+      },
+      "24": {
+        "x": 504.78125,
+        "y": 348,
+        "width": 137.890625,
+        "height": 42
+      },
+      "36": {
+        "x": 642.671875,
+        "y": 348,
+        "width": 137.890625,
+        "height": 42
+      },
+      "21": {
+        "x": 780.5625,
+        "y": 348,
+        "width": 137.9375,
+        "height": 42
+      },
+      "26": {
+        "x": 229,
+        "y": 390,
+        "width": 137.890625,
+        "height": 42
+      },
+      "32": {
+        "x": 366.890625,
+        "y": 390,
+        "width": 137.890625,
+        "height": 42
+      },
+      "3": {
+        "x": 504.78125,
+        "y": 390,
+        "width": 137.890625,
+        "height": 42
+      },
+      "38": {
+        "x": 642.671875,
+        "y": 390,
+        "width": 137.890625,
+        "height": 42
+      },
+      "8": {
+        "x": 780.5625,
+        "y": 390,
+        "width": 137.9375,
+        "height": 42
+      },
+      "49": {
+        "x": 229,
+        "y": 432,
+        "width": 137.890625,
+        "height": 42
+      },
+      "5": {
+        "x": 366.890625,
+        "y": 432,
+        "width": 137.890625,
+        "height": 42
+      },
+      "4": {
+        "x": 504.78125,
+        "y": 432,
+        "width": 137.890625,
+        "height": 42
+      },
+      "45": {
+        "x": 642.671875,
+        "y": 432,
+        "width": 137.890625,
+        "height": 42
+      },
+      "44": {
+        "x": 780.5625,
+        "y": 432,
+        "width": 137.9375,
+        "height": 42
+      }
+    },
+    "split": "heldout",
+    "sha256": "ebfbe3e92a82bf2ede7422adb6c0e1cdc06f3d0be2826c597547e67baa870ecb"
+  },
+  {
+    "id": "heldout_table_cells_1366x768",
+    "category": "table_cells",
+    "size": [
+      1366,
+      768
+    ],
+    "task": "Click spreadsheet cell D3 (column D, row 3).",
+    "image": "images/heldout_table_cells_1366x768.png",
+    "target_ref": 35,
+    "boxes": {
+      "14": {
+        "x": 200,
+        "y": 128,
+        "width": 60,
+        "height": 26
+      },
+      "40": {
+        "x": 229,
+        "y": 222,
+        "width": 219.09375,
+        "height": 42
+      },
+      "19": {
+        "x": 448.09375,
+        "y": 222,
+        "width": 219.09375,
+        "height": 42
+      },
+      "49": {
+        "x": 667.1875,
+        "y": 222,
+        "width": 219.09375,
+        "height": 42
+      },
+      "23": {
+        "x": 886.28125,
+        "y": 222,
+        "width": 219.09375,
+        "height": 42
+      },
+      "1": {
+        "x": 1105.375,
+        "y": 222,
+        "width": 219.125,
+        "height": 42
+      },
+      "3": {
+        "x": 229,
+        "y": 264,
+        "width": 219.09375,
+        "height": 42
+      },
+      "7": {
+        "x": 448.09375,
+        "y": 264,
+        "width": 219.09375,
+        "height": 42
+      },
+      "39": {
+        "x": 667.1875,
+        "y": 264,
+        "width": 219.09375,
+        "height": 42
+      },
+      "22": {
+        "x": 886.28125,
+        "y": 264,
+        "width": 219.09375,
+        "height": 42
+      },
+      "18": {
+        "x": 1105.375,
+        "y": 264,
+        "width": 219.125,
+        "height": 42
+      },
+      "36": {
+        "x": 229,
+        "y": 306,
+        "width": 219.09375,
+        "height": 42
+      },
+      "37": {
+        "x": 448.09375,
+        "y": 306,
+        "width": 219.09375,
+        "height": 42
+      },
+      "9": {
+        "x": 667.1875,
+        "y": 306,
+        "width": 219.09375,
+        "height": 42
+      },
+      "35": {
+        "x": 886.28125,
+        "y": 306,
+        "width": 219.09375,
+        "height": 42
+      },
+      "25": {
+        "x": 1105.375,
+        "y": 306,
+        "width": 219.125,
+        "height": 42
+      },
+      "32": {
+        "x": 229,
+        "y": 348,
+        "width": 219.09375,
+        "height": 42
+      },
+      "27": {
+        "x": 448.09375,
+        "y": 348,
+        "width": 219.09375,
+        "height": 42
+      },
+      "12": {
+        "x": 667.1875,
+        "y": 348,
+        "width": 219.09375,
+        "height": 42
+      },
+      "48": {
+        "x": 886.28125,
+        "y": 348,
+        "width": 219.09375,
+        "height": 42
+      },
+      "6": {
+        "x": 1105.375,
+        "y": 348,
+        "width": 219.125,
+        "height": 42
+      },
+      "45": {
+        "x": 229,
+        "y": 390,
+        "width": 219.09375,
+        "height": 42
+      },
+      "2": {
+        "x": 448.09375,
+        "y": 390,
+        "width": 219.09375,
+        "height": 42
+      },
+      "13": {
+        "x": 667.1875,
+        "y": 390,
+        "width": 219.09375,
+        "height": 42
+      },
+      "8": {
+        "x": 886.28125,
+        "y": 390,
+        "width": 219.09375,
+        "height": 42
+      },
+      "47": {
+        "x": 1105.375,
+        "y": 390,
+        "width": 219.125,
+        "height": 42
+      },
+      "38": {
+        "x": 229,
+        "y": 432,
+        "width": 219.09375,
+        "height": 42
+      },
+      "20": {
+        "x": 448.09375,
+        "y": 432,
+        "width": 219.09375,
+        "height": 42
+      },
+      "34": {
+        "x": 667.1875,
+        "y": 432,
+        "width": 219.09375,
+        "height": 42
+      },
+      "17": {
+        "x": 886.28125,
+        "y": 432,
+        "width": 219.09375,
+        "height": 42
+      },
+      "42": {
+        "x": 1105.375,
+        "y": 432,
+        "width": 219.125,
+        "height": 42
+      }
+    },
+    "split": "heldout",
+    "sha256": "6254d05be886ae56d6e1723eb14b88072e43118eaa263cbfbd01ef25f547896f"
+  },
+  {
+    "id": "heldout_table_cells_1600x900",
+    "category": "table_cells",
+    "size": [
+      1600,
+      900
+    ],
+    "task": "Click spreadsheet cell D3 (column D, row 3).",
+    "image": "images/heldout_table_cells_1600x900.png",
+    "target_ref": 25,
+    "boxes": {
+      "41": {
+        "x": 200,
+        "y": 128,
+        "width": 60,
+        "height": 26
+      },
+      "28": {
+        "x": 229,
+        "y": 222,
+        "width": 265.890625,
+        "height": 42
+      },
+      "37": {
+        "x": 494.890625,
+        "y": 222,
+        "width": 265.890625,
+        "height": 42
+      },
+      "31": {
+        "x": 760.78125,
+        "y": 222,
+        "width": 265.890625,
+        "height": 42
+      },
+      "21": {
+        "x": 1026.671875,
+        "y": 222,
+        "width": 265.890625,
+        "height": 42
+      },
+      "24": {
+        "x": 1292.5625,
+        "y": 222,
+        "width": 265.9375,
+        "height": 42
+      },
+      "36": {
+        "x": 229,
+        "y": 264,
+        "width": 265.890625,
+        "height": 42
+      },
+      "4": {
+        "x": 494.890625,
+        "y": 264,
+        "width": 265.890625,
+        "height": 42
+      },
+      "34": {
+        "x": 760.78125,
+        "y": 264,
+        "width": 265.890625,
+        "height": 42
+      },
+      "20": {
+        "x": 1026.671875,
+        "y": 264,
+        "width": 265.890625,
+        "height": 42
+      },
+      "33": {
+        "x": 1292.5625,
+        "y": 264,
+        "width": 265.9375,
+        "height": 42
+      },
+      "16": {
+        "x": 229,
+        "y": 306,
+        "width": 265.890625,
+        "height": 42
+      },
+      "10": {
+        "x": 494.890625,
+        "y": 306,
+        "width": 265.890625,
+        "height": 42
+      },
+      "18": {
+        "x": 760.78125,
+        "y": 306,
+        "width": 265.890625,
+        "height": 42
+      },
+      "25": {
+        "x": 1026.671875,
+        "y": 306,
+        "width": 265.890625,
+        "height": 42
+      },
+      "1": {
+        "x": 1292.5625,
+        "y": 306,
+        "width": 265.9375,
+        "height": 42
+      },
+      "5": {
+        "x": 229,
+        "y": 348,
+        "width": 265.890625,
+        "height": 42
+      },
+      "46": {
+        "x": 494.890625,
+        "y": 348,
+        "width": 265.890625,
+        "height": 42
+      },
+      "27": {
+        "x": 760.78125,
+        "y": 348,
+        "width": 265.890625,
+        "height": 42
+      },
+      "40": {
+        "x": 1026.671875,
+        "y": 348,
+        "width": 265.890625,
+        "height": 42
+      },
+      "23": {
+        "x": 1292.5625,
+        "y": 348,
+        "width": 265.9375,
+        "height": 42
+      },
+      "8": {
+        "x": 229,
+        "y": 390,
+        "width": 265.890625,
+        "height": 42
+      },
+      "42": {
+        "x": 494.890625,
+        "y": 390,
+        "width": 265.890625,
+        "height": 42
+      },
+      "32": {
+        "x": 760.78125,
+        "y": 390,
+        "width": 265.890625,
+        "height": 42
+      },
+      "13": {
+        "x": 1026.671875,
+        "y": 390,
+        "width": 265.890625,
+        "height": 42
+      },
+      "47": {
+        "x": 1292.5625,
+        "y": 390,
+        "width": 265.9375,
+        "height": 42
+      },
+      "3": {
+        "x": 229,
+        "y": 432,
+        "width": 265.890625,
+        "height": 42
+      },
+      "49": {
+        "x": 494.890625,
+        "y": 432,
+        "width": 265.890625,
+        "height": 42
+      },
+      "43": {
+        "x": 760.78125,
+        "y": 432,
+        "width": 265.890625,
+        "height": 42
+      },
+      "35": {
+        "x": 1026.671875,
+        "y": 432,
+        "width": 265.890625,
+        "height": 42
+      },
+      "2": {
+        "x": 1292.5625,
+        "y": 432,
+        "width": 265.9375,
+        "height": 42
+      }
+    },
+    "split": "heldout",
+    "sha256": "031c8c83d64554b6a8c7698aa19e09c251037173563c91f355956ae6c8912fad"
+  },
+  {
+    "id": "heldout_table_cells_1920x1200",
+    "category": "table_cells",
+    "size": [
+      1920,
+      1200
+    ],
+    "task": "Click spreadsheet cell D3 (column D, row 3).",
+    "image": "images/heldout_table_cells_1920x1200.png",
+    "target_ref": 29,
+    "boxes": {
+      "46": {
+        "x": 200,
+        "y": 128,
+        "width": 60,
+        "height": 26
+      },
+      "25": {
+        "x": 229,
+        "y": 222,
+        "width": 329.890625,
+        "height": 42
+      },
+      "3": {
+        "x": 558.890625,
+        "y": 222,
+        "width": 329.890625,
+        "height": 42
+      },
+      "47": {
+        "x": 888.78125,
+        "y": 222,
+        "width": 329.890625,
+        "height": 42
+      },
+      "36": {
+        "x": 1218.671875,
+        "y": 222,
+        "width": 329.890625,
+        "height": 42
+      },
+      "6": {
+        "x": 1548.5625,
+        "y": 222,
+        "width": 329.9375,
+        "height": 42
+      },
+      "30": {
+        "x": 229,
+        "y": 264,
+        "width": 329.890625,
+        "height": 42
+      },
+      "26": {
+        "x": 558.890625,
+        "y": 264,
+        "width": 329.890625,
+        "height": 42
+      },
+      "22": {
+        "x": 888.78125,
+        "y": 264,
+        "width": 329.890625,
+        "height": 42
+      },
+      "34": {
+        "x": 1218.671875,
+        "y": 264,
+        "width": 329.890625,
+        "height": 42
+      },
+      "15": {
+        "x": 1548.5625,
+        "y": 264,
+        "width": 329.9375,
+        "height": 42
+      },
+      "24": {
+        "x": 229,
+        "y": 306,
+        "width": 329.890625,
+        "height": 42
+      },
+      "28": {
+        "x": 558.890625,
+        "y": 306,
+        "width": 329.890625,
+        "height": 42
+      },
+      "2": {
+        "x": 888.78125,
+        "y": 306,
+        "width": 329.890625,
+        "height": 42
+      },
+      "29": {
+        "x": 1218.671875,
+        "y": 306,
+        "width": 329.890625,
+        "height": 42
+      },
+      "5": {
+        "x": 1548.5625,
+        "y": 306,
+        "width": 329.9375,
+        "height": 42
+      },
+      "49": {
+        "x": 229,
+        "y": 348,
+        "width": 329.890625,
+        "height": 42
+      },
+      "39": {
+        "x": 558.890625,
+        "y": 348,
+        "width": 329.890625,
+        "height": 42
+      },
+      "21": {
+        "x": 888.78125,
+        "y": 348,
+        "width": 329.890625,
+        "height": 42
+      },
+      "11": {
+        "x": 1218.671875,
+        "y": 348,
+        "width": 329.890625,
+        "height": 42
+      },
+      "13": {
+        "x": 1548.5625,
+        "y": 348,
+        "width": 329.9375,
+        "height": 42
+      },
+      "16": {
+        "x": 229,
+        "y": 390,
+        "width": 329.890625,
+        "height": 42
+      },
+      "43": {
+        "x": 558.890625,
+        "y": 390,
+        "width": 329.890625,
+        "height": 42
+      },
+      "4": {
+        "x": 888.78125,
+        "y": 390,
+        "width": 329.890625,
+        "height": 42
+      },
+      "37": {
+        "x": 1218.671875,
+        "y": 390,
+        "width": 329.890625,
+        "height": 42
+      },
+      "32": {
+        "x": 1548.5625,
+        "y": 390,
+        "width": 329.9375,
+        "height": 42
+      },
+      "42": {
+        "x": 229,
+        "y": 432,
+        "width": 329.890625,
+        "height": 42
+      },
+      "14": {
+        "x": 558.890625,
+        "y": 432,
+        "width": 329.890625,
+        "height": 42
+      },
+      "27": {
+        "x": 888.78125,
+        "y": 432,
+        "width": 329.890625,
+        "height": 42
+      },
+      "40": {
+        "x": 1218.671875,
+        "y": 432,
+        "width": 329.890625,
+        "height": 42
+      },
+      "41": {
+        "x": 1548.5625,
+        "y": 432,
+        "width": 329.9375,
+        "height": 42
+      }
+    },
+    "split": "heldout",
+    "sha256": "0306b4ba456f665d0654dc5b28d6375b6aa5c3224f81c846134ae04d244603a3"
+  },
+  {
+    "id": "native_large_button_1",
+    "category": "native_large_button",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click the button labeled Export.",
+    "image": "images/native_large_button_1.png",
+    "target_ref": "button_Export",
+    "boxes": {
+      "button_Export": {
+        "x": 185,
+        "y": 125,
+        "width": 125,
+        "height": 40
+      }
+    },
+    "split": "native",
+    "sha256": "5040b32e0037a65279483c96395f4c8db9eda9f168224ca7748a05e558a0dad8"
+  },
+  {
+    "id": "native_small_icon_1",
+    "category": "native_small_icon",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click the trash-can icon in the File operations toolbar.",
+    "image": "images/native_small_icon_1.png",
+    "target_ref": "icon_edit-delete-symbolic",
+    "boxes": {
+      "icon_edit-delete-symbolic": {
+        "x": 380,
+        "y": 125,
+        "width": 36,
+        "height": 34
+      }
+    },
+    "split": "native",
+    "sha256": "38c7eaaa860f4659427475d1789d480eade4a3adb1dba52f96726c14b4f0c4f1"
+  },
+  {
+    "id": "native_duplicate_label_1",
+    "category": "native_duplicate_label",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click Delete on the archive.zip row. Other rows also have Delete buttons.",
+    "image": "images/native_duplicate_label_1.png",
+    "target_ref": "delete_archive.zip",
+    "boxes": {
+      "delete_archive.zip": {
+        "x": 1085,
+        "y": 206,
+        "width": 90,
+        "height": 34
+      }
+    },
+    "split": "native",
+    "sha256": "6f71f22a461c9a7e54ae80b6056a9a735274b706f5ddeb01b6b603d94e65c89b"
+  },
+  {
+    "id": "native_entry_1",
+    "category": "native_entry",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click inside the Folder text field.",
+    "image": "images/native_entry_1.png",
+    "target_ref": "field_Folder",
+    "boxes": {
+      "field_Folder": {
+        "x": 45,
+        "y": 575,
+        "width": 270,
+        "height": 36
+      }
+    },
+    "split": "native",
+    "sha256": "101b131ab303167fff599ecf121dd68cbb5f4f37165d58925b65649f086734c3"
+  },
+  {
+    "id": "native_checkbox_1",
+    "category": "native_checkbox",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click the checkbox labeled Enable backups.",
+    "image": "images/native_checkbox_1.png",
+    "target_ref": "check_Enable backups",
+    "boxes": {
+      "check_Enable backups": {
+        "x": 45,
+        "y": 270,
+        "width": 250,
+        "height": 32
+      }
+    },
+    "split": "native",
+    "sha256": "b1663448e125376105430871af99198c991173d28ffebdb499b6197c758ab288"
+  },
+  {
+    "id": "native_table_cell_1",
+    "category": "native_table_cell",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click spreadsheet cell C4 (column C, row 4).",
+    "image": "images/native_table_cell_1.png",
+    "target_ref": "cell_4_3",
+    "boxes": {
+      "cell_4_3": {
+        "x": 652,
+        "y": 389,
+        "width": 111,
+        "height": 24
+      }
+    },
+    "split": "native",
+    "sha256": "1e92520e8cef117dad9e34cf815086061da416847f106fe0fb2bbc9a562685ec"
+  },
+  {
+    "id": "native_large_button_2",
+    "category": "native_large_button",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click the button labeled Export.",
+    "image": "images/native_large_button_2.png",
+    "target_ref": "button_Export",
+    "boxes": {
+      "button_Export": {
+        "x": 185,
+        "y": 181,
+        "width": 125,
+        "height": 40
+      }
+    },
+    "split": "native",
+    "sha256": "59cb89b8845a54e7912f1f7e331ac2c9fb377e35dc018f2f39b44157ff1930b5"
+  },
+  {
+    "id": "native_small_icon_2",
+    "category": "native_small_icon",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click the trash-can icon in the File operations toolbar.",
+    "image": "images/native_small_icon_2.png",
+    "target_ref": "icon_edit-delete-symbolic",
+    "boxes": {
+      "icon_edit-delete-symbolic": {
+        "x": 466,
+        "y": 125,
+        "width": 36,
+        "height": 34
+      }
+    },
+    "split": "native",
+    "sha256": "cd3043591147f816d23b08d058438197a84c5f1a7b8d67a6a5f840f17b0e44d2"
+  },
+  {
+    "id": "native_duplicate_label_2",
+    "category": "native_duplicate_label",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click Delete on the archive.zip row. Other rows also have Delete buttons.",
+    "image": "images/native_duplicate_label_2.png",
+    "target_ref": "delete_archive.zip",
+    "boxes": {
+      "delete_archive.zip": {
+        "x": 1085,
+        "y": 122,
+        "width": 90,
+        "height": 34
+      }
+    },
+    "split": "native",
+    "sha256": "19171ddb04f3f3d968a1b393ff1452a114bf2e8bebc792546ffc6121327eb4c6"
+  },
+  {
+    "id": "native_entry_2",
+    "category": "native_entry",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click inside the Folder text field.",
+    "image": "images/native_entry_2.png",
+    "target_ref": "field_Folder",
+    "boxes": {
+      "field_Folder": {
+        "x": 45,
+        "y": 575,
+        "width": 270,
+        "height": 36
+      }
+    },
+    "split": "native",
+    "sha256": "83e17790b486aa978faa41a093a7837def898c9b2ced2e32a69bb63cd991fb3e"
+  },
+  {
+    "id": "native_checkbox_2",
+    "category": "native_checkbox",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click the checkbox labeled Enable backups.",
+    "image": "images/native_checkbox_2.png",
+    "target_ref": "check_Enable backups",
+    "boxes": {
+      "check_Enable backups": {
+        "x": 45,
+        "y": 270,
+        "width": 250,
+        "height": 32
+      }
+    },
+    "split": "native",
+    "sha256": "308b77fcb013f68b50a7f8c6a1c81dd946d8ed1ce63e61b2a6eceb3258c18cb0"
+  },
+  {
+    "id": "native_table_cell_2",
+    "category": "native_table_cell",
+    "size": [
+      1280,
+      800
+    ],
+    "task": "Click spreadsheet cell C4 (column C, row 4).",
+    "image": "images/native_table_cell_2.png",
+    "target_ref": "cell_4_3",
+    "boxes": {
+      "cell_4_3": {
+        "x": 652,
+        "y": 389,
+        "width": 111,
+        "height": 24
+      }
+    },
+    "split": "native",
+    "sha256": "98597f451624a758d145c452242c982355446efb1e4461e4933a6c1c5432603b"
+  }
+]

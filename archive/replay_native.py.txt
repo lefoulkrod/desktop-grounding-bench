@@ -1,0 +1,122 @@
+from pathlib import Path
+import os,subprocess,time,json,ctypes,ctypes.util,random,statistics
+import experiments as e
+OUT=e.OUT/'native_linux';OUT.mkdir(exist_ok=True)
+log=(OUT/'xvfb.log').open('w')
+proc=subprocess.Popen(['Xvfb','-displayfd','1','-screen','0','1280x800x24','-nolisten','tcp','-ac'],stdout=subprocess.PIPE,stderr=log,text=True)
+try:
+ number=proc.stdout.readline().strip()
+ if not number.isdigit():raise RuntimeError('Xvfb failed to allocate an isolated display')
+ display=':'+number;os.environ['DISPLAY']=display;os.environ['GDK_BACKEND']='x11';os.environ['GTK_THEME']='Adwaita';os.environ['NO_AT_BRIDGE']='1'
+ os.environ.pop('DBUS_SESSION_BUS_ADDRESS',None);os.environ.pop('AT_SPI_BUS_ADDRESS',None)
+ import gi
+ gi.require_version('Gtk','3.0');from gi.repository import Gtk,Gdk
+ xlib=ctypes.CDLL(ctypes.util.find_library('X11'));xtst=ctypes.CDLL(ctypes.util.find_library('Xtst'))
+ xlib.XOpenDisplay.argtypes=[ctypes.c_char_p];xlib.XOpenDisplay.restype=ctypes.c_void_p
+ xlib.XFlush.argtypes=[ctypes.c_void_p];xlib.XCloseDisplay.argtypes=[ctypes.c_void_p]
+ xtst.XTestFakeMotionEvent.argtypes=[ctypes.c_void_p,ctypes.c_int,ctypes.c_int,ctypes.c_int,ctypes.c_ulong]
+ xtst.XTestFakeButtonEvent.argtypes=[ctypes.c_void_p,ctypes.c_uint,ctypes.c_int,ctypes.c_ulong]
+ xdisplay=xlib.XOpenDisplay(display.encode())
+ if not xdisplay:raise RuntimeError('Could not connect input to isolated X display')
+ def pump():
+  for _ in range(15):
+   while Gtk.events_pending():Gtk.main_iteration_do(False)
+   time.sleep(.01)
+ def mouse_click(point):
+  started=time.perf_counter()
+  x,y=map(round,point);xtst.XTestFakeMotionEvent(xdisplay,-1,x,y,0)
+  xtst.XTestFakeButtonEvent(xdisplay,1,1,0);xtst.XTestFakeButtonEvent(xdisplay,1,0,0);xlib.XFlush(xdisplay)
+  while clicked['ref'] is None and time.perf_counter()-started<.5:
+   while Gtk.events_pending():Gtk.main_iteration_do(False)
+   if clicked['ref'] is None:time.sleep(.001)
+  elapsed=time.perf_counter()-started
+  pump()
+  return elapsed
+ fixtures=[];rows=[];clicked={'ref':None};replay_rows=json.loads((e.OUT/'repeat_results.json').read_text())
+ rng=random.Random(430615)
+ for layout in range(2):
+  win=Gtk.Window(title='Desktop Targeting Lab');win.set_default_size(1220,750);win.move(20,20)
+  fixed=Gtk.Fixed();win.add(fixed)
+  title=Gtk.Label(label='Native Linux desktop targeting lab');title.set_markup('<span size="x-large" weight="bold">Native Linux desktop targeting lab</span>');fixed.put(title,25,18)
+  widgets={};tasks=[]
+  def label(text,x,y):w=Gtk.Label(label=text);fixed.put(w,x,y)
+  def record(widget,ref):
+   if isinstance(widget,Gtk.Entry):widget.connect('button-press-event',lambda w,event,r=ref:clicked.update(ref=r) or False)
+   else:widget.connect('clicked',lambda w,r=ref:clicked.update(ref=r))
+  def add(widget,ref,x,y,width,height):
+   widget.set_size_request(width,height);fixed.put(widget,x,y);widgets[ref]=widget;record(widget,ref);return widget
+  label('Project actions',25,75)
+  labels=['Save','Cancel','Export','Help'];rng.shuffle(labels)
+  for i,text in enumerate(labels):
+   ref='button_'+text;add(Gtk.Button(label=text),ref,25+(i%2)*140,105+(i//2)*56,125,40)
+  tasks.append(('large_button','Click the button labeled Export.','button_Export'))
+  label('File operations',360,75)
+  icons=['document-open-symbolic','edit-delete-symbolic','view-refresh-symbolic','system-search-symbolic'];rng.shuffle(icons)
+  for i,icon in enumerate(icons):
+   ref='icon_'+icon;button=Gtk.Button();button.set_image(Gtk.Image.new_from_icon_name(icon,Gtk.IconSize.BUTTON));add(button,ref,360+i*43,105,34,34)
+  tasks.append(('small_icon','Click the trash-can icon in the File operations toolbar.','icon_edit-delete-symbolic'))
+  label('Downloads',900,75)
+  names=['archive.zip','report.pdf','photo.png'];rng.shuffle(names)
+  for i,name in enumerate(names):
+   label(name,900,110+i*42);add(Gtk.Button(label='Delete'),'delete_'+name,1065,102+i*42,90,32)
+  tasks.append(('duplicate_label','Click Delete on the archive.zip row. Other rows also have Delete buttons.','delete_archive.zip'))
+  label('Document properties',25,420)
+  for i,(name,value) in enumerate([('Filename','Untitled.txt'),('Folder','/home/user/Documents')]):
+   label(name,25,460+i*74);entry=Gtk.Entry();entry.set_text(value);add(entry,'field_'+name,25,481+i*74,270,36)
+  tasks.append(('entry','Click inside the Folder text field.','field_Folder'))
+  for i,text in enumerate(['Enable backups','Show hidden files','Automatic updates']):
+   add(Gtk.CheckButton(label=text),'check_'+text,25,250+i*42,250,32)
+  tasks.append(('checkbox','Click the checkbox labeled Enable backups.','check_Enable backups'))
+  label('Planning spreadsheet',360,230)
+  store=Gtk.ListStore(*([str]*6))
+  for n in range(1,7):store.append([str(n)]+[str(rng.randrange(10,999)) for _ in range(5)])
+  tree=Gtk.TreeView(model=store);tree.set_headers_visible(True)
+  columns=[]
+  for i,text in enumerate(['#','A','B','C','D','E']):
+   col=Gtk.TreeViewColumn(text,Gtk.CellRendererText(),text=i);col.set_fixed_width(40 if i==0 else 115);col.set_sizing(Gtk.TreeViewColumnSizing.FIXED);tree.append_column(col);columns.append(col)
+  tree.set_grid_lines(Gtk.TreeViewGridLines.BOTH);tree.set_size_request(630,220);fixed.put(tree,360,265)
+  def tree_click(w,event):
+   info=w.get_path_at_pos(round(event.x),round(event.y))
+   if info:
+    path,col,_,_=info;clicked['ref']=f'cell_{path.get_indices()[0]+1}_{columns.index(col)}'
+   return False
+  tree.connect('button-press-event',tree_click)
+  tasks.append(('table_cell','Click spreadsheet cell C4 (column C, row 4).','cell_4_3'))
+  win.show_all();pump()
+  for category,task,ref in tasks:
+   capture_started=time.perf_counter()
+   root=Gdk.get_default_root_window();pb=Gdk.pixbuf_get_from_window(root,0,0,1280,800)
+   fixture_id=f'native_{category}_{layout+1}';image_name=fixture_id+'.png';pb.savev(str(OUT/('replay_'+image_name)),'png',[],[])
+   capture_seconds=time.perf_counter()-capture_started
+   origin=win.get_window().get_origin();wx,wy=origin[-2:]
+   if ref.startswith('cell_'):
+    area=tree.get_cell_area(Gtk.TreePath.new_from_indices([3]),columns[3]);tx,ty=tree.get_bin_window().get_origin()[-2:]
+    box={'x':tx+area.x,'y':ty+area.y,'width':area.width,'height':area.height}
+   else:
+    widget=widgets[ref];tx,ty=widget.translate_coordinates(win,0,0);a=widget.get_allocation()
+    box={'x':wx+tx,'y':wy+ty,'width':a.width,'height':a.height}
+   fixture={'id':fixture_id,'category':'native_'+category,'size':[1280,800],'task':task,'image':image_name,'target_ref':ref,'boxes':{ref:box},'base_dir':OUT}
+   fixtures.append({k:str(v) if isinstance(v,Path) else v for k,v in fixture.items()})
+   for prediction in [r for r in replay_rows if r['fixture']==fixture_id]:
+    model=prediction['model'];style=prediction['style'];result=dict(prediction);clicked['ref']=None
+    if result['point']:result['input_dispatch_seconds']=mouse_click(result['point'])
+    result['capture_encode_seconds']=capture_seconds
+    result['actual_clicked_ref']=clicked['ref'];result['actual_hit']=clicked['ref']==ref
+    result['isolated_display']=True;rows.append(result)
+    (OUT/'replay_results.json').write_text(json.dumps(rows,indent=2))
+    print(json.dumps({'native_fixture':fixture_id,'model':model,'actual_hit':result['actual_hit'],'clicked_ref':clicked['ref'],'target_ref':ref}),flush=True)
+  win.destroy();pump()
+ (OUT/'replay_fixtures.json').write_text(json.dumps(fixtures,indent=2))
+ summary={}
+ for model in sorted({r['model'] for r in rows}):
+  g=[r for r in rows if r['model']==model]
+  summary[model]={'n':len(g),'actual_hits':sum(r['actual_hit'] for r in g),'bbox_hits':sum(r['hit'] for r in g),'median_seconds':round(statistics.median(r['seconds'] for r in g),3),'failures':[{'fixture':r['fixture'],'parsed':r['parsed'],'actual_ref':r['actual_clicked_ref']} for r in g if not r['actual_hit']]}
+ (OUT/'replay_summary.json').write_text(json.dumps(summary,indent=2));print('NATIVE_LINUX '+json.dumps(summary),flush=True)
+ timings={'capture_encode_median_seconds':round(statistics.median(r['capture_encode_seconds'] for r in rows),4),'input_event_to_callback_median_seconds':round(statistics.median(r['input_dispatch_seconds'] for r in rows),4),'settle_delay_excluded_seconds':.15,'note':'Local isolated Xvfb/GTK measurements; file encoding included; model calls timed separately.'}
+ (OUT/'local_desktop_timing.json').write_text(json.dumps(timings,indent=2));print('LOCAL_TIMING '+json.dumps(timings),flush=True)
+ xlib.XCloseDisplay(xdisplay)
+finally:
+ proc.terminate()
+ try:proc.wait(timeout=5)
+ except subprocess.TimeoutExpired:proc.kill();proc.wait()
+ log.close()

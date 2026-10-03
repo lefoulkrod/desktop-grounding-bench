@@ -1,0 +1,1174 @@
+{
+  "deepseek-v4.1-flash:cloud": {
+    "hits": 180,
+    "n": 180,
+    "median_model_seconds": 0.378,
+    "mean_model_seconds": 0.402,
+    "correct_per_model_second": 2.485,
+    "runs": {
+      "1": {
+        "hits": 60,
+        "n": 60
+      },
+      "2": {
+        "hits": 60,
+        "n": 60
+      },
+      "3": {
+        "hits": 60,
+        "n": 60
+      }
+    },
+    "absent_correct": 18,
+    "absent_n": 18,
+    "failures": []
+  },
+  "glm-5.3-flash:cloud": {
+    "hits": 0,
+    "n": 180,
+    "median_model_seconds": 1.416,
+    "mean_model_seconds": 1.469,
+    "correct_per_model_second": 0.0,
+    "runs": {
+      "1": {
+        "hits": 0,
+        "n": 60
+      },
+      "2": {
+        "hits": 0,
+        "n": 60
+      },
+      "3": {
+        "hits": 0,
+        "n": 60
+      }
+    },
+    "absent_correct": 0,
+    "absent_n": 18,
+    "failures": [
+      {
+        "fixture": "large_buttons_800x600",
+        "run": 1,
+        "response": "The user wants me to find the \"Save\" button and return its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the Save button is at the bottom left area. It appears to span roughly from x=190 to x=340, and y=490 to y=538 in the image coordinates (800x600 image).\n\nThe button center: x = (190+340)/2 = 265, y = (490+538)/2 = 514.\n\nNormalized: x = 265/800 * 1000 = 331.25 \u2248 331, y = 514/600 * 1000 = 856.67 \u2248 857.\n\nLet me look more carefully. The Save button appears to be at approximately x from 190 to 340, y from 490 to 538. Center around (265, 514).\n\nNormalized: x \u2248 331, y \u2248 857.{\"x\": 331, \"y\": 857}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1024x768",
+        "run": 1,
+        "response": "The Save button is at the bottom left of the content area. It spans roughly from x=190 to x=340, y=659 to y=705. Center: x \u2248 265, y \u2248 682.</think>{\"x\": 265, \"y\": 682}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1280x720",
+        "run": 1,
+        "response": "The Save button is at the bottom right. Its bounding box appears to be roughly x from 1065 to 1214, y from 611 to 657. Center: x \u2248 (1065+1214)/2 = 1139.5, y \u2248 (611+657)/2 = 634.\n\nNormalized to 0-1000: image width 1280, height 720. x = 1139.5/1280*1000 \u2248 890.2. y = 634/720*1000 \u2248 880.6.</think>{\"x\": 890, \"y\": 881}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1920x1080",
+        "run": 1,
+        "response": "The Save button is the blue button in the center. It appears to span roughly from x=910 to x=1060, y=531 to y=577. Center approximately x=985, y=554.</think>{\"x\": 985, \"y\": 554}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_800x600",
+        "run": 1,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar, not the \"Save\" button.\n\nLooking at the image, there's a toolbar with buttons: Share, Open, Close, Redo, Replace, Export, Save, Help, Print in the first row, and Find, Save As, Undo in the second row.\n\nThe \"Save As\" button is in the second row, between \"Find\" and \"Undo\". It appears to be located around x=290, y=176 in the image.\n\nLet me estimate the coordinates. The image is 800x600. The \"Save As\" button appears to span roughly from x=262 to x=318, and y=163 to y=189. The center would be around x=290, y=176.\n\nNormalized to 0-1000: x = 290/800 * 1000 = 362.5, y = 176/600 * 1000 = 293.3.\n\nLet me look more carefully. The second row buttons: \"Find\" is around x=205-248, \"Save As\" around x=262-318, \"Undo\" around x=330-378.\n\nThe \"Save As\" button center: x \u2248 290, y \u2248 176.\n\nNormalized: x = 290/800 * 1000 = 362.5 \u2248 363, y = 176/600 * 1000 = 293.3 \u2248 293.{\"x\": 363, \"y\": 293}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1024x768",
+        "run": 1,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the image, there's a toolbar with buttons: Close, Open, Redo, Save, Replace, Save As, Export, Print, Help, Share, Undo, Find.\n\nThe \"Save As\" button is located at approximately x=536, y=142 in the image. Let me estimate more precisely.\n\nThe buttons in the toolbar row at y\u2248142:\n- Close: ~224\n- Open: ~284\n- Redo: ~343\n- Save: ~402\n- Replace: ~466\n- Save As: ~536\n- Export: ~600\n- Print: ~660\n- Help: ~719\n- Share: ~777\n- Undo: ~836\n- Find: ~895\n\nThe \"Save As\" button spans roughly from x=507 to x=565, so center is around x=536. The y center is around 142.\n\nNormalized to 0-1000: image is 1024 wide, 768 tall. So x = 536/1024 * 1000 \u2248 523. y = 142/768 * 1000 \u2248 185.\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I should normalize the pixel coordinates to 0-1000 range.\n\nx = 536/1024 * 1000 \u2248 523.4 \u2192 523\ny = 142/768 * 1000 \u2248 184.9 \u2192 185\n\nSo the answer is {\"x\": 523, \"y\": 185}.{\"x\": 523, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1280x720",
+        "run": 1,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the image, there's a toolbar with buttons: Undo, Save As, Find, Print, Close, Open, Redo, Replace, Save, Help, Share, Export.\n\nThe \"Save As\" button is the second button. It appears to be located around x=290, y=141 in the image. The image is 1280x720 pixels.\n\nThe Save As button spans roughly from x=260 to x=321, centered around x=290. Vertically it's centered around y=141.\n\nNormalized to 0-1000: x = 290/1280 * 1000 \u2248 226.6, y = 141/720 * 1000 \u2248 195.8.\n\nLet me look more carefully. The button \"Save As\" text is at approximately x=290, y=141. The button box appears to span from about x=260 to x=321, y=128 to y=155.\n\nCenter: x \u2248 290, y \u2248 141.\n\nNormalized: x = 290/1280 * 1000 = 226.56 \u2248 227, y = 141/720 * 1000 = 195.83 \u2248 196.</think>{\"x\": 227, \"y\": 196}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1920x1080",
+        "run": 1,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the screenshot, I can see a toolbar with buttons: Replace, Open, Close, Help, Undo, Export, Save As, Find, Share, Redo, Save, Print.\n\nThe \"Save As\" button is located at approximately x=596, y=141 in the image. The image appears to be 1920 wide based on typical screenshots. Let me estimate the coordinates.\n\nThe Save As button appears to be centered around x=596, y=141 in pixel coordinates. Normalizing to 0-1000: x = 596/1920 * 1000 \u2248 310, y = 141/1080 * 1000 \u2248 131.\n\nWait, I need to be careful. The image dimensions - the screenshot appears to be 1920x1080. The Save As button text is at around x=596, y=141.\n\nNormalized: x = 596/1920 \u2248 0.310 \u2192 310, y = 141/1080 \u2248 0.1306 \u2192 131.\n\nSo the answer is {\"x\": 310, \"y\": 131}.</think>{\"x\": 310, \"y\": 131}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_800x600",
+        "run": 1,
+        "response": "The toolbar has icons: refresh, X, folder, search, gear, plus, download, trash can. The trash can icon is the last one at approximately x=459, y=142 in the image. The image is 800x600 presumably. Normalized coordinates: x = 459/800 * 1000 \u2248 574, y = 142/600 * 1000 \u2248 237.\n\nLet me estimate more carefully. The toolbar buttons: refresh at ~213, X at ~248, folder at ~284, search at ~319, gear at ~354, plus at ~389, download at ~424, trash at ~459. The trash button spans roughly x 447-471, y 130-155. Center ~459, 142.\n\nNormalized: x = 459/800*1000 = 573.75 \u2248 574. y = 142/600*1000 = 236.7 \u2248 237.</think>{\"x\": 574, \"y\": 237}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1024x768",
+        "run": 1,
+        "response": "The toolbar has icons: refresh, plus, search, download, X, gear, folder, trash can. The trash can icon is the last one at approximately x=459, y=142 in the image. Normalized to 0-1000: image is 1024 wide, 768 tall. x = 459/1024 * 1000 \u2248 448. y = 142/768 * 1000 \u2248 185.\n\nLet me estimate the trash icon center. The icons appear at: refresh ~213, plus ~249, search ~283, download ~319, X ~354, gear ~388, folder ~424, trash ~459. The trash button spans roughly x 447-471, y 130-155. Center ~459, 142.\n\nNormalized: x = 459/1024*1000 = 448.2, y = 142/768*1000 = 184.9.</think>{\"x\": 448, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1280x720",
+        "run": 1,
+        "response": "The toolbar has icons: download (213, 142), trash (248, 142), folder (283, 142), refresh (319, 142), plus (354, 142), gear (388, 142), X (423, 142), search (458, 142).\n\nThe trash-can icon is the second one, at approximately x=248, y=142.</think>{\"x\": 248, \"y\": 142}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1920x1080",
+        "run": 1,
+        "response": "The toolbar has icons: X (close), trash can, search, refresh, download, plus, folder, gear. The trash can icon is the second icon at approximately x=249, y=141 in the image. The image is 1920 wide? Let me estimate coordinates.\n\nThe toolbar icons: X at ~213, trash at ~249, search at ~283, refresh at ~319, download at ~353, plus at ~389, folder at ~424, gear at ~458. Y ~141.\n\nNormalized to 0-1000: x = 249/1920 * 1000 \u2248 130. y = 141/1080 * 1000 \u2248 131.\n\nSo {\"x\": 130, \"y\": 131}.</think>{\"x\": 130, \"y\": 131}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_800x600",
+        "run": 1,
+        "response": "The archive.zip row's Delete button. Looking at the image, the archive.zip row is at y\u2248396. The Delete button for that row is at approximately x=627, y=396. The button spans roughly x 596-658, y 385-407. Center around (627, 396).</think>{\"x\": 627, \"y\": 396}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1024x768",
+        "run": 1,
+        "response": "The user wants me to identify the Delete button on the archive.zip row. Looking at the image, the archive.zip row is the first row in the table. The Delete button for that row appears to be at approximately x=782, y=181 in the image coordinates.\n\nThe image is 1024x768. The Delete button on the archive.zip row is centered around x=782, y=181.\n\nNormalized to 0-1000: x = 782/1024 * 1000 \u2248 764, y = 181/768 * 1000 \u2248 236.\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I should normalize the pixel coordinates to 0-1000 range.\n\nx = 782/1024 * 1000 \u2248 763.7 \u2248 764\ny = 181/768 * 1000 \u2248 235.7 \u2248 236\n\nSo the answer is {\"x\": 764, \"y\": 236}.</think>{\"x\": 764, \"y\": 236}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1280x720",
+        "run": 1,
+        "response": "The archive.zip row's Delete button. The row for archive.zip is at y\u2248310. The Delete button for that row appears centered at approximately x=961, y=310. Normalized: image width 1280, height 720. x = 961/1280*1000 \u2248 750.8. y = 310/720*1000 \u2248 430.6.\n\nLet me check the button positions. Buttons at y=181, 224, 267, 310, 353, 396 in pixels. The archive.zip row is the 4th row, y=310. Button center x \u2248 961.\n\nNormalized: x = 961/1280 = 0.7508 \u2192 751. y = 310/720 = 0.4306 \u2192 431.</think>{\"x\": 751, \"y\": 431}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1920x1080",
+        "run": 1,
+        "response": "The archive.zip row's Delete button is at approximately x=1408, y=396 in the image. The image is 1920x1080 presumably. Normalized to 0-1000: x = 1408/1920*1000 \u2248 733, y = 396/1080*1000 \u2248 367.\n\nLet me check the button position. The Delete button for archive.zip row appears centered around (1408, 396). Normalized: x \u2248 733, y \u2248 367.{\"x\": 733, \"y\": 367}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_800x600",
+        "run": 1,
+        "response": "The Filename text field in the Save document dialog. The field with \"Untitled.txt\" spans from about x=168 to x=631, y=239 to y=272. Center: x \u2248 (168+631)/2 = 399.5, y \u2248 (239+272)/2 = 255.5. So around (400, 256).</think>{\"x\": 400, \"y\": 256}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1024x768",
+        "run": 1,
+        "response": "The Filename text field in the Save document dialog. The field with \"Untitled.txt\" is at approximately x from 281 to 743, y from 323 to 356. Center: x \u2248 (281+743)/2 = 512, y \u2248 (323+356)/2 = 339.5 \u2248 340.{\"x\": 512, \"y\": 340}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1280x720",
+        "run": 1,
+        "response": "The Filename text field in the Save document dialog. The input field with \"Untitled.txt\" spans from x\u2248408 to x\u2248871, y\u2248299 to y\u2248332. Center: x \u2248 (408+871)/2 = 639.5, y \u2248 (299+332)/2 = 315.5. Normalized to 0-1000: image width 1280, height 720. x = 639.5/1280*1000 \u2248 499.6, y = 315.5/720*1000 \u2248 438.2.</think>{\"x\": 500, \"y\": 438}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1920x1080",
+        "run": 1,
+        "response": "The Filename text field in the Save document dialog. The dialog is centered around x=960. The Filename input field spans from about x=728 to x=1191, with text \"Untitled.txt\". The field's vertical position: label \"Filename\" at y\u2248467, input field at y\u2248496 (center). The input box appears to span from y\u2248480 to y\u2248511, so center y\u2248496.\n\nHorizontal center: field spans 728 to 1191, center \u2248 959.5, so x\u2248960.\n\nNormalized coordinates: x = 960/1920 * 1000 = 500. y = 496/1080 * 1000 \u2248 459.3.\n\nLet me estimate more carefully. The image is 1920x1080 presumably. The input field top edge around y=480, bottom around y=511. Center y \u2248 495.5. Normalized: 495.5/1080*1000 \u2248 458.8.\n\nSo {\"x\": 500, \"y\": 459}.{\"x\": 500, \"y\": 459}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_800x600",
+        "run": 1,
+        "response": "I need to find cell C4 in the spreadsheet. Column C is the third column, row 4 is the fourth data row.\n\nLooking at the table:\n- Column headers: A (~241), B (~348), C (~454), D (~560), E (~665)\n- Row 4 is at y ~369\n\nColumn C cells: the cell spans from about x=441 to x=541, centered around x=490. The value \"365\" is at x~460.\n\nRow 4: y range approximately 351-387, center ~369.\n\nSo the center of cell C4 is approximately x=491, y=369.</think>{\"x\": 491, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1024x768",
+        "run": 1,
+        "response": "The spreadsheet has columns A, B, C, D, E and rows 1-6. Cell C4 is column C, row 4.\n\nColumn C header is at x\u2248543. The column C cells span roughly from x\u2248530 to x\u2248680. Row 4 contains \"291\" at x\u2248550, y\u2248369.\n\nThe cell C4 spans from about x=530 to x=680, y=350 to y=390. Center would be around x=605, y=369.\n\nLet me estimate more carefully. Column headers: A at 242, B at 393, C at 543, D at 694, E at 845. These are centered in their columns. Column width appears to be about 150px. So column C spans from about 530-5 to 680-5... Actually header C at 543, so column C center is 543. Column boundaries: roughly 468-618? Wait, B at 393, C at 543, difference 150. So column C spans 468 to 618? Hmm, but cell content \"291\" is at x\u2248550, which is left-aligned with padding. Cell C2 \"447\" at 550, C3 \"505\" at 550.\n\nRow 1 y\u2248243, row 2 y\u2248285, row 3 y\u2248327, row 4 y\u2248369, row 5 y\u2248411, row 6 y\u2248453. Row height ~42.\n\nRow 4 spans y\u2248348 to y\u2248390, center y\u2248369.\n\nColumn C: header at 543. Columns likely span: table starts at x\u2248188 (row number column ~188-230), then A from 230 to 380, B 380 to 530, C 530 to 680, D 680 to 830, E 830 to 983. Header C centered at 543? That doesn't match center of 530-680 which is 605. Hmm.\n\nWait, headers might be left-aligned too. \"A\" at x=242, \"B\" at 393, \"C\" at 543, \"D\" at 694, \"E\" at 845. Differences: 151, 150, 151, 151. If left-aligned with padding ~12px, column A starts at 230, B at 381, C at 531, D at 682, E at 833. Column width ~150. So C spans 531 to 681, center x \u2248 606.\n\nCell content \"291\" at x\u2248550 (left-aligned with padding ~19px from 531).\n\nSo C4 center: x\u2248606, y\u2248369.\n\nNormalized to 0-1000: image is 1024 wide, 768 tall. x = 606/1024*1000 \u2248 592. y = 369/768*1000 \u2248 480.\n\nWait, the instruction says use native image coordinates normalized to 0-1000. So normalize: x_norm = 606/1024*1000 = 591.8 \u2248 592. y_norm = 369/768*1000 = 480.5 \u2248 480.\n\nSo answer: {\"x\": 592, \"y\": 480}.{\"x\": 592, \"y\": 480}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1280x720",
+        "run": 1,
+        "response": "I need to find cell C4 in the spreadsheet. Column C header is at x\u2248645. Row 4 is at y\u2248369.\n\nLooking at the table:\n- Column headers: A at x\u2248242, B at x\u2248444, C at x\u2248645, D at x\u2248848, E at x\u22481049\n- Row 1: y\u2248244, Row 2: y\u2248285, Row 3: y\u2248327, Row 4: y\u2248369, Row 5: y\u2248411, Row 6: y\u2248453\n\nCell C4 contains \"154\" at approximately (653, 369). The cell spans from x\u2248633 to x\u2248835, and y\u2248349 to y\u2248390. The visual center would be around x\u2248734, y\u2248369.\n\nWait, the question asks for the visual center of the control (the cell). The cell C4 spans from about x=633 to x=835 (column C boundaries), so center x \u2248 734. Row 4 spans y\u2248349 to y\u2248390, center y \u2248 369.\n\nSo the answer is {\"x\": 734, \"y\": 369}.</think>{\"x\": 734, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1920x1080",
+        "run": 1,
+        "response": "The spreadsheet has columns A-E. Column C header is at x\u2248902. Row 4 contains value 458 in column C at y\u2248369. The cell C4 spans from about x=889 to x=1219, y from about 350 to 389. Center approximately x=1054, y=369.\n\nLet me estimate: Column C header at 902, column D header at 1232. So column C spans roughly from 889 to 1219. Center x \u2248 1054. Row 4: row header at y=369, row 5 at y=411. Row 4 spans roughly 350-389, center y \u2248 369.\n\nSo answer: {\"x\": 1054, \"y\": 369}</think>{\"x\": 1054, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_960x640",
+        "run": 1,
+        "response": "The Export button is located at approximately x from 430 to 580, y from 100 to 147. Center: x = (430+580)/2 = 505, y = (100+147)/2 = 123.5. Let me estimate more carefully. The button appears to span from about x=430 to x=580, y=100 to y=147. Center around (505, 123).</think>{\"x\": 505, \"y\": 123}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1366x768",
+        "run": 1,
+        "response": "The Export button is at the top right area. It spans roughly from x=1152 to x=1300, y=156 to y=202. Center: x=(1152+1300)/2=1226, y=(156+202)/2=179. Normalized to 0-1000: image width 1366, height 768. x=1226/1366*1000\u2248897.7, y=179/768*1000\u2248233.1.</think>{\"x\": 898, \"y\": 233}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1600x900",
+        "run": 1,
+        "response": "The Export button is at the top right area. Its bounding box appears to be roughly x from 1385 to 1535, y from 156 to 202. Center: x \u2248 (1385+1535)/2 = 1460, y \u2248 (156+202)/2 = 179.\n\nNormalized to 0-1000: image width is 1600, height is 900. So x = 1460/1600*1000 = 912.5, y = 179/900*1000 = 198.9.\n\nLet me estimate more carefully. The button spans approximately x 1385\u20131535, y 156\u2013202. Center x = 1460 \u2192 912.5 \u2248 913. Center y = 179 \u2192 198.9 \u2248 199.{\"x\": 913, \"y\": 199}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1920x1200",
+        "run": 1,
+        "response": "The Export button is the blue button in the middle of the screen. It appears to span roughly from x=910 to x=1060, and y=592 to y=637. Center approximately x=985, y=614.\n\nLet me estimate more carefully. The button text \"Export\" is at around x=985, y=614. The button spans from about 910 to 1060 horizontally, so center x \u2248 985. Vertically from about 592 to 637, center y \u2248 614.\n\nNormalized to 0-1000: image width 1920, height 1200. x = 985/1920 * 1000 \u2248 513. y = 614/1200 * 1000 \u2248 512.\n\nWait, the coordinates should be normalized to 0-1000 for both axes. So x = 985/1920 \u2248 0.513 \u2192 513. y = 614/1200 \u2248 0.512 \u2192 512.</think>{\"x\": 513, \"y\": 512}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_960x640",
+        "run": 1,
+        "response": "The user wants me to find the \"Replace\" button in the editor toolbar and return its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the toolbar has buttons: Print, Share, Export, Save As, Help, Replace, Undo, Save, Find, Open, Close, and Redo on the second row.\n\nThe Replace button appears to be located around x=537, y=142 in the image. The image is 960 wide and 640 tall.\n\nThe Replace button spans roughly from x=508 to x=566, so center x \u2248 537. In normalized coordinates: 537/960 * 1000 \u2248 559.\n\nThe y center is about 142. In normalized: 142/640 * 1000 \u2248 222.\n\nLet me look more carefully. The buttons in the first row: Print (~224), Share (~284), Export (~343), Save As (~408), Help (~472), Replace (~537), Undo (~601), Save (~660), Find (~720), Open (~777), Close (~836).\n\nReplace button: appears to span from about x=508 to x=566, center \u2248 537. Normalized x = 537/960*1000 \u2248 559.4.\n\nY: buttons are at y \u2248 128-156, center \u2248 142. Normalized y = 142/640*1000 \u2248 221.9.\n\nSo the answer is {\"x\": 559, \"y\": 222}.{\"x\": 559, \"y\": 222}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1366x768",
+        "run": 1,
+        "response": "The user wants me to find the \"Replace\" button in the editor toolbar and give its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the toolbar has buttons: Export, Print, Find, Replace, Save As, Share, Help, Close, Redo, Undo, Save, Open.\n\nThe Replace button appears to be at approximately x=408, y=141 in the image (which is 1366x768 presumably).\n\nLet me estimate: The buttons are at y\u2248141. The Replace button spans roughly from x=380 to x=437. Center around x=408, y=141.\n\nNormalized: x = 408/1366 * 1000 \u2248 299. y = 141/768 * 1000 \u2248 184.\n\nLet me check the image dimensions. The image appears to be 1366 wide and 768 tall based on typical rendering. The status bar at bottom is at y\u2248759.\n\nReplace button: text \"Replace\" centered around x=408. The button box appears from ~380 to ~437, so center ~408.5. y center ~141.\n\nNormalized x: 408/1366 \u2248 0.2987 \u2192 299\nNormalized y: 141/768 \u2248 0.1836 \u2192 184\n\nSo {\"x\": 299, \"y\": 184}.{\"x\": 299, \"y\": 184}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1600x900",
+        "run": 1,
+        "response": "The Replace button in the toolbar. Looking at the image, the toolbar has buttons: Replace, Save, Close, Save As, Open, Export, Redo, Print, Share, Undo, Help, Find.\n\nThe Replace button appears to be at approximately x=230, y=142 in the image. The image is 1600 wide? Let me estimate. The image width appears to be 1600px based on typical rendering. The Replace button spans roughly from x=202 to x=259, centered around x=230. Vertically centered around y=142.\n\nNormalized to 0-1000: x = 230/1600 * 1000 = 143.75, y = 142/900 * 1000 = 157.8.\n\nWait, I need to know the image dimensions. The screenshot appears to be 1600x900 based on the layout. Let me check: the header bar height ~36px, sidebar width ~148px. The image seems 1600 wide, 900 tall.\n\nReplace button center: approximately x=230, y=142. Normalized: x = 230/1600*1000 \u2248 144, y = 142/900*1000 \u2248 158.{\"x\": 144, \"y\": 158}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1920x1200",
+        "run": 1,
+        "response": "The Replace button is in the toolbar. Looking at the image, the Replace button appears at approximately x=230, y=141 in the screenshot. The image is 1920 wide. Normalized: x = 230/1920*1000 \u2248 120, y = 141/1200*1000 \u2248 117.5.\n\nLet me estimate more carefully. The button \"Replace\" spans roughly from x=202 to x=259, center ~230. Height around y=128 to y=155, center ~141.\n\nNormalized: x = 230/1920*1000 = 119.8 \u2248 120. y = 141/1200*1000 = 117.5 \u2248 118.</think>{\"x\": 120, \"y\": 118}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_960x640",
+        "run": 1,
+        "response": "The user wants me to find the magnifying-glass (search) icon in the toolbar. Looking at the toolbar, there are several icons: refresh (\u21bb), trash, magnifying glass (\ud83d\udd0d), X, folder, gear, plus, download.\n\nThe magnifying glass icon appears to be the third icon in the toolbar. Let me estimate its position.\n\nThe toolbar starts around x=190 and the icons are spaced. The icons appear at approximately:\n- Refresh: x\u2248213\n- Trash: x\u2248249\n- Magnifying glass: x\u2248283\n- X: x\u2248318\n- Folder: x\u2248353\n- Gear: x\u2248388\n- Plus: x\u2248424\n- Download: x\u2248459\n\nThe y coordinate is around 141.\n\nThe magnifying glass icon center appears to be at approximately x=283, y=141.\n\nLet me look more carefully. The toolbar box spans from about x=190 to x=919, y=118 to y=166. The icons are inside. The magnifying glass is the third icon, at around x=283, y=141.\n\nNormalized to 0-1000: x = 283/960 * 1000 \u2248 295, y = 141/640 * 1000 \u2248 220.\n\nWait, the image is 960x640 based on the description. Let me estimate coordinates in the image directly.\n\nThe magnifying glass icon: it's at approximately x=283, y=141 in a 960-wide, 640-tall image. Normalized: x = 283/960*1000 \u2248 295, y = 141/640*1000 \u2248 220.\n\nSo the answer is {\"x\": 295, \"y\": 220}.</think>{\"x\": 295, \"y\": 220}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1366x768",
+        "run": 1,
+        "response": "The toolbar has icons: X (close), + (add), trash, refresh, gear, folder, magnifying glass (search), download. The magnifying glass icon is at approximately x=423, y=142 in the image. The image is 1366 wide, 767 tall. Normalized: x = 423/1366 * 1000 \u2248 309.7, y = 142/767 * 1000 \u2248 185.1.\n\nLet me estimate the icon positions. The toolbar buttons: X at ~213, + at ~249, trash at ~284, refresh at ~319, gear at ~353, folder at ~388, search at ~423, download at ~458. The search icon center around x=423, y=142.\n\nNormalized x: 423/1366 = 0.3097 \u2192 310. y: 142/767 = 0.1851 \u2192 185.</think>{\"x\": 310, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1600x900",
+        "run": 1,
+        "response": "The magnifying-glass icon is the first button in the toolbar. The toolbar buttons appear at around y=142 in the image. The first button (magnifying glass) is at approximately x=213, y=142.\n\nImage dimensions appear to be 1600x900 based on typical layout. Let me estimate: the toolbar row is at y\u2248142. The first button center is at x\u2248213.\n\nNormalized: x = 213/1600 * 1000 \u2248 133, y = 142/900 * 1000 \u2248 158.\n\nLet me look more carefully. The buttons: search at ~213, X at ~248, trash at ~284, refresh at ~319, gear at ~353, folder at ~389, download at ~424, plus at ~459. The toolbar spans from x=190 to x=1558. The first button box is roughly x=200-227, center ~213.\n\ny center of buttons ~142.\n\nNormalized x: 213/1600 = 0.1331 \u2192 133. y: 142/900 = 0.1578 \u2192 158.{\"x\": 133, \"y\": 158}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1920x1200",
+        "run": 1,
+        "response": "The toolbar has icons: gear (212, 141), trash (249, 141), download (284, 141), plus (319, 141), refresh (354, 141), X (389, 141), folder (424, 141), magnifying glass (459, 141).\n\nThe magnifying glass icon is the last one at approximately x=459, y=141. Normalized to 0-1000: image width is 1920, height 1200. x = 459/1920*1000 \u2248 239. y = 141/1200*1000 \u2248 117.5.\n\nLet me check the icon positions more carefully. The toolbar buttons appear at roughly x=212, 249, 284, 319, 354, 389, 424, 459 in pixel coordinates. The magnifying glass is at ~459 px. Normalized: 459/1920 = 0.239 \u2192 239. y = 141/1200 = 0.1175 \u2192 118.</think>{\"x\": 239, \"y\": 118}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_960x640",
+        "run": 1,
+        "response": "The Delete button for report.pdf row is at approximately x=739, y=181 in the image. The image is 960 wide and 640 tall. Normalized: x = 739/960 * 1000 \u2248 770, y = 181/640 * 1000 \u2248 283.\n\nLet me estimate the button center more carefully. The button appears to span roughly x from 708 to 770, y from 170 to 192. Center \u2248 (739, 181). Normalized: x \u2248 770, y \u2248 283.{\"x\": 770, \"y\": 283}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1366x768",
+        "run": 1,
+        "response": "The user wants me to find the Delete button on the report.pdf row. Looking at the image, the report.pdf row is the 4th row. The Delete button for that row appears to be centered around x=1022, y=310 in the image coordinates.\n\nThe image is 1366 wide and 768 tall (based on typical dimensions). Let me estimate the button position. The Delete button for report.pdf row appears at approximately x=1022, y=310.\n\nNormalized to 0-1000: x = 1022/1366 * 1000 \u2248 748, y = 310/768 * 1000 \u2248 404.\n\nWait, but the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y. Do not convert into pixels or do resolution arithmetic.\" This means I should just give the coordinates in a 0-1000 scale directly, estimating visually.\n\nThe button center appears to be at roughly x=748, y=404 in normalized coordinates. Let me look more carefully.\n\nThe report.pdf row: filename at y\u2248310, size 412 KB at y\u2248310, Delete button at y\u2248310. The button spans roughly x=990-1054, so center x\u22481022. In normalized: 1022/1366*1000 \u2248 748.\n\ny: 310/768*1000 \u2248 404.\n\nSo the answer is {\"x\": 748, \"y\": 404}.</think>{\"x\": 748, \"y\": 404}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1600x900",
+        "run": 1,
+        "response": "The report.pdf row's Delete button. The button appears at around x=1185, y=267 in the image. Image width appears to be 1600, height 900. Normalized: x = 1185/1600*1000 \u2248 740.6, y = 267/900*1000 \u2248 296.7.\n\nLet me estimate more carefully. The Delete button for report.pdf row: the row is at y\u2248267. Button spans roughly x 1155-1216, y 255-279. Center \u2248 (1185, 267). Normalized: x \u2248 741, y \u2248 297.</think>{\"x\": 741, \"y\": 297}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1920x1200",
+        "run": 1,
+        "response": "The report.pdf row has a Delete button. The row is at y\u2248353. The Delete button for report.pdf is at approximately x=1408, y=353. Normalized coordinates: image width 1920, height 1200. The button center: x \u2248 1408/1920 * 1000 \u2248 733, y \u2248 353/1200 * 1000 \u2248 294.\n\nLet me check the button positions. The Delete buttons appear at x around 1378-1440, centered ~1408. For report.pdf row, y \u2248 353.\n\nNormalized: x = 1408/1920*1000 = 733.3, y = 353/1200*1000 = 294.2.</think>{\"x\": 733, \"y\": 294}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_960x640",
+        "run": 1,
+        "response": "The Folder text field is the input containing \"/home/user/Documents\". Its bounding box appears to span from x\u2248248 to x\u2248711, y\u2248323 to y\u2248356. Center: x = (248+711)/2 \u2248 479.5, y = (323+356)/2 \u2248 339.5.\n\nNormalized to 0-1000: image width 960, height 640. But the instruction says use native image coordinates normalized to 0-1000 for x and y. So x = 479.5/960*1000 \u2248 499.5, y = 339.5/640*1000 \u2248 530.5.\n\nWait \u2014 \"native image coordinates normalized to 0\u20131000\" means scale the pixel coordinates to 0-1000 range. So x \u2248 500, y \u2248 530.{\"x\": 500, \"y\": 530}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1366x768",
+        "run": 1,
+        "response": "The Folder text field in the Save document dialog. The dialog spans roughly x from 429 to 937, y from 240 to 527. The Folder label is at y\u2248374, and the text field is below it, spanning from x\u2248451 to x\u2248914, y\u2248386 to y\u2248420. The center of the field: x = (451+914)/2 \u2248 682, y = (386+420)/2 \u2248 403.\n\nNormalized to 0-1000: image width 1366, height 768. x = 682/1366*1000 \u2248 499.3. y = 403/768*1000 \u2248 524.7.\n\nLet me estimate more precisely. The field appears to span from about x=451 to x=914 in pixels. Center x \u2248 682.5. Normalized: 682.5/1366 = 0.4996 \u2192 500. y center \u2248 403. 403/768 = 0.5247 \u2192 525.</think>{\"x\": 500, \"y\": 525}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1600x900",
+        "run": 1,
+        "response": "The Folder text field in the Save document dialog. The field spans from x\u2248568 to x\u22481032, y\u2248453 to y\u2248486. Center: x = (568+1032)/2 = 800, y = (453+486)/2 \u2248 469.5. Normalized to 0-1000: image width 1600, height 900. x = 800/1600*1000 = 500. y = 469.5/900*1000 \u2248 521.7.</think>{\"x\": 500, \"y\": 522}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1920x1200",
+        "run": 1,
+        "response": "The Folder text field in the Save document dialog. The dialog is centered around x=960. The Folder field appears to span from about x=730 to x=1190, with the label \"Folder\" at y=590 and the input field at y=619. The input field center: x \u2248 (730+1190)/2 = 960, y \u2248 619.\n\nLet me estimate more precisely. The Filename field is at y\u2248555, Folder field at y\u2248619. The field spans roughly x=730 to x=1190. Center x = 960, y = 619.\n\nNormalized to 0-1000: image is 1920x1200 presumably. x = 960/1920*1000 = 500. y = 619/1200*1000 \u2248 516.\n\nWait, the instruction says return native image coordinates normalized to 0-1000. So x=500, y\u2248516.</think>{\"x\": 500, \"y\": 516}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_960x640",
+        "run": 1,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Column D header is at x\u2248656. Row 3 is at y\u2248327. Cell D3 contains 636.\n\nColumn D spans roughly from x=641 to x=780. Center x \u2248 660? Let me estimate: column A spans ~230-367, B ~367-504, C ~504-641, D ~641-778, E ~778-918. Center of D \u2248 (641+778)/2 \u2248 709.5. Hmm, but the header \"D\" is at x=656. The text \"636\" is at x=663. Text is left-aligned with padding. The visual center of the cell would be around x=709.\n\nRow 3 spans y\u2248307-347, center y\u2248327.\n\nSo the point is approximately (709, 327).{\"x\": 709, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1366x768",
+        "run": 1,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Column D header is at x\u2248899. Row 3 is at y\u2248327. Cell D3 contains \"71\" at x\u2248903, y\u2248327.\n\nThe cell D3 spans from about x=886 to x=1105, and y from about 307 to 347. Center would be around x=995, y=327.\n\nLet me estimate: Column D header at x=899. Column boundaries: A starts ~237, B ~455, C ~668, D ~886, E ~1105. So D spans 886-1105, center \u2248 995. Row 3 spans y\u2248307-347, center \u2248 327.\n\nSo the visual center of cell D3 is approximately (995, 327).</think>{\"x\": 995, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1600x900",
+        "run": 1,
+        "response": "I need to find cell D3 in the spreadsheet. Column D header is at x\u22481040. Row 3 is the row with values 595, 526, 688, 862, 862.\n\nLooking at the table:\n- Column A starts around x=230, column B around x=495, column C around x=762, column D around x=1028, column E around x=1295.\n- Column D spans from about x=1028 to x=1295, so center is around x=1160.\n- Row 3 spans from about y=307 to y=347, center around y=327.\n\nThe cell D3 contains \"862\" at approximately (1046, 327). The cell center would be around x=1160, y=327.\n\nLet me estimate more carefully. The table header row: A at x=242, B at x=508, C at x=773, D at x=1040, E at x=1305. These are left-aligned labels with padding. Column boundaries: A column starts at ~230, B at ~495, C at ~762, D at ~1028, E at ~1295, table ends at ~1557.\n\nColumn D: from 1028 to 1295, center = (1028+1295)/2 = 1161.5.\n\nRow 3: rows appear to be ~40px tall. Row 1: 224-264, row 2: 264-304, row 3: 304-344. Center of row 3 \u2248 324-327.\n\nSo D3 center \u2248 (1161, 327).</think>{\"x\": 1161, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1920x1200",
+        "run": 1,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Cell D3 contains \"315\". Column D header is at x\u22481232. The D column spans from about x=1219 to x=1548. Row 3 spans from y\u2248308 to y\u2248348. The cell D3 center: x \u2248 (1219+1548)/2 \u2248 1383, y \u2248 328.\n\nLet me estimate more carefully. The table starts at x=190 (row header column) and column A starts at 230. Column A spans 230-558, B 558-887, C 887-1219, D 1219-1548, E 1548-1878. So D center \u2248 1383.5. Row 3: rows are ~40px tall. Row 1: 224-264, row 2: 264-304, row 3: 304-348? Row 3 label at y=327. So center y \u2248 328.\n\nNormalized to 0-1000: image is 1920x1200. x = 1383.5/1920*1000 \u2248 720.6. y = 328/1200*1000 \u2248 273.3.{\"x\": 721, \"y\": 273}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_large_button_1",
+        "run": 1,
+        "response": "The Export button is located at approximately x from 185 to 310, y from 126 to 164. Center: x = (185+310)/2 = 247.5, y = (126+164)/2 = 145.{\"x\": 248, \"y\": 145}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_small_icon_1",
+        "run": 1,
+        "response": "The File operations toolbar has icons: trash-can at around x=397, y=142. The trash icon button appears to be at approximately (397, 142). Normalized: image is 1269 wide? Actually coordinates given in the description are already in some pixel space. The image appears to be 1269x775 or similar. Let me estimate: trash icon at x\u2248397, y\u2248142. Normalize to 0-1000: x = 397/1269*1000 \u2248 313, y = 142/775*1000 \u2248 183.\n\nWait, the coordinates I see in the layout: trash icon at (397, 142) in the rendered image of width ~1269, height ~775. So normalized x \u2248 313, y \u2248 183.</think>{\"x\": 313, \"y\": 183}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_duplicate_label_1",
+        "run": 1,
+        "response": "The archive.zip row's Delete button is at approximately y=223, x=1128. The button spans roughly x=1085 to 1174, y=207 to 239. Center: x \u2248 1129, y \u2248 223.{\"x\": 1129, \"y\": 223}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_entry_1",
+        "run": 1,
+        "response": "The Folder text field is located below the \"Folder\" label. The field spans from approximately x=45 to x=314, and y=576 to y=610. The center would be around x=180, y=593.</think>{\"x\": 180, \"y\": 593}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_checkbox_1",
+        "run": 1,
+        "response": "The user wants me to click the checkbox labeled \"Enable backups\". I need to find the checkbox itself, at its visual center.\n\nLooking at the image, there's a checkbox at approximately x=57, y=286 (the small square box), with the label \"Enable backups\" next to it. The checkbox itself appears to be at around x=57, y=286 in the image coordinates.\n\nThe image is 1269 wide and 780 tall. The checkbox square appears to be at around x=50-64, y=279-293. So center would be around x=57, y=286.\n\nNormalized to 0-1000: x = 57/1269 * 1000 \u2248 45, y = 286/780 * 1000 \u2248 367.\n\nLet me look more carefully. The checkbox is at pixel roughly (57, 286). Normalized: x \u2248 45, y \u2248 367.</think>{\"x\": 45, \"y\": 367}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_table_cell_1",
+        "run": 1,
+        "response": "The spreadsheet has columns #, A, B, C, D, E. Column C header is at x\u2248660. Row 4 is at y\u2248401. The cell C4 contains 383 at (666, 401). The cell spans from x\u2248645 to x\u2248758, y from ~389 to ~414. Center of cell C4: x \u2248 (645+758)/2 \u2248 701, y \u2248 401.\n\nLet me estimate column boundaries. Column A header at x=430, B at 545, C at 660, D at 775, E at 889. Column width ~115. So column C spans from ~645 to ~758. Center x \u2248 701. Row 4: rows at y=323, 349, 375, 401, 427, 453. Row height ~26. Row 4 spans ~388 to ~414, center y \u2248 401.\n\nSo answer: {\"x\": 701, \"y\": 401}.</think>{\"x\": 701, \"y\": 401}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_large_button_2",
+        "run": 1,
+        "response": "The Export button is located at approximately x=247, y=201 in the image. The button spans from about x=185 to x=310, and y=182 to y=220. Center would be around (247, 201).</think>{\"x\": 247, \"y\": 201}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_small_icon_2",
+        "run": 1,
+        "response": "The File operations toolbar has icons: search (magnifier) at ~398, copy at ~442, trash at ~484, refresh at ~526. The trash-can icon is the third one, at approximately x=484, y=142.</think>{\"x\": 484, \"y\": 142}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_duplicate_label_2",
+        "run": 1,
+        "response": "The archive.zip row's Delete button is at approximately x=1128, y=139 in the image. The image is 1264 wide, 780 tall. Normalized: x = 1128/1264 * 1000 \u2248 892.4, y = 139/780 * 1000 \u2248 178.2.\n\nLet me estimate the button center: the Delete button next to archive.zip spans roughly x from 1085 to 1174, y from 123 to 155. Center \u2248 (1129, 139). Normalized: x \u2248 893, y \u2248 178.</think>{\"x\": 893, \"y\": 178}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_entry_2",
+        "run": 1,
+        "response": "The Folder text field is located below the \"Folder\" label. The text field spans from approximately x=45 to x=314, and y=576 to y=610. The center would be around x=180, y=593.</think>{\"x\": 180, \"y\": 593}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_checkbox_2",
+        "run": 1,
+        "response": "The user wants me to find the checkbox labeled \"Enable backups\" and point to its visual center.\n\nLooking at the image, I can see a checkbox with the label \"Enable backups\" at approximately y=286. The checkbox itself appears to be at around x=57, y=286.\n\nThe checkbox is the small square control. Its center appears to be at approximately x=57, y=286 in the image coordinates.\n\nThe image is 1260 wide and 800 tall (based on typical rendering). The coordinates should be normalized to 0-1000.\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I need to normalize the pixel coordinates to a 0-1000 scale.\n\nThe checkbox for \"Enable backups\" is at approximately pixel (57, 286) in the image. The image dimensions appear to be 1260x800.\n\nNormalizing: x = 57/1260 * 1000 \u2248 45.2, y = 286/800 * 1000 \u2248 357.5\n\nHmm, but actually the instruction might mean just give coordinates in a 0-1000 normalized space directly. Let me estimate the checkbox position more carefully.\n\nThe checkbox appears to be a small square at around x=50-65, y=279-293. Center at approximately (57, 286).\n\nNormalized: x = 57/1260 * 1000 \u2248 45, y = 286/800 * 1000 \u2248 358.\n\nSo the answer would be {\"x\": 45, \"y\": 358}.\n\nActually, let me reconsider. The image shown is 1260x800 pixels. The checkbox \"Enable backups\" - the checkbox square is at roughly x=50-64, y=279-293. Center \u2248 (57, 286).\n\nNormalized to 0-1000: x = 57 * 1000/1260 \u2248 45.2, y = 286 * 1000/800 \u2248 357.5.\n\nSo {\"x\": 45, \"y\": 358} or approximately that.</think>{\"x\": 45, \"y\": 358}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_table_cell_2",
+        "run": 1,
+        "response": "The spreadsheet has columns #, A, B, C, D, E. Column C header is at x\u2248660. Row 4 is at y\u2248401. The cell C4 contains 800, at approximately x=660, y=401.\n\nColumn C spans from about x=645 to x=760. Center \u2248 702? Wait, let me look. The header \"C\" is at x\u2248660. Column A header at x\u2248430, B at x\u2248545, C at x\u2248660, D at x\u2248775, E at x\u2248890. So columns are ~115 wide. Column C spans roughly 645-760, center \u2248 702? Actually the header text \"C\" is at 660, which is left-aligned with padding. Column A spans from ~415 to ~530. Header \"A\" at 430. So column C spans ~645 to ~760, center \u2248 702.\n\nRow 4: rows are at y\u2248323, 349, 375, 401, 427, 453. Row 4 center y \u2248 401.\n\nSo C4 center \u2248 (702, 401). The value 800 is at x=660 (left-aligned). The visual center of the cell would be around x=702, y=401.\n\nLet me estimate more carefully. The table spans from x\u2248380 to x\u22481010. The # column is narrow (~380-415). Then A: 415-530, B: 530-645, C: 645-760, D: 760-875, E: 875-1010? Actually E header at 890, and table ends at 1010. Hmm, E: 875-1010 would be 135 wide. Let me reconsider: A header at 430, B at 545, C at 660, D at 775, E at 890. Spacing 115. So A starts at ~415, C starts at ~645, ends at ~760. Center of C \u2248 702.\n\nRow 4 y: row 1 at 323, row 2 at 349, row 3 at 375, row 4 at 401. Row height ~26. Row 4 spans ~388-414, center 401.\n\nSo answer: {\"x\": 702, \"y\": 401}.</think>{\"x\": 702, \"y\": 401}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_800x600",
+        "run": 2,
+        "response": "The user wants me to find the \"Save\" button and return its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the Save button is at the bottom left area. It appears to span roughly from x=190 to x=340, and y=490 to y=538 in the image coordinates.\n\nThe image is 800x600 pixels. Let me estimate the Save button's bounding box:\n- Left edge: ~190\n- Right edge: ~340\n- Top edge: ~490\n- Bottom edge: ~538\n\nCenter in pixels: x = (190+340)/2 = 265, y = (490+538)/2 = 514\n\nNormalized to 0-1000:\n- x = 265/800 * 1000 = 331.25 \u2248 331\n- y = 514/600 * 1000 = 856.67 \u2248 857\n\nLet me double-check the button position. The Save button text is at around x=264, y=513. The button box appears to go from about x=190 to x=340 horizontally, and y=490 to y=538 vertically.\n\nSo center: x \u2248 265/800 = 0.331 \u2192 331\ny \u2248 514/600 = 0.857 \u2192 857{\"x\": 331, \"y\": 857}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1024x768",
+        "run": 2,
+        "response": "The user wants me to find the \"Save\" button and return its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the Save button is at the bottom left area. It appears to span roughly from x=190 to x=340, and y=658 to y=706 in the image coordinates.\n\nThe image is 1024 wide and 768 tall (based on typical dimensions, but let me estimate from the description).\n\nThe Save button: left edge around x=190, right edge around x=340. Center x \u2248 265. Top edge around y=658, bottom edge around y=706. Center y \u2248 682.\n\nNormalized: x = 265/1024 * 1000 \u2248 259. y = 682/768 * 1000 \u2248 888.\n\nLet me be more careful. The image appears to be 1024x768. The Save button text \"Save\" is centered around x=264, y=682 in pixel coordinates.\n\nNormalized x: 264/1024 \u2248 0.2578 \u2192 258\nNormalized y: 682/768 \u2248 0.888 \u2192 888\n\nSo {\"x\": 258, \"y\": 888}.{\"x\": 258, \"y\": 888}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1280x720",
+        "run": 2,
+        "response": "The Save button is at the bottom right. Its bounding box appears to be roughly x from 1065 to 1214, y from 611 to 657. Center: x \u2248 (1065+1214)/2 = 1139.5, y \u2248 (611+657)/2 = 634.\n\nNormalized to 0-1000: image width 1280, height 720. x = 1139.5/1280*1000 \u2248 890.2. y = 634/720*1000 \u2248 880.6.</think>{\"x\": 890, \"y\": 881}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1920x1080",
+        "run": 2,
+        "response": "The Save button is the blue button in the center. It appears to span roughly from x=910 to x=1060, y=531 to y=577. Center approximately x=985, y=554.</think>{\"x\": 985, \"y\": 554}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_800x600",
+        "run": 2,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the image, there's a toolbar with buttons: Share, Open, Close, Redo, Replace, Export, Save, Help, Print in the first row, and Find, Save As, Undo in the second row.\n\nThe \"Save As\" button is in the second row. It appears to be located around x=290, y=176 in the image. The image is 800x600 pixels.\n\nThe Save As button spans roughly from x=260 to x=320, and y=163 to y=190. The center would be around x=290, y=176.\n\nNormalized to 0-1000: x = 290/800 * 1000 = 362.5, y = 176/600 * 1000 = 293.3.\n\nLet me look more carefully. The \"Save As\" button text is at approximately x=275-315, y=170-183. The button box appears to span from about x=260 to x=321, y=163 to y=190.\n\nCenter: x \u2248 290, y \u2248 176.\n\nNormalized: x = 290/800 * 1000 = 362.5 \u2248 363, y = 176/600 * 1000 = 293.3 \u2248 293.</think>{\"x\": 363, \"y\": 293}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1024x768",
+        "run": 2,
+        "response": "The user wants me to find the \"Save As\" button in the toolbar. Looking at the image, the toolbar has buttons: Close, Open, Redo, Save, Replace, Save As, Export, Print, Help, Share, Undo, Find.\n\nThe \"Save As\" button is at approximately x=536, y=142 in the image. Let me estimate its center. The button spans roughly from x=507 to x=565, so center x \u2248 536. The y center is around 142.\n\nNormalized to 0-1000: the image is 1024 wide, 768 tall. So x = 536/1024 * 1000 \u2248 523. y = 142/768 * 1000 \u2248 185.\n\nWait, the instructions say \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I should normalize to 0-1000 range. The image appears to be 1024x768. So x = 536/1024*1000 \u2248 523.4, y = 142/768*1000 \u2248 184.9.\n\nLet me look more carefully at the Save As button position. The buttons row: Close (~224), Open (~284), Redo (~343), Save (~403), Replace (~466), Save As (~536), Export (~601), Print (~661), Help (~719), Share (~777), Undo (~836), Find (~895).\n\nSave As button: text \"Save As\" centered around x=536, y=142. Normalized: x = 536/1024*1000 = 523.4 \u2248 523, y = 142/768*1000 = 184.9 \u2248 185.</think>{\"x\": 523, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1280x720",
+        "run": 2,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the image, there's a toolbar with buttons: Undo, Save As, Find, Print, Close, Open, Redo, Replace, Save, Help, Share, Export.\n\nThe \"Save As\" button is the second button. Its center appears to be around x=290, y=141 in the image. The image is 1280x720 presumably. Normalized to 0-1000: x = 290/1280 * 1000 \u2248 226.6, y = 141/720 * 1000 \u2248 195.8.\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I should normalize to 0-1000 based on the image dimensions. The image appears to be 1280 wide and 720 tall.\n\nSave As button: spans roughly from x=260 to x=321, y=128 to y=155. Center \u2248 (290, 141).\n\nNormalized: x = 290/1280*1000 = 226.6 \u2248 227, y = 141/720*1000 = 195.8 \u2248 196.\n\nReturn {\"x\": 227, \"y\": 196}.</think>{\"x\": 227, \"y\": 196}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1920x1080",
+        "run": 2,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the toolbar, I can see buttons: Replace, Open, Close, Help, Undo, Export, Save As, Find, Share, Redo, Save, Print.\n\nThe \"Save As\" button is at approximately x=596, y=141 in the image. The image is 1920 wide and 1080 tall. Normalized: x = 596/1920 * 1000 \u2248 310, y = 141/1080 * 1000 \u2248 131.\n\nLet me estimate more carefully. The Save As button appears centered around x=596 pixels. 596/1920 = 0.3104 \u2192 310. y=141/1080 = 0.1306 \u2192 131.</think>{\"x\": 310, \"y\": 131}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_800x600",
+        "run": 2,
+        "response": "The toolbar has icons: refresh, X, folder, search, gear, plus, download, trash can. The trash can icon is the last one at approximately x=459, y=142 in the image. The image is 800x600 presumably. Normalized coordinates: x = 459/800 * 1000 \u2248 574, y = 142/600 * 1000 \u2248 237.\n\nLet me estimate more carefully. The icons appear at y\u2248142 (center). The trash icon button spans roughly x=447-471, center \u2248459. Normalized: x = 459/800*1000 = 573.75 \u2248 574. y = 142/600*1000 = 236.7 \u2248 237.</think>{\"x\": 574, \"y\": 237}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1024x768",
+        "run": 2,
+        "response": "The toolbar has icons: refresh, plus, search, download, X, gear, folder, trash can. The trash can icon is the last one at approximately x=459, y=142 in the image. Normalized to 0-1000: image is 1024 wide, 768 tall. x = 459/1024 * 1000 \u2248 448. y = 142/768 * 1000 \u2248 185.\n\nLet me estimate the trash icon position: it appears at around x=459, y=142. Normalized: x \u2248 448, y \u2248 185.</think>{\"x\": 448, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1280x720",
+        "run": 2,
+        "response": "The toolbar has icons: download (213, 141), trash (248, 141), folder (283, 141), refresh (319, 141), plus (354, 141), gear (388, 141), X (423, 141), search (458, 141).\n\nThe trash-can icon is the second one, at approximately x=248, y=141.</think>{\"x\": 248, \"y\": 141}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1920x1080",
+        "run": 2,
+        "response": "The toolbar has icons: X (close), trash can, search, refresh, download, plus, folder, gear. The trash can icon is the second icon at approximately x=249, y=141 in the image. The image is 1920 wide, 1080 tall. Normalized: x = 249/1920 \u2248 129.7, y = 141/1080 \u2248 130.6.\n\nLet me estimate more carefully. The icons: X at ~213, trash at ~249, search at ~283, refresh at ~319, download at ~353, plus at ~389, folder at ~424, gear at ~458. Y ~141.\n\nNormalized x: 249/1920 = 0.1297 \u2192 130. y: 141/1080 = 0.1306 \u2192 131.</think>{\"x\": 130, \"y\": 131}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_800x600",
+        "run": 2,
+        "response": "The archive.zip row's Delete button. Looking at the image, the archive.zip row is at y\u2248396. The Delete button for that row is at approximately x=627, y=396.\n\nThe button spans roughly x from 596 to 658, y from 385 to 407. Center: x \u2248 627, y \u2248 396.{\"x\": 627, \"y\": 396}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1024x768",
+        "run": 2,
+        "response": "The user wants me to identify the Delete button on the archive.zip row. Looking at the image, the archive.zip row is the first row in the table. The Delete button for that row appears to be at approximately x=782, y=181 in the image coordinates.\n\nThe image is 1024x768 pixels. The Delete button on the archive.zip row is centered around x=782, y=181.\n\nNormalized to 0-1000: x = 782/1024 * 1000 \u2248 764, y = 181/768 * 1000 \u2248 236.\n\nLet me look more carefully. The button appears to span roughly from x=753 to x=814, so center is about x=783.5. Vertically from about y=169 to y=193, center about y=181.\n\nNormalized: x = 783.5/1024 * 1000 \u2248 765, y = 181/768 * 1000 \u2248 236.{\"x\": 765, \"y\": 236}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1280x720",
+        "run": 2,
+        "response": "The archive.zip row's Delete button. The row for archive.zip is at y\u2248310. The Delete button in that row appears centered at approximately x=961, y=310. Normalized: x = 961/1280 * 1000 \u2248 751, y = 310/720 * 1000 \u2248 430.6.\n\nLet me check the button: it spans roughly x 931-992, y 298-322. Center x \u2248 961.5, y \u2248 310. Normalized x \u2248 751, y \u2248 430.{\"x\": 751, \"y\": 431}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1920x1080",
+        "run": 2,
+        "response": "The archive.zip row's Delete button is at approximately x=1408, y=396 in the image. The image is 1920x1080 presumably. Normalized: x = 1408/1920*1000 \u2248 733, y = 396/1080*1000 \u2248 367.\n\nLet me check the button position. The Delete button for archive.zip row appears centered around x=1408, y=396. Normalized x \u2248 733, y \u2248 367.{\"x\": 733, \"y\": 367}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_800x600",
+        "run": 2,
+        "response": "The Filename text field in the Save document dialog. The field with \"Untitled.txt\" spans from about x=168 to x=631, y=239 to y=272. Center: x \u2248 (168+631)/2 = 399.5, y \u2248 (239+272)/2 = 255.5. So around (400, 256).</think>{\"x\": 400, \"y\": 256}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1024x768",
+        "run": 2,
+        "response": "The Filename text field in the Save document dialog. The field with \"Untitled.txt\" is at approximately x from 281 to 743, y from 323 to 356. Center: x \u2248 (281+743)/2 = 512, y \u2248 (323+356)/2 = 339.5 \u2248 340.{\"x\": 512, \"y\": 340}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1280x720",
+        "run": 2,
+        "response": "The Filename text field in the Save document dialog. The input field with \"Untitled.txt\" spans from about x=408 to x=871, y=299 to y=333. Center: x \u2248 (408+871)/2 = 639.5, y \u2248 (299+333)/2 = 316.</think>{\"x\": 640, \"y\": 316}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1920x1080",
+        "run": 2,
+        "response": "The Filename text field in the Save document dialog. The dialog is centered around x=960. The Filename input field spans from about x=728 to x=1192, with center around x=960. The field's vertical position: label \"Filename\" at y=467, input field at y=496 (center). The input box appears to span from about y=480 to y=511, so center y \u2248 496.\n\nSo the answer: {\"x\": 960, \"y\": 496}</think>{\"x\": 960, \"y\": 496}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_800x600",
+        "run": 2,
+        "response": "I need to find cell C4 in the spreadsheet. Column C is the third column, row 4 is the fourth data row.\n\nLooking at the table:\n- Column headers: A (~241), B (~348), C (~454), D (~560), E (~665)\n- Row 4 is at y ~369\n\nColumn C cells: the C column spans roughly from x=441 to x=540. The center of column C is around x=490.\n\nRow 4: rows are at y=243 (row 1), 284 (row 2), 327 (row 3), 369 (row 4), 411 (row 5), 453 (row 6).\n\nSo C4 center is approximately x=490, y=369.\n\nLet me verify with the image. The table starts at x~190 and ends at x~759. Columns: row header column ~190-227, then A: 227-334, B: 334-441, C: 441-540, D: 540-651, E: 651-759.\n\nColumn C center: (441+540)/2 \u2248 490.\n\nRow 4 spans y ~350-390, center ~369.\n\nSo answer: {\"x\": 490, \"y\": 369}</think>{\"x\": 490, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1024x768",
+        "run": 2,
+        "response": "The spreadsheet has columns A, B, C, D, E. Column C header is at x\u2248543. Row 4 is at y\u2248369. Cell C4 contains \"291\" at approximately (551, 369). The cell spans from x\u2248530 to x\u2248681, y\u2248349 to y\u2248389. Center of cell C4: x \u2248 (530+681)/2 \u2248 605, y \u2248 369.\n\nLet me estimate more carefully. Column C header \"C\" at x=543. Column boundaries: A spans ~230-380, B ~380-530, C ~530-681, D ~681-831, E ~831-983. Row 4 spans y\u2248349-389, center y\u2248369.\n\nSo center of C4 \u2248 (605, 369).{\"x\": 605, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1280x720",
+        "run": 2,
+        "response": "I need to find cell C4 in the spreadsheet. Column C header is at x\u2248646. Row 4 is at y\u2248369.\n\nLooking at the table:\n- Column headers: A at x\u2248242, B at x\u2248444, C at x\u2248646, D at x\u2248848, E at x\u22481049\n- Row 1: y\u2248244, Row 2: y\u2248285, Row 3: y\u2248327, Row 4: y\u2248369, Row 5: y\u2248411, Row 6: y\u2248453\n\nCell C4 would be at approximately x=646, y=369.\n\nThe column C spans from about x=633 to x=835 (based on the cell boundaries). The center of column C is around x=646 (where the header \"C\" is). Actually the header text is centered in the column, so the column center is at x\u2248646.\n\nRow 4 spans from y\u2248349 to y\u2248390, center at y\u2248369.\n\nSo the answer is {\"x\": 646, \"y\": 369}.</think>{\"x\": 646, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1920x1080",
+        "run": 2,
+        "response": "I need to find cell C4 in the spreadsheet. Column C header is at around x=902. Row 4 is at y=369 (the row with 263, 877, 458, 511, 453).\n\nColumn C spans from about x=889 to x=1218. The center of column C would be around x=1053. Row 4 spans from about y=350 to y=389, center around y=369.\n\nLet me estimate more carefully. The table starts at x=189 (row headers) and column A starts around x=230. Column headers: A at 242, B at 572, C at 902, D at 1232, E at 1562. These are left-aligned text positions. Column C cell spans from ~889 to ~1218, so center x \u2248 1053.\n\nRow 4: rows are at y\u2248243 (row1), 285 (row2), 327 (row3), 369 (row4), 411 (row5), 453 (row6). So row 4 center y \u2248 369.\n\nSo the answer is {\"x\": 1053, \"y\": 369}.</think>{\"x\": 1053, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_960x640",
+        "run": 2,
+        "response": "The Export button is located at approximately x from 430 to 579, y from 101 to 147. Center: x = (430+579)/2 = 504.5, y = (101+147)/2 = 124. Normalized to 0-1000: image width 960, height 640. Wait, the coordinates given in the image are already in pixels of the displayed image (960x640). Normalized to 0-1000: x = 504.5/960*1000 \u2248 525.5, y = 124/640*1000 \u2248 193.75.\n\nLet me estimate the button bounds: it appears to span roughly x 430\u2013579, y 101\u2013147. Center pixel \u2248 (505, 124). Normalized: x \u2248 526, y \u2248 194.</think>{\"x\": 526, \"y\": 194}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1366x768",
+        "run": 2,
+        "response": "The Export button is at the top right area. Its bounding box appears to be roughly x from 1152 to 1300, y from 156 to 202. Center: x = (1152+1300)/2 = 1226, y = (156+202)/2 = 179.\n\nNormalized to 0-1000: image width 1366, height 768. x = 1226/1366 * 1000 \u2248 897.7. y = 179/768 * 1000 \u2248 233.1.{\"x\": 898, \"y\": 233}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1600x900",
+        "run": 2,
+        "response": "The Export button is at the top right area. Its bounding box appears to be roughly x from 1385 to 1534, y from 156 to 202. Center: x \u2248 (1385+1534)/2 = 1459.5, y \u2248 (156+202)/2 = 179. Normalized to 0-1000: image width 1600, height 900. x = 1459.5/1600*1000 \u2248 912. y = 179/900*1000 \u2248 199.</think>{\"x\": 912, \"y\": 199}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1920x1200",
+        "run": 2,
+        "response": "The Export button is the blue button in the middle of the screen. It appears to span roughly from x=910 to x=1060, y=592 to y=637. Center approximately x=985, y=614.</think>{\"x\": 985, \"y\": 614}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_960x640",
+        "run": 2,
+        "response": "The user wants me to find the \"Replace\" button in the editor toolbar and give its visual center coordinates normalized to 0-1000.\n\nLooking at the image, the toolbar has buttons: Print, Share, Export, Save As, Help, Replace, Undo, Save, Find, Open, Close, and Redo on the second row.\n\nThe Replace button appears to be located around x=537, y=142 in the image. The image is 960 wide and 640 tall.\n\nThe Replace button: it spans roughly from x=508 to x=566, centered around x=537. Vertically it spans from about y=130 to y=155, centered around y=142.\n\nNormalized: x = 537/960 * 1000 \u2248 559.4, y = 142/640 * 1000 \u2248 221.9.\n\nLet me look more carefully. The buttons in the first row: Print (~224), Share (~284), Export (~343), Save As (~408), Help (~472), Replace (~537), Undo (~601), Save (~660), Find (~719), Open (~777), Close (~836).\n\nReplace button center: approximately x=537, y=142.\n\nNormalized: x = 537/960 * 1000 = 559.4 \u2248 559, y = 142/640 * 1000 = 221.9 \u2248 222.</think>{\"x\": 559, \"y\": 222}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1366x768",
+        "run": 2,
+        "response": "The user wants me to find the \"Replace\" button in the editor toolbar and return its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the toolbar has buttons: Export, Print, Find, Replace, Save As, Share, Help, Close, Redo, Undo, Save, Open.\n\nThe Replace button appears to be at approximately x=408, y=142 in the image. The image is 1366 wide and 768 tall.\n\nLet me estimate the Replace button's position. The buttons:\n- Export: ~226\n- Print: ~285\n- Find: ~344\n- Replace: ~408\n- Save As: ~477\n- Share: ~541\n- Help: ~600\n- Close: ~660\n- Redo: ~719\n- Undo: ~778\n- Save: ~837\n- Open: ~896\n\nThe Replace button spans roughly from x=381 to x=436, so center is around x=408. Y center is around 142.\n\nNormalized: x = 408/1366 * 1000 \u2248 298.7 \u2248 299\ny = 142/768 * 1000 \u2248 184.9 \u2248 185\n\nSo {\"x\": 299, \"y\": 185}.{\"x\": 299, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1600x900",
+        "run": 2,
+        "response": "The Replace button in the toolbar. Looking at the image, the Replace button is at approximately x=230, y=142 in the image. The image is 1600 wide? Let me estimate. The image appears to be 1600x900 or similar. The Replace button center is around x=230, y=142.\n\nNormalized to 0-1000: x = 230/1600*1000 \u2248 144, y = 142/900*1000 \u2248 158.\n\nLet me check the image dimensions. The screenshot seems to be 1600 wide based on typical. The toolbar buttons: Replace at ~230, Save at ~295, Close at ~355, Save As at ~418, Open at ~482, Export at ~541, Redo at ~601, Print at ~661, Share at ~719, Undo at ~778, Help at ~837, Find at ~896.\n\nIf image width is 1600, Replace center x \u2248 230 \u2192 144 normalized. Height 900, y=142 \u2192 158.\n\nSo answer: {\"x\": 144, \"y\": 158}.{\"x\": 144, \"y\": 158}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1920x1200",
+        "run": 2,
+        "response": "The Replace button is in the toolbar. Looking at the image, the Replace button appears at around x=230, y=141 in the image. The image is 1920 wide and 1200 tall presumably. The button \"Replace\" spans roughly from x=202 to x=259, y=128 to y=155. Center approximately x=230, y=141.\n\nNormalized: x = 230/1920 * 1000 \u2248 120, y = 141/1200 * 1000 \u2248 117.5.\n\nLet me estimate more carefully. The toolbar row is at y\u2248141. The Replace button center x \u2248 230. So normalized x \u2248 119.8, y \u2248 117.5.</think>{\"x\": 120, \"y\": 118}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_960x640",
+        "run": 2,
+        "response": "The user wants me to find the magnifying-glass (search) icon in the toolbar. Looking at the toolbar, there are several icons: refresh, trash, magnifying glass, X, folder, gear, plus, download.\n\nThe magnifying glass icon appears to be the third icon in the toolbar. Looking at the image, the toolbar icons are at approximately y=142. The icons appear at x positions: ~213 (refresh), ~248 (trash), ~283 (magnifying glass), ~318 (X), ~353 (folder), ~388 (gear), ~424 (plus), ~459 (download).\n\nThe magnifying glass icon is at approximately x=283, y=142.\n\nLet me look more carefully. The toolbar spans from about x=190 to x=920, y=118 to y=166. The icons are centered vertically around y=142.\n\nThe third icon (magnifying glass) is at around x=283, y=142.</think>{\"x\": 283, \"y\": 142}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1366x768",
+        "run": 2,
+        "response": "The toolbar has icons: X (close), + (new), trash, refresh, gear, folder, magnifying glass (search), download.\n\nThe magnifying glass icon is at approximately x=423, y=142 in the image. The image is 1366 wide, 767 tall. Normalized: x = 423/1366 * 1000 \u2248 309.7, y = 142/767 * 1000 \u2248 185.1.\n\nLet me estimate more carefully. The icons: X at ~213, + at ~249, trash at ~284, refresh at ~319, gear at ~353, folder at ~389, search at ~423, download at ~459. The search icon center around x=423, y=142.\n\nNormalized x: 423/1366 = 0.3097 \u2192 310. y: 142/767 = 0.1851 \u2192 185.</think>{\"x\": 310, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1600x900",
+        "run": 2,
+        "response": "The magnifying-glass icon is the first button in the toolbar. The toolbar buttons appear at around y=142 in pixel coordinates. The first button (magnifying glass) is at approximately x=213, y=142 in pixels.\n\nImage dimensions: 1600 x 900 presumably. Let me estimate. The image width appears to be 1600, height 900.\n\nThe magnifying glass button center: x \u2248 213, y \u2248 142.\n\nNormalized: x = 213/1600 * 1000 \u2248 133, y = 142/900 * 1000 \u2248 158.\n\nLet me check the button positions. Buttons: search at ~213, X at ~248, trash at ~284, refresh at ~319, gear at ~353, folder at ~389, download at ~424, plus at ~459. Spacing ~35px. First button center around x=213.\n\nNormalized x: 213/1600 = 0.133 \u2192 133. y: 142/900 = 0.158 \u2192 158.</think>{\"x\": 133, \"y\": 158}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1920x1200",
+        "run": 2,
+        "response": "The toolbar has icons: gear, trash, download, plus, refresh, X, folder, and magnifying glass (search). The magnifying glass is the last icon at approximately x=459, y=141 in the image. The image is 1920 wide, 1200 tall presumably. Let me estimate coordinates.\n\nThe icons: gear at ~213, trash ~249, download ~284, plus ~319, refresh ~354, X ~389, folder ~424, search ~459. Y ~141.\n\nNormalized: x = 459/1920 * 1000 \u2248 239. y = 141/1200 * 1000 \u2248 117.5.\n\nSo {\"x\": 239, \"y\": 118}.</think>{\"x\": 239, \"y\": 118}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_960x640",
+        "run": 2,
+        "response": "The Delete button for report.pdf row is at approximately y=181, x=738. The button spans roughly x=708 to 770, y=170 to 192. Center around (738, 181).</think>{\"x\": 738, \"y\": 181}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1366x768",
+        "run": 2,
+        "response": "The user wants me to find the Delete button on the report.pdf row. Looking at the image, the report.pdf row is the 4th row. The Delete button for that row appears to be centered around x=1021, y=310 in the image coordinates.\n\nThe image is 1366 wide and 768 tall (based on typical dimensions). Let me estimate the normalized coordinates.\n\nThe Delete button for report.pdf row: the button appears to span roughly from x=991 to x=1053, centered at about x=1022. Vertically it spans about y=298 to y=322, centered at about y=310.\n\nNormalized: x = 1022/1366 \u2248 0.748 \u2192 748\ny = 310/768 \u2248 0.404 \u2192 404\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I need to normalize to 0-1000 range. The image appears to be 1366x768.\n\nx: 1022/1366 * 1000 \u2248 748\ny: 310/768 * 1000 \u2248 404\n\nSo the answer is {\"x\": 748, \"y\": 404}.</think>{\"x\": 748, \"y\": 404}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1600x900",
+        "run": 2,
+        "response": "The report.pdf row's Delete button. The image is 1600 wide, 900 tall presumably. The Delete button for report.pdf row is at approximately x=1185, y=267 in the image. Normalized: x = 1185/1600*1000 = 740.6, y = 267/900*1000 = 296.7.\n\nLet me check the button position. The button appears centered around x=1185, y=267. Normalized x \u2248 741, y \u2248 297.</think>{\"x\": 741, \"y\": 297}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1920x1200",
+        "run": 2,
+        "response": "The report.pdf row has a Delete button. The row is at y\u2248353. The Delete button for report.pdf is at approximately x=1408, y=353. Normalized coordinates: the image is 1920 wide, 1200 tall presumably. x = 1408/1920 * 1000 \u2248 733. y = 353/1200 * 1000 \u2248 294.\n\nLet me estimate more carefully. The Delete buttons appear at x around 1378-1440, center ~1408. Normalized x \u2248 733. The report.pdf row Delete button center y \u2248 353. Normalized y \u2248 294.</think>{\"x\": 733, \"y\": 294}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_960x640",
+        "run": 2,
+        "response": "The Folder text field is the input containing \"/home/user/Documents\". It spans roughly from x=248 to x=711, y=323 to y=357. Center: x \u2248 (248+711)/2 = 479.5, y \u2248 (323+357)/2 = 340.</think>{\"x\": 480, \"y\": 340}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1366x768",
+        "run": 2,
+        "response": "The Folder text field in the Save document dialog. The field spans from x\u2248451 to x\u2248914, y\u2248387 to y\u2248419. Center: x = (451+914)/2 \u2248 682.5, y = (387+419)/2 \u2248 403.\n\nNormalized to 0-1000: image width 1366, height 768. Wait \u2014 the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So normalize: x = 682.5/1366*1000 \u2248 499.6, y = 403/768*1000 \u2248 524.7.\n\nLet me check the field bounds more carefully. The Folder input field: left edge ~451, right edge ~914, top ~387, bottom ~419. Center x \u2248 682, y \u2248 403.\n\nNormalized: x = 682/1366*1000 = 499.3, y = 403/768*1000 = 524.7.\n\nSo {\"x\": 499, \"y\": 525}.</think>{\"x\": 499, \"y\": 525}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1600x900",
+        "run": 2,
+        "response": "The Folder text field in the Save document dialog. The field spans from x\u2248568 to x\u22481032, y\u2248452 to y\u2248486. Center: x = (568+1032)/2 = 800, y = (452+486)/2 = 469.{\"x\": 800, \"y\": 469}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1920x1200",
+        "run": 2,
+        "response": "The Folder text field in the Save document dialog. The dialog is centered around x=960. The Folder input field spans from about x=730 to x=1190, with text \"/home/user/Documents\" at y=619. The field's vertical center appears to be around y=619. The field box appears to span roughly y=604 to y=634, so center y \u2248 619.\n\nX center: field spans 730 to 1190, center \u2248 960.\n\nSo {\"x\": 960, \"y\": 619}.</think>{\"x\": 960, \"y\": 619}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_960x640",
+        "run": 2,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Column D header is at x\u2248656. Row 3 is at y\u2248327. Cell D3 contains 636 at (663, 327). The cell spans from x\u2248641 to x\u2248779, y\u2248308 to y\u2248347. Center x \u2248 710, y \u2248 327.\n\nLet me estimate: Column D header at 656, column E at 792. Column boundaries: D column spans roughly 641 to 779. Center \u2248 710. Row 3 spans 308-347, center \u2248 327.</think>{\"x\": 710, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1366x768",
+        "run": 2,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Column D header is at x\u2248899. Row 3 is at y\u2248327. Cell D3 contains \"71\" at approximately (903, 327).\n\nThe cell D3 spans from about x=886 to x=1105, and y=307 to y=347. Center would be around x=995, y=327.\n\nLet me estimate: Column D header at x=899. Column boundaries: A starts ~237, B ~455, C ~668, D ~886, E ~1105. So D column spans 886 to 1105, center \u2248 995. Row 3 spans y\u2248307 to 347, center \u2248 327.\n\nSo the answer is {\"x\": 995, \"y\": 327}.</think>{\"x\": 995, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1600x900",
+        "run": 2,
+        "response": "I need to find cell D3 in the spreadsheet. Column D header is at x\u22481040. Row 3 is the third data row.\n\nLooking at the table:\n- Column D header at x\u22481040\n- Row 3 contains values: 595 (A), 526 (B), 688 (C), 862 (D), 862 (E)\n- Row 3 y-coordinate: the row with 595, 526, 688, 862, 862 is at y\u2248327\n\nCell D3 contains \"862\" at approximately x=1046, y=327. The cell spans from about x=1028 to x=1293, and y from about 308 to 347. The visual center would be around x=1160, y=327.\n\nLet me estimate more carefully. The table starts at x\u2248190 and ends at x\u22481557. There are 5 columns (A-E) plus a row number column. Row number column: 190-230. Column A: 230-495. Column B: 495-760. Column C: 760-1028. Column D: 1028-1293. Column E: 1293-1557.\n\nColumn D center: (1028+1293)/2 \u2248 1160.\n\nRow 3: rows appear to be about 40px tall. Row 1: 224-264, Row 2: 264-304, Row 3: 304-347. Center of row 3 \u2248 327.\n\nSo D3 center is approximately (1160, 327).</think>{\"x\": 1160, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1920x1200",
+        "run": 2,
+        "response": "I need to find cell D3 in the spreadsheet. Column D header is at around x=1232. The D column spans from about x=1219 to x=1548. Row 3 is at y around 327 (the row with 282, 631, 472, 315, 42).\n\nLooking at the table:\n- Column headers: A at x=242, B at x=571, C at x=901, D at x=1232, E at x=1561\n- Row 3 spans from about y=308 to y=347, center around y=327\n- Column D spans from about x=1219 to x=1548, center around x=1383\n\nCell D3 contains \"315\" at approximately x=1238, y=327. The cell center would be around x=1383, y=327.\n\nLet me estimate more precisely. The table starts at x=190 (row number column) and column A starts at x=230. Column boundaries: A: 230-558, B: 558-888, C: 888-1218, D: 1218-1548, E: 1548-1878.\n\nColumn D center: (1218+1548)/2 = 1383.\n\nRow 3: rows appear to be about 39-40 pixels tall. Row 1: 224-263, Row 2: 263-303, Row 3: 303-343. Center of row 3 \u2248 323-327.\n\nSo D3 center \u2248 x=1383, y=325.\n\nNormalized to 0-1000: image width is 1920, height is 1200.\nx = 1383/1920 * 1000 = 720.3\ny = 325/1200 * 1000 = 270.8\n\nSo approximately {\"x\": 720, \"y\": 271}.{\"x\": 720, \"y\": 271}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_large_button_1",
+        "run": 2,
+        "response": "The Export button is located at approximately x from 185 to 310, y from 126 to 164. Center: x = (185+310)/2 = 247.5, y = (126+164)/2 = 145.{\"x\": 248, \"y\": 145}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_small_icon_1",
+        "run": 2,
+        "response": "The File operations toolbar has icons: trash-can at around x=397, y=142. The trash icon button appears to be at approximately (397, 142). Normalized coordinates: the image is 1268 wide? Actually the image dimensions... The screenshot appears to be 1268x770 or similar. But we need normalized 0-1000 coordinates.\n\nThe trash icon is at pixel roughly x=397, y=142 in the image. Image width appears to be 1268, height 770. Normalized: x = 397/1268*1000 \u2248 313, y = 142/770*1000 \u2248 184.\n\nLet me estimate more carefully. The trash button spans roughly x 380-414, y 126-158. Center ~ (397, 142). Normalized x \u2248 313, y \u2248 184.{\"x\": 313, \"y\": 184}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_duplicate_label_1",
+        "run": 2,
+        "response": "The archive.zip row has a Delete button. Looking at the image, the Downloads section has three rows: photo.png (Delete at y\u2248139), report.pdf (Delete at y\u2248181), archive.zip (Delete at y\u2248223).\n\nThe archive.zip Delete button appears centered around x\u22481128, y\u2248223. The button spans roughly x from 1085 to 1174, y from 208 to 238. Center: x\u22481129, y\u2248223.\n\nNormalized to 0-1000: x = 1129/1272 * 1000 \u2248 887.6, y = 223/771 * 1000 \u2248 289.2.\n\nWait, the image dimensions: width 1272, height 771. The coordinates given in the description are in that pixel space. Normalized: x = 1129/1272*1000 \u2248 887.7, y = 223/771*1000 \u2248 289.2.\n\nLet me estimate the button center more carefully. The Delete button for archive.zip: text \"Delete\" at approximately x=1128, y=223. Button bounds roughly x: 1085-1174, y: 208-239. Center \u2248 (1129, 223).\n\nNormalized: x \u2248 888, y \u2248 289.{\"x\": 888, \"y\": 289}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_entry_1",
+        "run": 2,
+        "response": "The Folder text field is located below the \"Folder\" label. The field appears to span from x=45 to x=314, and y=576 to y=610. Center: x = (45+314)/2 = 179.5, y = (576+610)/2 = 593.{\"x\": 180, \"y\": 593}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_checkbox_1",
+        "run": 2,
+        "response": "The user wants me to click the checkbox labeled \"Enable backups\". I need to find the checkbox itself, not the label. The checkbox appears to be at around x=57, y=286 in the image. Let me look more carefully.\n\nThe checkbox for \"Enable backups\" is at approximately x=57, y=286. The label text \"Enable backups\" is at around x=113, y=286.\n\nThe instruction says \"Point to the visual center of that control.\" The control is the checkbox. The checkbox square appears to be centered around x=57, y=286.\n\nLooking at the image, the checkbox is a small square at approximately (57, 286). Normalized to 0-1000: x = 57/1240*1000 \u2248 46, y = 286/780*1000 \u2248 367.\n\nWait, the image dimensions appear to be 1240x780 based on the coordinates. Let me estimate: the checkbox square spans roughly from x=50 to x=64, y=279 to y=293. Center at (57, 286).\n\nNormalized: x = 57/1240 * 1000 \u2248 46, y = 286/780 * 1000 \u2248 367.\n\nSo the answer is {\"x\": 46, \"y\": 367}.{\"x\": 46, \"y\": 367}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_table_cell_1",
+        "run": 2,
+        "response": "The spreadsheet has columns: # (around x=390), A (x=429), B (x=545), C (x=660), D (x=776), E (x=889).\n\nColumn C header is at x\u2248660. Row 4 is at y\u2248401 (the row with 979, 342, 383, 201, 49).\n\nCell C4 would be at approximately x=660, y=401.\n\nLet me check the column boundaries. Column C spans from about x=645 to x=760 (between B and D). Center around x=660-665. The value 383 is at x=666. The cell center would be around x=660.\n\nRow 4: rows are at y=323 (row 1), 349 (row 2), 375 (row 3), 401 (row 4), 427 (row 5), 453 (row 6). So row 4 center is y=401.\n\nSo the answer is {\"x\": 660, \"y\": 401}.{\"x\": 660, \"y\": 401}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_large_button_2",
+        "run": 2,
+        "response": "The Export button is located at approximately x=247, y=201 in the image. The button spans from about x=185 to x=310, and y=183 to y=219. Center would be around (247, 201).</think>{\"x\": 247, \"y\": 201}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_small_icon_2",
+        "run": 2,
+        "response": "The File operations toolbar has icons: search (magnifier) at ~398, copy at ~442, trash at ~484, refresh at ~526. The trash-can icon is the third one, at approximately x=484, y=142.</think>{\"x\": 484, \"y\": 142}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_duplicate_label_2",
+        "run": 2,
+        "response": "The archive.zip row's Delete button is at approximately x=1128, y=139 in the image. The image is 1260 wide and 780 tall. Normalized: x = 1128/1260*1000 \u2248 895, y = 139/780*1000 \u2248 178.\n\nLet me estimate the button center more carefully. The Delete button next to archive.zip appears to span roughly x from 1085 to 1173, centered around 1129. Vertically around 139. Normalized x \u2248 896, y \u2248 178.</think>{\"x\": 896, \"y\": 178}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_entry_2",
+        "run": 2,
+        "response": "The Folder text field is located below the \"Folder\" label. The text field spans from approximately x=45 to x=314, and y=576 to y=610. The center would be around x=180, y=593.</think>{\"x\": 180, \"y\": 593}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_checkbox_2",
+        "run": 2,
+        "response": "The user wants me to find the checkbox labeled \"Enable backups\" and point to its visual center.\n\nLooking at the image, I can see a checkbox with the label \"Enable backups\" at approximately y=286. The checkbox itself appears to be at around x=57, y=286.\n\nThe checkbox is the small square control. Its center appears to be at approximately x=57, y=286 in the image coordinates.\n\nThe image is 1264 wide and 790 tall (based on typical rendering). Let me estimate the normalized coordinates.\n\nThe checkbox appears to be at pixel position around x=57, y=286. Normalized: x = 57/1264 * 1000 \u2248 45, y = 286/790 * 1000 \u2248 362.\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I should normalize the pixel coordinates to 0-1000 range.\n\nThe checkbox for \"Enable backups\" is at approximately pixel (57, 286). The image dimensions appear to be 1264x790.\n\nx = 57/1264 * 1000 \u2248 45.1\ny = 286/790 * 1000 \u2248 362.0\n\nSo the answer would be {\"x\": 45, \"y\": 362}.\n\nLet me double-check the checkbox position. The label \"Enable backups\" text starts around x=70, and the checkbox square is to the left at around x=50-64, centered at ~57. The y position is around 286.\n\nNormalized: x \u2248 45, y \u2248 362.</think>{\"x\": 45, \"y\": 362}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_table_cell_2",
+        "run": 2,
+        "response": "The spreadsheet has columns #, A, B, C, D, E. Column C header is at x\u2248660. Row 4 is at y\u2248401. The cell C4 contains 800, located at x\u2248660, y\u2248401.\n\nColumn C spans roughly from x=645 to x=760. Center x \u2248 702? Let me look. Column headers: # at 390, A at 430, B at 545, C at 660, D at 775, E at 888. The columns: A spans ~418-533, B ~533-648, C ~648-763, D ~763-878, E ~878-1010.\n\nCell C4 center: x \u2248 (648+763)/2 \u2248 705, y \u2248 401. The value 800 is at x=660 (left-aligned). The visual center of the cell would be around x=705, y=401.\n\nRow 4: rows are at y=323 (row1), 349 (row2), 375 (row3), 401 (row4), 427 (row5), 453 (row6). So row 4 center y \u2248 401.\n\nSo answer: {\"x\": 705, \"y\": 401}.</think>{\"x\": 705, \"y\": 401}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_800x600",
+        "run": 3,
+        "response": "The user wants me to find the \"Save\" button and return its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the Save button is at the bottom left area. It appears to span roughly from x=190 to x=340, and y=490 to y=538 in the image which is 800x600 pixels.\n\nLet me estimate more carefully. The image is 800 wide, 600 tall.\n\nThe Save button: left edge around x=190, right edge around x=340. Center x \u2248 265. In normalized: 265/800 = 0.331 \u2192 331.\n\nVertical: top around y=490, bottom around y=538. Center y \u2248 514. Normalized: 514/600 = 0.857 \u2192 857.\n\nSo {\"x\": 331, \"y\": 857}.</think>{\"x\": 331, \"y\": 857}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1024x768",
+        "run": 3,
+        "response": "The user wants me to find the \"Save\" button and return its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the Save button is at the bottom left area. It appears to span roughly from x=190 to x=340, and y=660 to y=705 in the image.\n\nThe image is 1024x768 pixels. Let me estimate the Save button's position:\n- Left edge: ~190px\n- Right edge: ~340px\n- Top edge: ~660px\n- Bottom edge: ~705px\n\nCenter in pixels: x \u2248 265, y \u2248 682\n\nNormalized to 0-1000:\n- x: 265/1024 * 1000 \u2248 258.8 \u2248 259\n- y: 682/768 * 1000 \u2248 888\n\nLet me double-check. The Save button appears centered around x=263, y=682 in the image. \n\nx: 263/1024 = 0.2568 \u2192 257\ny: 682/768 = 0.888 \u2192 888\n\nSo approximately {\"x\": 258, \"y\": 888}.{\"x\": 258, \"y\": 888}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1280x720",
+        "run": 3,
+        "response": "The Save button is at the bottom right. Its bounding box appears to be roughly x from 1065 to 1214, y from 611 to 657. Center: x \u2248 (1065+1214)/2 = 1139.5, y \u2248 (611+657)/2 = 634.\n\nNormalized to 0\u20131000: image width 1280, height 720. x = 1139.5/1280*1000 \u2248 890. y = 634/720*1000 \u2248 880.6.</think>{\"x\": 890, \"y\": 881}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "large_buttons_1920x1080",
+        "run": 3,
+        "response": "The Save button is the blue button in the center. Its center appears to be around x=985, y=553 in the image. Normalized to 0-1000: image width 1920, height 1080. x = 985/1920*1000 \u2248 513, y = 553/1080*1000 \u2248 512.\n\nLet me estimate the button bounds: roughly x from 910 to 1060, y from 530 to 577. Center x \u2248 985, y \u2248 553. Normalized: x \u2248 513, y \u2248 512.{\"x\": 513, \"y\": 512}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_800x600",
+        "run": 3,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar, not \"Save\". Looking at the image, there's a toolbar with buttons: Share, Open, Close, Redo, Replace, Export, Save, Help, Print in the first row, and Find, Save As, Undo in the second row.\n\nThe \"Save As\" button is in the second row. It appears to be located around x=290, y=176 in the image. Let me estimate more carefully.\n\nThe second row buttons: \"Find\" spans roughly x=203-249, \"Save As\" spans roughly x=259-321, \"Undo\" spans roughly x=331-379.\n\n\"Save As\" button center: approximately x=290, y=176.\n\nThe image is 800x600, so normalized coordinates: x = 290/800 * 1000 = 362.5, y = 176/600 * 1000 = 293.3.\n\nWait, the instructions say \"Use native image coordinates normalized to 0\u20131000 for x and y\" \u2014 so I should normalize to 0-1000 range. So x \u2248 363, y \u2248 293.\n\nLet me double-check the button position. The toolbar area starts around x=190 and the buttons in row 2: Find at ~203-249, Save As at ~259-321, Undo at ~331-379. The Save As center x \u2248 290. y center \u2248 176.\n\nNormalized: x = 290/800*1000 = 362.5 \u2248 363, y = 176/600*1000 = 293.3 \u2248 293.</think>{\"x\": 363, \"y\": 293}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1024x768",
+        "run": 3,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the image, there's a toolbar with buttons: Close, Open, Redo, Save, Replace, Save As, Export, Print, Help, Share, Undo, Find.\n\nThe \"Save As\" button is located at approximately x=536, y=142 in the image. Let me estimate its center. The button spans roughly from x=507 to x=565, and y=129 to y=155. So the center would be around x=536, y=142.\n\nNormalized to 0-1000: x = 536/1024 * 1000 \u2248 523, y = 142/768 * 1000 \u2248 185.\n\nWait, the image is 1024x768. Normalized coordinates: x = 536/1024 \u2248 0.523 \u2192 523, y = 142/768 \u2248 0.185 \u2192 185.\n\nLet me look more carefully at the button position. The \"Save As\" button appears centered around x=536 pixels, y=142 pixels. Normalized: x \u2248 523, y \u2248 185.</think>{\"x\": 523, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1280x720",
+        "run": 3,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the image, there's a toolbar with buttons: Undo, Save As, Find, Print, Close, Open, Redo, Replace, Save, Help, Share, Export.\n\nThe \"Save As\" button is the second button in the toolbar. It appears to be located around x=290, y=141 in the image. The image is 1280 wide and 720 tall.\n\nThe button \"Save As\" spans roughly from x=260 to x=320, centered around x=290. Vertically it's centered around y=141.\n\nNormalized: x = 290/1280 * 1000 \u2248 226.6, y = 141/720 * 1000 \u2248 195.8.\n\nLet me look more carefully. The buttons: Undo at ~224, Save As at ~290, Find at ~355, Print at ~413, Close at ~471, Open at ~531, Redo at ~589, Replace at ~653, Save at ~718, Help at ~777, Share at ~835, Export at ~895.\n\nSave As button center: approximately x=290, y=141.\n\nNormalized: x = 290/1280*1000 = 226.56 \u2248 227, y = 141/720*1000 = 195.83 \u2248 196.</think>{\"x\": 227, \"y\": 196}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dense_toolbar_1920x1080",
+        "run": 3,
+        "response": "The user wants me to find the \"Save As\" button in the editor toolbar. Looking at the screenshot, I can see a toolbar with buttons: Replace, Open, Close, Help, Undo, Export, Save As, Find, Share, Redo, Save, Print.\n\nThe \"Save As\" button is located at approximately x=596, y=141 in the image. The image appears to be 1920 wide and 1080 tall based on typical dimensions.\n\nLet me estimate the coordinates. The buttons in the toolbar:\n- Replace: ~230\n- Open: ~295\n- Close: ~354\n- Help: ~414\n- Undo: ~471\n- Export: ~531\n- Save As: ~596\n- Find: ~660\n- Share: ~719\n- Redo: ~777\n- Save: ~837\n- Print: ~896\n\nThe y coordinate is around 141.\n\nNormalized to 0-1000: x = 596/1920 * 1000 \u2248 310, y = 141/1080 * 1000 \u2248 131.\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I should normalize the pixel coordinates to 0-1000 range.\n\nThe image is 1920x1080. Save As button center is at approximately (596, 141) in pixels.\n\nx = 596/1920 * 1000 = 310.4\ny = 141/1080 * 1000 = 130.6\n\nSo approximately {\"x\": 310, \"y\": 131}.{\"x\": 310, \"y\": 131}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_800x600",
+        "run": 3,
+        "response": "The toolbar has icons: refresh, X, folder, search, gear, plus, download, trash can. The trash can icon is the last one at approximately x=459, y=142 in the image. Normalized: image is 800 wide, 600 tall. x = 459/800*1000 \u2248 574, y = 142/600*1000 \u2248 237.\n\nLet me estimate more carefully. The icons appear at y\u2248142. The trash icon button spans roughly x=447-471, center ~459. Normalized x = 459/800 = 0.57375 \u2192 574. y = 142/600 = 0.2367 \u2192 237.</think>{\"x\": 574, \"y\": 237}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1024x768",
+        "run": 3,
+        "response": "The toolbar has icons: refresh, plus, search, download, X, gear, folder, trash can. The trash can icon is the last one at approximately x=459, y=142 in the image. Normalized to 0-1000: image is 1024 wide, 768 tall. x = 459/1024*1000 \u2248 448, y = 142/768*1000 \u2248 185.\n\nLet me estimate more carefully. The trash icon button appears centered around x=459, y=142. Normalized: x \u2248 448, y \u2248 185.</think>{\"x\": 448, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1280x720",
+        "run": 3,
+        "response": "The toolbar has icons: download (213, 142), trash (248, 142), folder (283, 142), refresh (319, 142), plus (354, 142), gear (388, 142), X (423, 142), search (458, 142).\n\nThe trash-can icon is the second one at approximately x=248, y=142.</think>{\"x\": 248, \"y\": 142}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "small_icons_1920x1080",
+        "run": 3,
+        "response": "The toolbar has icons: X (close), trash can, search, refresh, download, plus, folder, settings. The trash can icon is the second icon at approximately x=249, y=141 in the image. The image is 1920 wide presumably. Normalized coordinates: x = 249/1920 \u2248 129.7, y = 141/1080 \u2248 130.6.\n\nLet me estimate more carefully. The icons: X at ~213, trash at ~249, search at ~283, refresh at ~319, download at ~353, plus at ~389, folder at ~424, gear at ~458. Y ~141.\n\nNormalized: x = 249/1920*1000 \u2248 129.7 \u2192 130. y = 141/1080*1000 \u2248 130.6 \u2192 131.</think>{\"x\": 130, \"y\": 131}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_800x600",
+        "run": 3,
+        "response": "The archive.zip row's Delete button. Looking at the image, the Delete buttons are at x \u2248 626, and the archive.zip row is at y \u2248 396. The button center: the button spans roughly x 596-658, y 385-407. Center \u2248 (627, 396).</think>{\"x\": 627, \"y\": 396}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1024x768",
+        "run": 3,
+        "response": "The user wants me to identify the Delete button on the archive.zip row. Looking at the image, the archive.zip row is the first row in the table. The Delete button for that row appears to be at approximately x=782, y=181 in the image coordinates.\n\nThe image is 1024x768 pixels. The Delete button on the archive.zip row is centered around x=782, y=181.\n\nNormalized to 0-1000: x = 782/1024 * 1000 \u2248 763.7, y = 181/768 * 1000 \u2248 235.7\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y.\" So I should normalize the pixel coordinates to 0-1000 range.\n\nx = 782/1024 * 1000 \u2248 764\ny = 181/768 * 1000 \u2248 236\n\nLet me look more carefully at the button position. The Delete button for archive.zip appears to span roughly from x=753 to x=815, and y=169 to y=193. Center would be around x=784, y=181.\n\nNormalized: x = 784/1024 * 1000 \u2248 765.6 \u2248 766\ny = 181/768 * 1000 \u2248 235.7 \u2248 236{\"x\": 766, \"y\": 236}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1280x720",
+        "run": 3,
+        "response": "The archive.zip row's Delete button. The button appears at around x=931-993, y=298-321. Center approximately (962, 310). Normalized: x = 962/1280 * 1000 \u2248 751.6, y = 310/720 * 1000 \u2248 430.6.\n\nLet me estimate more carefully. The Delete button for archive.zip row: the row is at y\u2248310 in the image. Button spans roughly x 931 to 993, y 298 to 321. Center x \u2248 962, y \u2248 310.\n\nNormalized: x = 962/1280 = 0.7516 \u2192 752. y = 310/720 = 0.4306 \u2192 431.</think>{\"x\": 752, \"y\": 431}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "duplicate_labels_1920x1080",
+        "run": 3,
+        "response": "The archive.zip row is the last row. Its Delete button is at approximately x=1408, y=396 in the image. The image is 1920x1080 presumably. Normalized: x = 1408/1920 * 1000 \u2248 733.3, y = 396/1080 * 1000 \u2248 366.7.\n\nLet me check the button position. The Delete button for archive.zip appears centered around x=1408, y=396. Normalized x \u2248 733, y \u2248 367.</think>{\"x\": 733, \"y\": 367}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_800x600",
+        "run": 3,
+        "response": "The Filename text field in the Save document dialog. The field spans from about x=168 to x=632, y=239 to y=272. Center: x \u2248 (168+632)/2 = 400, y \u2248 (239+272)/2 = 255.5.</think>{\"x\": 400, \"y\": 256}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1024x768",
+        "run": 3,
+        "response": "The Filename text field in the Save document dialog. The field with \"Untitled.txt\" spans from about x=281 to x=743, y=322 to y=357. Center: x \u2248 (281+743)/2 = 512, y \u2248 (322+357)/2 = 339.5 \u2248 340.{\"x\": 512, \"y\": 340}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1280x720",
+        "run": 3,
+        "response": "The Filename text field in the Save document dialog. The input field with \"Untitled.txt\" spans from about x=408 to x=871, y=299 to y=333. Center: x \u2248 (408+871)/2 = 639.5, y \u2248 (299+333)/2 = 316.</think>{\"x\": 640, \"y\": 316}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "dialog_fields_1920x1080",
+        "run": 3,
+        "response": "The Filename text field in the Save document dialog. The dialog is centered around x=960. The Filename input field spans from about x=728 to x=1192, with text \"Untitled.txt\" at y\u2248496. The field's vertical center is around y=496. Let me estimate: the field appears to be at y from ~480 to ~512, so center y \u2248 496. Horizontal center: (728+1192)/2 = 960.\n\nSo {\"x\": 960, \"y\": 496}.</think>{\"x\": 960, \"y\": 496}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_800x600",
+        "run": 3,
+        "response": "I need to find cell C4 in the spreadsheet. Column C is the third column, row 4 is the fourth data row.\n\nLooking at the table:\n- Column headers: A (~241), B (~348), C (~454), D (~560), E (~665)\n- Row 4 is at y ~369\n\nColumn C cells: 94 (row 1, y~243), 188 (row 2, y~285), 853 (row 3, y~327), 365 (row 4, y~369), 125 (row 5, y~411), 875 (row 6, y~453)\n\nCell C4 contains \"365\" at approximately x=454, y=369.\n\nThe cell spans from about x=441 to x=541 (column C width), and y from ~349 to ~390. Center would be around x=490, y=369.\n\nLet me estimate more carefully. The table starts at x~189 and ends at x~759. There are 6 columns (row header + A-E). Row header column: 189-224 (~35 wide). Then A: 224-334, B: 334-441, C: 441-548, D: 548-655, E: 655-759. Each ~107 wide.\n\nColumn C center: (441+548)/2 \u2248 494. But the text \"365\" is at x~454, left-aligned. The visual center of the cell control would be the center of the cell, ~494.\n\nRow 4: rows are at y 224-262 (row 1), 262-304 (row 2), 304-347 (row 3), 347-390 (row 4), 390-432 (row 5), 432-475 (row 6). Row 4 center: ~369.\n\nSo the answer is approximately {\"x\": 494, \"y\": 369}.</think>{\"x\": 494, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1024x768",
+        "run": 3,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Cell C4 is column C, row 4. Column C header is at x\u2248544. Row 4 is at y\u2248369. The cell C4 contains \"291\" at approximately (549, 369). The cell spans from about x=530 to x=681, y=350 to y=389. Center would be around x=605, y=369.\n\nLet me estimate: Column C spans from ~530 to ~681 (based on column boundaries). Column C header \"C\" at x=544. Column D header at x=693. So column C spans roughly 530-681, center \u2248 605. Row 4 spans y\u2248350-389, center \u2248 369.\n\nSo the center of cell C4 is approximately (605, 369).</think>{\"x\": 605, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1280x720",
+        "run": 3,
+        "response": "I need to find cell C4 in the spreadsheet. Column C header is at x\u2248646. Row 4 is at y\u2248369.\n\nLooking at the table:\n- Column A header at x\u2248242, column B at x\u2248444, column C at x\u2248646, column D at x\u2248848, column E at x\u22481049.\n- Row 1 at y\u2248243, row 2 at y\u2248285, row 3 at y\u2248327, row 4 at y\u2248369, row 5 at y\u2248411, row 6 at y\u2248453.\n\nCell C4 contains \"154\" at approximately (653, 369). The cell spans from x\u2248633 to x\u2248835, and y\u2248349 to y\u2248390. The visual center of the cell would be around x\u2248734, y\u2248369.\n\nWait, the question asks for the visual center of the control (the cell). The cell C4 spans from about x=633 to x=835 (column C width), and y=349 to y=390. Center would be x\u2248734, y\u2248369.\n\nLet me estimate more carefully. The table starts at x\u2248189 and ends at x\u22481238. There are 5 columns plus a row-number column. Row number column: 189 to ~229. Then columns A-E each about 202 px wide: A: 229-431, B: 431-633, C: 633-835, D: 835-1037, E: 1037-1238.\n\nColumn C center: (633+835)/2 = 734.\n\nRow 4: rows appear to be ~42px tall. Row 1: 224-265, row 2: 265-307, row 3: 307-349, row 4: 349-390, row 5: 390-432, row 6: 432-474. Row 4 center: ~369.\n\nSo the center of cell C4 is approximately (734, 369).</think>{\"x\": 734, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "table_cells_1920x1080",
+        "run": 3,
+        "response": "I need to find cell C4 in the spreadsheet. Column C header is at around x=902. Row 4 is the row with values 263, 877, 458, 511, 453.\n\nThe table spans from about x=189 to x=1878. Columns: A, B, C, D, E. Column C header at x\u2248902. Column C cell region: from about x=889 to x=1218. Center of column C \u2248 (889+1218)/2 \u2248 1053.\n\nRow 4: rows are at y\u2248243 (row 1), 285 (row 2), 327 (row 3), 369 (row 4), 411 (row 5), 453 (row 6). Row 4 center y \u2248 369.\n\nSo C4 center \u2248 x=1053, y=369.</think>{\"x\": 1053, \"y\": 369}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_960x640",
+        "run": 3,
+        "response": "The Export button is located at approximately x from 430 to 580, y from 100 to 147. Center: x = (430+580)/2 = 505, y = (100+147)/2 = 123.5. Normalized to 0-1000: image width 960, height 640. Wait, the coordinates given in the image are already in pixels of a 960x640 image. Normalized to 0-1000: x = 505/960*1000 \u2248 526, y = 123.5/640*1000 \u2248 193.\n\nLet me estimate the button bounds more carefully. The button appears to span roughly x 430-580, y 100-147. Center pixel \u2248 (505, 123). Normalized: x = 505/960*1000 = 526.0, y = 123/640*1000 = 192.2.{\"x\": 526, \"y\": 193}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1366x768",
+        "run": 3,
+        "response": "The Export button is at the top right area. Its bounding box appears to be roughly x from 1152 to 1300, y from 156 to 202. Center: x \u2248 (1152+1300)/2 = 1226, y \u2248 (156+202)/2 = 179.\n\nNormalized to 0-1000: image width 1366, height 768. x = 1226/1366*1000 \u2248 897.5. y = 179/768*1000 \u2248 233.1.</think>{\"x\": 898, \"y\": 233}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1600x900",
+        "run": 3,
+        "response": "The Export button is at the top right area. Its bounding box appears to be roughly x from 1385 to 1534, y from 156 to 202. Center: x \u2248 (1385+1534)/2 = 1459.5, y \u2248 (156+202)/2 = 179. Normalized to 0-1000: image width 1600, height 900. x = 1459.5/1600*1000 \u2248 912. y = 179/900*1000 \u2248 199.{\"x\": 912, \"y\": 199}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_large_buttons_1920x1200",
+        "run": 3,
+        "response": "The Export button is the blue button in the middle of the screen. It appears to span roughly from x=910 to x=1060, y=592 to y=637. Center approximately x=985, y=614.\n\nLet me estimate more carefully. The button text \"Export\" is at around x=985, y=614. The button spans from about 910 to 1060 horizontally, so center x \u2248 985. Vertically from about 592 to 637, center y \u2248 614.\n\nNormalized to 0-1000: image is 1920x1200 presumably. x = 985/1920 \u2248 513, y = 614/1200 \u2248 512.\n\nWait, the coordinates should be normalized to 0-1000 for both axes. So x = 985/1920 * 1000 \u2248 513. y = 614/1200 * 1000 \u2248 512.{\"x\": 513, \"y\": 512}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_960x640",
+        "run": 3,
+        "response": "The user wants me to find the \"Replace\" button in the editor toolbar and return its visual center coordinates normalized to 0-1000.\n\nLooking at the image, the toolbar has buttons: Print, Share, Export, Save As, Help, Replace, Undo, Save, Find, Open, Close, and Redo on the second row.\n\nThe \"Replace\" button appears to be located at approximately x=536, y=142 in the image. The image is 960 wide and 640 tall.\n\nLet me estimate the Replace button's position. The buttons in the first row:\n- Print: ~224\n- Share: ~284\n- Export: ~343\n- Save As: ~408\n- Help: ~472\n- Replace: ~536\n- Undo: ~601\n- Save: ~660\n- Find: ~720\n- Open: ~777\n- Close: ~836\n\nThe Replace button spans roughly from x=508 to x=566, so center is around x=537. The y center is around 142.\n\nNormalized: x = 537/960 * 1000 \u2248 559, y = 142/640 * 1000 \u2248 222.\n\nLet me be more careful. The Replace button text \"Replace\" is centered around x=536. The button box appears to span from about 508 to 566. Center x \u2248 537. Normalized: 537/960 = 0.5594 \u2192 559.\n\nY: button spans from about 128 to 156, center \u2248 142. Normalized: 142/640 = 0.2219 \u2192 222.\n\nSo {\"x\": 559, \"y\": 222}.{\"x\": 559, \"y\": 222}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1366x768",
+        "run": 3,
+        "response": "The user wants me to find the \"Replace\" button in the editor toolbar and return its visual center in normalized coordinates (0-1000).\n\nLooking at the image, the toolbar has buttons: Export, Print, Find, Replace, Save As, Share, Help, Close, Redo, Undo, Save, Open.\n\nThe Replace button appears to be at approximately x=408, y=142 in the image. The image is 1366 wide and 768 tall (based on typical dimensions).\n\nLet me estimate the Replace button location. The buttons start at Export (~226), Print (~285), Find (~344), Replace (~408), Save As (~477), Share (~541), Help (~600), Close (~660), Redo (~719), Undo (~777), Save (~837), Open (~895).\n\nThe Replace button center appears to be around x=408, y=142.\n\nNormalized: x = 408/1366 * 1000 \u2248 299, y = 142/768 * 1000 \u2248 185.\n\nLet me look more carefully. The Replace button spans roughly from x=381 to x=436, so center ~408. Vertically from ~130 to ~155, center ~142.\n\nx: 408/1366 = 0.2987 \u2192 299\ny: 142/768 = 0.1849 \u2192 185\n\nSo {\"x\": 299, \"y\": 185}.{\"x\": 299, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1600x900",
+        "run": 3,
+        "response": "The Replace button in the toolbar. Looking at the image, the Replace button is at approximately x=231, y=142 in the image. The image is 1600 wide and 900 tall presumably. Normalized: x = 231/1600*1000 \u2248 144, y = 142/900*1000 \u2248 158.\n\nLet me estimate more carefully. The button \"Replace\" spans roughly from x=202 to x=260, center ~231. Vertical: y=130 to y=155, center ~142.\n\nNormalized: x = 231/1600 = 0.1444 \u2192 144. y = 142/900 = 0.1578 \u2192 158.{\"x\": 144, \"y\": 158}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dense_toolbar_1920x1200",
+        "run": 3,
+        "response": "The Replace button is in the toolbar. Looking at the image, the toolbar has buttons: Replace, Close, Save, Find, Help, Print, Share, Save As, Export, Undo, Redo, Open.\n\nThe Replace button appears to be at approximately x=230, y=141 in the image. The image is 1920 wide and 1200 tall (based on typical dimensions). Let me estimate coordinates.\n\nThe Replace button spans roughly from x=202 to x=260, centered around x=230. Vertically around y=141.\n\nNormalized: x = 230/1920 * 1000 \u2248 120. y = 141/1200 * 1000 \u2248 117.5.\n\nWait, I need to figure out the actual image dimensions. The screenshot appears to be 1920x1200 based on the layout. The status bar at bottom says \"Ready - All changes saved\" at y\u22481191.\n\nSo Replace button center: x \u2248 230, y \u2248 141. Normalized: x = 230/1920*1000 \u2248 119.8 \u2248 120. y = 141/1200*1000 \u2248 117.5 \u2248 118.</think>{\"x\": 120, \"y\": 118}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_960x640",
+        "run": 3,
+        "response": "The user wants me to find the magnifying-glass (search) icon in the toolbar. Looking at the toolbar, there are several icons: refresh, trash, magnifying glass, X, folder, gear, plus, download.\n\nThe magnifying glass icon appears to be the third icon in the toolbar. Let me estimate its position.\n\nThe toolbar starts around x=190 and the icons are spaced. The first icon (refresh) is around x=213, trash around x=249, magnifying glass around x=283, X around x=318, folder around x=354, gear around x=388, plus around x=424, download around x=459.\n\nThe magnifying glass icon center appears to be at approximately x=283, y=142.\n\nLet me look more carefully. The toolbar row is at y\u2248142. The icons: refresh at ~213, trash at ~249, search at ~283, close at ~318, folder at ~354, gear at ~388, plus at ~424, download at ~459.\n\nSo the magnifying glass is at approximately (283, 142).</think>{\"x\": 283, \"y\": 142}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1366x768",
+        "run": 3,
+        "response": "The toolbar has icons: X (close), + (new), trash, refresh, gear, folder, magnifying glass (search), download.\n\nThe magnifying glass icon is at approximately x=423, y=142 in the image. The image is 1366 wide, 767 tall. Normalized: x = 423/1366 * 1000 \u2248 309.7, y = 142/767 * 1000 \u2248 185.1.\n\nLet me estimate more carefully. The icons: X at ~213, + at ~249, trash at ~284, refresh at ~319, gear at ~353, folder at ~388, search at ~423, download at ~459. The search icon center around x=423, y=142.\n\nNormalized x: 423/1366 \u2248 0.3097 \u2192 310. y: 142/767 \u2248 0.1851 \u2192 185.{\"x\": 310, \"y\": 185}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1600x900",
+        "run": 3,
+        "response": "The magnifying-glass icon is the first button in the toolbar. The toolbar buttons appear at around y=142 in the image. The first button (magnifying glass) is at approximately x=213, y=142 in the image coordinates.\n\nImage dimensions: 1600 x 900 presumably. Let me estimate: the toolbar row is at y\u2248142. The first button center is around x=213.\n\nNormalized: x = 213/1600 * 1000 \u2248 133. y = 142/900 * 1000 \u2248 158.\n\nLet me check the button positions: buttons at x\u2248213, 248, 284, 320, 353, 389, 424, 459. The magnifying glass is the first one at x\u2248213, y\u2248142.\n\nNormalized x: 213/1600 = 0.1331 \u2192 133. y: 142/900 = 0.1578 \u2192 158.{\"x\": 133, \"y\": 158}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_small_icons_1920x1200",
+        "run": 3,
+        "response": "The toolbar has icons: gear, trash, download, plus, refresh, X, folder, magnifying glass. The magnifying glass is the last icon at approximately x=459, y=141 in the image. Image dimensions appear to be 1920x1200. Normalized: x = 459/1920 * 1000 \u2248 239, y = 141/1200 * 1000 \u2248 117.5.\n\nLet me estimate more carefully. The icons: gear at ~213, trash ~249, download ~284, plus ~319, refresh ~354, X ~389, folder ~424, magnifier ~459. Spacing ~35px. The magnifier center at x\u2248459, y\u2248141.\n\nNormalized x: 459/1920 = 0.239 \u2192 239. y: 141/1200 = 0.1175 \u2192 118.</think>{\"x\": 239, \"y\": 118}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_960x640",
+        "run": 3,
+        "response": "The Delete button for report.pdf row is at approximately x=739, y=181 in the image. The image is 960 wide and 640 tall. Normalized: x = 739/960 * 1000 \u2248 770, y = 181/640 * 1000 \u2248 283.\n\nLet me estimate the button center more carefully. The button appears to span roughly x from 708 to 770, y from 170 to 192. Center \u2248 (739, 181). Normalized: x \u2248 770, y \u2248 283.{\"x\": 770, \"y\": 283}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1366x768",
+        "run": 3,
+        "response": "The user wants me to find the Delete button on the report.pdf row. Looking at the image, the report.pdf row is the 4th row. The Delete button for that row appears to be at approximately x=1022, y=310 in the image coordinates.\n\nThe image is 1366 wide and 768 tall (based on typical dimensions). Let me estimate the normalized coordinates.\n\nThe Delete button for report.pdf row: the button appears centered around x=1022, y=310 in pixel coordinates. Normalized: x = 1022/1366 * 1000 \u2248 748, y = 310/768 * 1000 \u2248 404.\n\nWait, the instruction says \"Use native image coordinates normalized to 0\u20131000 for x and y\" and \"Do not convert into pixels or do resolution arithmetic.\" This means I should just give the coordinates as if the image is 0-1000 in both dimensions. So I estimate the position directly in the 0-1000 space.\n\nThe report.pdf row's Delete button: horizontally, the button is at about 75% of the width (1022/1366 \u2248 0.748). Vertically, the row is at about 310/768 \u2248 0.404.\n\nSo {\"x\": 748, \"y\": 404}.{\"x\": 748, \"y\": 404}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1600x900",
+        "run": 3,
+        "response": "The report.pdf row's Delete button. The image is 1600 wide, 900 tall roughly. The Delete button for report.pdf is at approximately x=1185, y=267 in the image. Normalized: x = 1185/1600*1000 \u2248 741, y = 267/900*1000 \u2248 297.\n\nLet me check the button position. The button spans roughly x 1155-1216, center ~1185. y range ~256-279, center ~267. Normalized x: 1185/1600 = 0.7406 \u2192 741. y: 267/900 = 0.2967 \u2192 297.{\"x\": 741, \"y\": 297}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_duplicate_labels_1920x1200",
+        "run": 3,
+        "response": "The report.pdf row has a Delete button. The row is at y\u2248353. The Delete button for report.pdf is at approximately x=1408, y=353. Normalized: image is 1920 wide, 1200 tall. x = 1408/1920*1000 \u2248 733. y = 353/1200*1000 \u2248 294.\n\nLet me check the button position: Delete buttons at x\u22481378-1440, center \u22481409. y for report.pdf row \u2248353. So x \u2248 733, y \u2248 294.</think>{\"x\": 733, \"y\": 294}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_960x640",
+        "run": 3,
+        "response": "The Folder text field is the input containing \"/home/user/Documents\". It spans roughly from x=248 to x=711, y=323 to y=357. Center: x \u2248 (248+711)/2 = 479.5, y \u2248 (323+357)/2 = 340.</think>{\"x\": 480, \"y\": 340}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1366x768",
+        "run": 3,
+        "response": "The Folder text field is the input containing \"/home/user/Documents\". It spans from approximately x=451 to x=914, y=386 to y=420. Center: x = (451+914)/2 = 682.5, y = (386+420)/2 = 403.\n\nNormalized to 0-1000: image width 1366, height 768. But the instruction says use native image coordinates normalized to 0-1000 for x and y. So x = 682.5/1366*1000 \u2248 499.6, y = 403/768*1000 \u2248 524.7.\n\nWait, \"native image coordinates normalized to 0\u20131000\" \u2014 meaning normalize the pixel coordinates to a 0-1000 scale. So x \u2248 500, y \u2248 525.{\"x\": 500, \"y\": 525}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1600x900",
+        "run": 3,
+        "response": "The Folder text field is the input containing \"/home/user/Documents\". Its bounding box: x from ~568 to ~1032, y from ~452 to ~486. Center: x = (568+1032)/2 = 800, y = (452+486)/2 = 469.\n\nNormalized to 0-1000: image width 1600, height 900. x = 800/1600*1000 = 500. y = 469/900*1000 \u2248 521.</think>{\"x\": 500, \"y\": 521}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_dialog_fields_1920x1200",
+        "run": 3,
+        "response": "The Folder text field in the Save document dialog. The dialog is centered around x=960. The Folder field spans from about x=730 to x=1190, y from about 604 to 636. Center: x \u2248 (730+1190)/2 = 960, y \u2248 620.\n\nLet me estimate more precisely. The field appears to be at y ~604-636, center ~620. x center ~960.{\"x\": 960, \"y\": 620}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_960x640",
+        "run": 3,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Column D header is at x\u2248656. Row 3 is at y\u2248327. Cell D3 contains 636 at (663, 327). The cell spans from x\u2248641 to x\u2248779, y\u2248308 to y\u2248347. Center x \u2248 710, y \u2248 327.\n\nLet me estimate: Column D header at 656, column E at 792. Column boundaries: D column spans roughly 641 to 779. Center \u2248 710. Row 3 spans y\u2248308 to 347, center \u2248 327.</think>{\"x\": 710, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1366x768",
+        "run": 3,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Column D header is at x\u2248899. Row 3 is at y\u2248327. Cell D3 contains \"71\" at approximately (903, 327).\n\nThe cell D3 spans from about x=886 to x=1105, and y from about 307 to 348. Center would be around x=995, y=327.\n\nLet me estimate: Column D header at x=899. Column boundaries: A starts ~237, B ~455, C ~668, D ~886, E ~1105. So D column spans 886 to 1105, center \u2248 995. Row 3 spans y\u2248307 to 348, center \u2248 327.\n\nSo the visual center of cell D3 is approximately (995, 327).{\"x\": 995, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1600x900",
+        "run": 3,
+        "response": "I need to find cell D3 in the spreadsheet. Column D header is at x\u22481040. Row 3 is the third data row.\n\nLooking at the table:\n- Header row at y\u2248200\n- Row 1 at y\u2248243\n- Row 2 at y\u2248285\n- Row 3 at y\u2248327\n- Row 4 at y\u2248369\n- Row 5 at y\u2248411\n- Row 6 at y\u2248453\n\nColumn D cells: the \"862\" value in row 3 is at x\u22481046. The column D spans from about x\u22481027 to x\u22481293. Center of column D would be around x\u22481160. But the question asks for the visual center of the cell D3.\n\nColumn boundaries: A starts at ~230, B at ~495, C at ~761, D at ~1027, E at ~1293. So D spans 1027 to 1293, center \u2248 1160.\n\nRow 3 spans from y\u2248307 to y\u2248348, center \u2248 327.\n\nSo the center of cell D3 is approximately (1160, 327).</think>{\"x\": 1160, \"y\": 327}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "heldout_table_cells_1920x1200",
+        "run": 3,
+        "response": "The spreadsheet has columns A-E and rows 1-6. Cell D3 contains \"315\". Column D header is at x\u22481232. The D column spans from about x=1219 to x=1548. Row 3 spans from y\u2248309 to y\u2248347, so center y\u2248328.\n\nColumn D center: (1219+1548)/2 \u2248 1383. Row 3 center: (309+347)/2 \u2248 328.\n\nNormalized to 0-1000: image width 1920, height 1200. x = 1383/1920*1000 \u2248 720. y = 328/1200*1000 \u2248 273.\n\nLet me check the pixel coordinates more carefully. The table starts at x\u2248190 (row number column) and column A starts at ~230. Column headers: A at 242, B at 571, C at 902, D at 1232, E at 1561. Column D cell spans roughly from x=1219 to x=1548 (based on cell boundaries). Center \u2248 1383.\n\nRow 3: rows appear at y: row1 ~224-265, row2 ~265-307, row3 ~307-348, row4 ~348-390. Row 3 center \u2248 327.\n\nNormalized: x = 1383/1920*1000 = 720.3, y = 327/1200*1000 = 272.5.</think>{\"x\": 720, \"y\": 273}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_large_button_1",
+        "run": 3,
+        "response": "The Export button is located at approximately x from 185 to 310, y from 126 to 164. Center: x = (185+310)/2 = 247.5, y = (126+164)/2 = 145.</think>{\"x\": 248, \"y\": 145}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_small_icon_1",
+        "run": 3,
+        "response": "The File operations toolbar has icons: trash-can at around x=397, y=142. The trash icon button appears to be at approximately (397, 142). Normalized coordinates: the image is 1268 wide, 770 tall. The trash button center: x \u2248 397/1268 \u2248 313, y \u2248 142/770 \u2248 184.\n\nLet me estimate more precisely. The trash icon button spans roughly x 381-413, y 126-158. Center \u2248 (397, 142). Normalized: x = 397/1268*1000 \u2248 313, y = 142/770*1000 \u2248 184.</think>{\"x\": 313, \"y\": 184}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_duplicate_label_1",
+        "run": 3,
+        "response": "The archive.zip row has a Delete button. Looking at the image, the Downloads section has photo.png, report.pdf, archive.zip with Delete buttons at approximately x=1128, y=223 for archive.zip's Delete button.\n\nThe Delete button next to archive.zip is at around y=223, x=1128. The button spans roughly from x=1085 to x=1174, centered at ~1129. Vertically from ~208 to ~238, centered at ~223.\n\nNormalized to 0-1000: x = 1129/1271 * 1000 \u2248 888. y = 223/771 * 1000 \u2248 289.\n\nWait, the image dimensions appear to be 1271x771 based on the coordinates. Let me estimate: the image is 1271 wide, 771 tall.\n\nx = 1129/1271 \u2248 888.4 \u2192 888\ny = 223/771 \u2248 289.2 \u2192 289</think>{\"x\": 888, \"y\": 289}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_entry_1",
+        "run": 3,
+        "response": "The Folder text field is located below the \"Folder\" label. The field spans from approximately x=45 to x=314, and y=576 to y=610. The center would be around x=180, y=593.</think>{\"x\": 180, \"y\": 593}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_checkbox_1",
+        "run": 3,
+        "response": "The user wants me to click the checkbox labeled \"Enable backups\". Looking at the image, I can see a checkbox at approximately x=57, y=285 with the label \"Enable backups\" next to it.\n\nThe checkbox itself appears to be at around x=57, y=285. The visual center of the checkbox control would be at that point.\n\nLet me estimate more precisely. The checkbox appears to be a small square at around x=50-64, y=278-292. So the center would be around x=57, y=285.\n\nNormalized to 0-1000: the image is 1269 wide and 799 tall. But the user says to use native image coordinates normalized to 0-1000 for x and y. So I should give coordinates in the 0-1000 scale.\n\nThe checkbox center in pixels: approximately x=57, y=285.\n\nNormalized: x = 57/1269 * 1000 \u2248 45, y = 285/799 * 1000 \u2248 357.\n\nWait, \"native image coordinates normalized to 0\u20131000\" - this means the coordinates should be expressed in a 0-1000 scale relative to the image dimensions. So x = 57/1269*1000 \u2248 44.9, y = 285/799*1000 \u2248 356.7.\n\nSo the answer would be {\"x\": 45, \"y\": 357}.{\"x\": 45, \"y\": 357}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_table_cell_1",
+        "run": 3,
+        "response": "The spreadsheet has columns #, A, B, C, D, E. Column C header is at x\u2248660. Row 4 is at y\u2248401. The cell C4 contains 383 at (666, 401). The cell spans from about x=648 to x=762, so center x \u2248 705. Row 4 spans y from ~389 to ~413, center y \u2248 401.\n\nLet me estimate: Column C header at x=660, column D header at x=776. So column C spans roughly from 648 to 762, center \u2248 705. Row 4: rows are at y=323, 349, 375, 401, 427, 453. Row height ~26. Row 4 center y \u2248 401.\n\nSo the answer is {\"x\": 705, \"y\": 401}.{\"x\": 705, \"y\": 401}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_large_button_2",
+        "run": 3,
+        "response": "The Export button is located at approximately x=247, y=201 in the image. The button spans from about x=185 to x=310, and y=182 to y=220. Center is around (247, 201).</think>{\"x\": 247, \"y\": 201}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_small_icon_2",
+        "run": 3,
+        "response": "The File operations toolbar has icons: search (magnifier) at ~398, copy at ~442, trash at ~484, refresh at ~526. The trash-can icon is the third button, centered around x=484, y=142.{\"x\": 484, \"y\": 142}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_duplicate_label_2",
+        "run": 3,
+        "response": "The archive.zip row's Delete button is at approximately x=1128, y=139 in the image. The image is 1260 wide and 780 tall. Normalized: x = 1128/1260*1000 \u2248 895, y = 139/780*1000 \u2248 178.\n\nLet me estimate the button center: the Delete button next to archive.zip spans roughly x from 1085 to 1174, center ~1129. y from 123 to 155, center ~139.\n\nNormalized: x \u2248 1129/1260*1000 = 896, y \u2248 139/780*1000 = 178.</think>{\"x\": 896, \"y\": 178}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_entry_2",
+        "run": 3,
+        "response": "The Folder text field is located below the \"Folder\" label. The text field spans from approximately x=45 to x=314, and y=576 to y=610. The center would be around x=180, y=593.</think>{\"x\": 180, \"y\": 593}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_checkbox_2",
+        "run": 3,
+        "response": "The user wants me to find the checkbox labeled \"Enable backups\" and point to its visual center.\n\nLooking at the image, I can see a checkbox with the label \"Enable backups\" at approximately y=286. The checkbox itself appears to be at around x=57, y=286.\n\nThe checkbox is the small square at the left. Its center appears to be around x=57, y=286.\n\nLet me look more carefully. The checkbox square appears to span from about x=50 to x=64, and y=279 to y=293. So the center would be around x=57, y=286.\n\nThe label \"Enable backups\" text is next to it. The user asks to point to the visual center of \"that control\" - the checkbox control. So the center of the checkbox itself.\n\nThe checkbox appears to be at approximately x=57, y=286 in the image coordinates. Normalized to 0-1000: x = 57/1263 * 1000 \u2248 45, y = 286/799 * 1000 \u2248 358.\n\nWait, the image is 1263 wide and 799 tall based on the description. Let me estimate: the checkbox center is at pixel (57, 286). Normalized: x = 57/1263 \u2248 0.045 \u2192 45, y = 286/799 \u2248 0.358 \u2192 358.\n\nSo the answer is {\"x\": 45, \"y\": 358}.{\"x\": 45, \"y\": 358}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      },
+      {
+        "fixture": "native_table_cell_2",
+        "run": 3,
+        "response": "The spreadsheet has columns #, A, B, C, D, E. Column C header is at x\u2248660. Row 4 is at y\u2248401. The cell C4 contains 800, at approximately x=660, y=401.\n\nColumn C spans from about x=645 to x=760. Center x \u2248 702? Let me look. Column headers: # at 390, A at 430, B at 545, C at 660, D at 775, E at 888. Column C cell contains \"800\" at x=665. The column C spans roughly from x=645 to x=760, so center \u2248 702. But the text is left-aligned at 665. The visual center of the cell would be around x=702, y=401.\n\nRow 4: rows are at y=323 (row1), 349 (row2), 375 (row3), 401 (row4), 427 (row5), 453 (row6). Row height ~26. Row 4 center y \u2248 401.\n\nColumn C: header \"C\" at x=660. Column boundaries: A column starts ~415, B ~530, C ~645, D ~760, E ~875, ends ~1010. So C spans 645-760, center \u2248 702.\n\nSo answer: {\"x\": 702, \"y\": 401}.{\"x\": 702, \"y\": 401}",
+        "result": "Error: Could not locate desktop target: Vision model must return JSON coordinates or {\"found\":false}."
+      }
+    ]
+  },
+  "kimi-k3:cloud": {
+    "hits": 177,
+    "n": 180,
+    "median_model_seconds": 0.891,
+    "mean_model_seconds": 1.143,
+    "correct_per_model_second": 0.86,
+    "runs": {
+      "1": {
+        "hits": 59,
+        "n": 60
+      },
+      "2": {
+        "hits": 59,
+        "n": 60
+      },
+      "3": {
+        "hits": 59,
+        "n": 60
+      }
+    },
+    "absent_correct": 18,
+    "absent_n": 18,
+    "failures": [
+      {
+        "fixture": "heldout_table_cells_960x640",
+        "run": 1,
+        "response": "{\"x\": 690, \"y\": 327}",
+        "result": "Clicked at (662, 209).\nBenchmark observation"
+      },
+      {
+        "fixture": "heldout_table_cells_960x640",
+        "run": 2,
+        "response": "{\"x\": 690, \"y\": 327}",
+        "result": "Clicked at (662, 209).\nBenchmark observation"
+      },
+      {
+        "fixture": "heldout_table_cells_1600x900",
+        "run": 3,
+        "response": "{\"x\": 654, \"y\": 327}",
+        "result": "Clicked at (1046, 294).\nBenchmark observation"
+      }
+    ]
+  }
+}
